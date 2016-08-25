@@ -76,12 +76,6 @@ $year = date('Y');
                     .done(function (data) {
                         $.each(data, function (i, value) {
                             $('select.selectModel').append($('<option>').text(value.name).attr('value', value.id));
-                            $('.selectModel .dropdown-menu .dropdown-menu')
-                                    .append('<li data-original-index="' + value.id + '">' +
-                                            '<a>' +
-                                            '   <span class="text">' + value.name + '</span>' +
-                                            '</a>' +
-                                            '</li>');
                         });
                         $('.selectModel').selectpicker('refresh');
                     });

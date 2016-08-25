@@ -14,9 +14,9 @@ class Helper
         return 'themes/' . $data;
     }
 
-    public static function assetsUrl()
+    public static function assetsUrl($path = '')
     {
-        return self::themeUrl() . '/assets';
+        return self::themeUrl() . '/assets'.$path;
     }
 
     public static function smartPrice($price)
@@ -26,6 +26,13 @@ class Helper
         $removeEU = substr($price, 3);
         $data = substr($removeEU, 0, strpos($removeEU, ","));
         return $data;
+    }
+
+    public static function kwToPS($kw) {
+        $convert = $kw*1.35962;
+        $ps = substr($convert, 0, strpos($convert, "."));
+
+        return $ps;
     }
 
 }

@@ -33,9 +33,9 @@
 
 </head>
 <body>
-@include('partials.headers.sales')
+@include('partials.headers.header')
 @yield('content')
-@include('partials.footers.sales')
+@include('partials.footers.footer')
 <!-- main -->
 <!-- footer -->
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>

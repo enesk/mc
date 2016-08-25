@@ -94,7 +94,7 @@ class MobileApiController extends Controller
             'description' => $ad->description,
             'first_registration' => Carbon::createFromFormat('Y-m', $ad->vehicle->specifics->{'first-registration'}->{'@value'})->toDateTimeString(),
             'price' => $ad->price->{'consumer-price-amount'}->{'@value'},
-            'milage' => $this->getMilage($ad),
+            'mileage' => $this->getMileage($ad),
             'power' => $power,
             'vatable' => ApiRequest::check($ad->vehicle->{'damage-and-unrepaired'}->{'@value'}),
             'damage_and_unrepaired' => ApiRequest::check($ad->price->vatable->{'@value'}),
@@ -147,14 +147,14 @@ class MobileApiController extends Controller
      * @param $ad
      * @return int
      */
-    public function getMilage($ad)
+    public function getMileage($ad)
     {
-        $milage = 0;
-        if (isset($ad->vehicle->specifics->milage->{'@value'})):
-            $milage = $ad->vehicle->specifics->milage->{'@value'};
+        $mileage = 0;
+        if (isset($ad->vehicle->specifics->mileage->{'@value'})):
+            $mileage = $ad->vehicle->specifics->mileage->{'@value'};
         endif;
 
-        return $milage;
+        return $mileage;
     }
 
 

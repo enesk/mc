@@ -275,7 +275,7 @@ if($("#priceRange").length){
       type: "double",
       min: 1000,
       step: 500,
-      max: 60000,
+      max: 300000,
       postfix : " €",
 
   });

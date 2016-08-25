@@ -4,6 +4,7 @@ namespace Modules\Car\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
+use Modules\Car\Models\Specifics\Specific;
 
 class Car extends Model
 {
@@ -16,7 +17,7 @@ class Car extends Model
         'description',
         'first_registration',
         'price',
-        'milage',
+        'mileage',
         'power',
         'vatable',
         'damaged_and_unrepaired',
@@ -36,13 +37,17 @@ class Car extends Model
     public static function search($data)
     {
         $cars = self::take(100);
-        if(!empty($data['company']))
+        if (!empty($data['company']))
             $cars = $cars->where('company_id', $data['company']);
-        if(!empty($data['model']))
+        if (!empty($data['model']))
             $cars = $cars->where('model_id', $data['model']);
-        if(!empty($data['year']))
-            $cars = $cars->whereDate('first_registration', '>=', Carbon::createFromFormat('Y', $data['year'])->toDateString());
-        if(!empty($data['priceRange'])):
+        if (!empty($data['fuel']))
+            $cars = $cars->whereHas('specifics', function ($q) use ($data) {
+                $q->where('key', $data['fuel']);
+            });
+        if (!empty($data['year']))
+            $cars = $cars->whereDate('first_registration', '<=', Carbon::createFromFormat('Y', $data['year'])->toDateString());
+        if (!empty($data['priceRange'])):
             $data = explode(';', $data['priceRange']);
             $cars = $cars->whereBetween('price', [$data[0], $data[1]]);
         endif;
@@ -67,6 +72,10 @@ class Car extends Model
         return $this->belongsTo('Modules\Car\Models\carClass', 'class_id', 'id');
     }
 
+    public function specifics()
+    {
+        return $this->hasMany(Specific::class);
+    }
 
     public function category()
     {
