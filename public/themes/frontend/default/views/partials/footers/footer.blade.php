@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 pt35 pb25">
-                <img src="{{ \App\Helpers\Helper::assetsUrl() }}/img/milleniumcars_bottom.png" alt="milleniumcars">
+                <img src="/{{ \App\Helpers\Helper::assetsUrl() }}/img/milleniumcars_bottom.png" alt="milleniumcars">
             </div>
         </div>
     </div>

@@ -4,6 +4,7 @@ namespace Modules\Car\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
+use Modules\Car\Models\Specifics\FuelConsumption;
 use Modules\Car\Models\Specifics\Specific;
 
 class Car extends Model
@@ -60,6 +61,9 @@ class Car extends Model
         return $this->hasMany(Photo::class);
     }
 
+    public function consumptions() {
+        return $this->hasOne(FuelConsumption::class);
+    }
 
     public function company()
     {

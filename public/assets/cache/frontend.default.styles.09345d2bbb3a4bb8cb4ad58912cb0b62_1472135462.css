@@ -2892,10 +2892,12 @@ textarea {
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 20px; }
 
-.tableHeader h3 {
-  font-size: 20px;
-  text-transform: uppercase;
-  margin-bottom: 5px; }
+.tableHeader a {
+  color: #111; }
+  .tableHeader h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 5px; }
   .tableHeader p {
     color: #7c808c; }
 

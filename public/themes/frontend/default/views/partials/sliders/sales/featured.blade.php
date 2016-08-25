@@ -12,7 +12,7 @@ $cars = \Modules\Car\Models\Car::newCars();
         <div class="carSlider saleSlider">
             @foreach($cars as $car)
                 <div>
-                    <img src="/imager{{ $car->photos()->first()->path }}">
+                    <a href="{{ route('cars::show', $car->id) }}"><img src="/imager{{ $car->photos()->first()->path }}"></a>
                     <h2 class="carSlide_name">
                         @if(strlen($car->title) > 30)
                             {{ substr($car->title, 0, 30) }}...
@@ -28,9 +28,11 @@ $cars = \Modules\Car\Models\Car::newCars();
                         <div class="carSlide_text mb40">inkl. 19% MwSt.</div>
                     @endif
                     <div class="carSlide_action">
-                        <button type="button" class="btn btn-negative" aria-label="Jetzt Prüfen">
-                            Details Ansehen
-                        </button>
+                        <a href="{{ route('cars::show', $car->id) }}">
+                            <button type="button" class="btn btn-negative" aria-label="Jetzt Prüfen">
+                                Details Ansehen
+                            </button>
+                        </a>
                     </div>
                 </div>
             @endforeach

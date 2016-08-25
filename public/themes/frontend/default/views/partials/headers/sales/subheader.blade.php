@@ -8,12 +8,12 @@
                         <span class="hidden-lg-down">Suche</span>
 
                     </li>
-                    <li class="currentStep">
+                    <li @if(\Request::route()->getName() == 'cars::search') class="currentStep" @endif>
                         <span class="isCircle">2</span>
                         <span>Angebote</span>
 
                     </li>
-                    <li class="futureStep">
+                    <li @if(\Request::route()->getName() == 'cars::show') class="currentStep" @endif>
                         <span class="isCircle">3</span>
                         <span class="hidden-lg-down">Details</span>
 

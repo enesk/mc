@@ -34,7 +34,7 @@ $year = date('Y');
                             <select name="fuel" class="selectpicker form-control saleSelect" data-live-search="true"
                                     title="Kraftstoff">
                                 @foreach($fuels as $fuel)
-                                    <option value="{{ $fuel->id }}">{{ $fuel->value }}</option>
+                                    <option value="{{ $fuel->key }}">{{ $fuel->value }}</option>
                                 @endforeach
                             </select>
                         </div>

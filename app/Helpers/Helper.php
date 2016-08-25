@@ -28,6 +28,11 @@ class Helper
         return $data;
     }
 
+    public static function noneTax($price) {
+        $noneTax = $price/1.19;
+        return $noneTax;
+    }
+
     public static function kwToPS($kw) {
         $convert = $kw*1.35962;
         $ps = substr($convert, 0, strpos($convert, "."));

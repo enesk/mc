@@ -11,4 +11,5 @@ Route::get('imager/{image?}', function ($src) {
 
     Route::group(['as' => 'cars::', 'namespace' => 'Modules\Car\Http\Controllers'], function () {
         Route::get('search', ['as' => 'search', 'uses' => 'CarsController@search']);
+        Route::get('show/{carID}', ['as' => 'show', 'uses' => 'CarsController@show']);
     });

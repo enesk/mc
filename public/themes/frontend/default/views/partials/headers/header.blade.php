@@ -47,7 +47,7 @@
     <div class="row vAlignCentered mb20">
         <div class="col-md-4 col-xs-6">
             <a href="/home" title="Millenium Cars">
-                <img src="{{ \App\Helpers\Helper::assetsUrl() }}/img/milleniumcars.png" alt="Millenium Cars" class="img-responsive">
+                <img src="/{{ \App\Helpers\Helper::assetsUrl() }}/img/milleniumcars.png" alt="Millenium Cars" class="img-responsive">
             </a>
         </div>
         <div class="col-md-8 col-xs-6 vMiddle flex-end">
