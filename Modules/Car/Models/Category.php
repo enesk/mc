@@ -23,12 +23,13 @@ class Category extends Model
             'slug' => $ad->vehicle->category->{'@key'},
         ];
 
-        $category = self::where('slug', $ad->vehicle->category->{'@key'})->get();
-        if ($category->isEmpty()):
+        $check = self::where('slug', $categoryData['slug']);
+        if ($check->get()->isEmpty()):
             $category = self::create($categoryData);
+            return $category;
         endif;
 
-        return $category->first();
+        return $check->first();
     }
 
 

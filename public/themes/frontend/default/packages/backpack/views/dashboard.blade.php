@@ -1,0 +1,1 @@
+@include('backpack::base.dashboard')

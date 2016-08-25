@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.2.42 on 2016-08-11.
+ * Generated for Laravel 5.2.44 on 2016-08-24.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -4899,11 +4899,23 @@ namespace {
          *
          * @param string $function
          * @param array $columns
-         * @return float|int 
+         * @return mixed 
          * @static 
          */
         public static function aggregate($function, $columns = array()){
             return \Illuminate\Database\Query\Builder::aggregate($function, $columns);
+        }
+        
+        /**
+         * Execute a numeric aggregate function on the database.
+         *
+         * @param string $function
+         * @param array $columns
+         * @return float|int 
+         * @static 
+         */
+        public static function numericAggregate($function, $columns = array()){
+            return \Illuminate\Database\Query\Builder::numericAggregate($function, $columns);
         }
         
         /**
@@ -7199,7 +7211,7 @@ namespace {
         }
         
         /**
-         * Get a subset of the items from the input data.
+         * Get a subset containing the provided keys with values from the input data.
          *
          * @param array|mixed $keys
          * @return array 
@@ -7281,7 +7293,7 @@ namespace {
          *
          * @param string $key
          * @param mixed $default
-         * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array|null 
+         * @return \Illuminate\Http\UploadedFile|array|null 
          * @static 
          */
         public static function file($key = null, $default = null){
@@ -12956,6 +12968,1295 @@ namespace {
          */
         public static function setStubPath($stubPath){
             return \Nwidart\Modules\Repository::setStubPath($stubPath);
+        }
+        
+    }
+
+
+    class Debugbar extends \Barryvdh\Debugbar\Facade{
+        
+        /**
+         * Enable the Debugbar and boot, if not already booted.
+         *
+         * @static 
+         */
+        public static function enable(){
+            return \Barryvdh\Debugbar\LaravelDebugbar::enable();
+        }
+        
+        /**
+         * Boot the debugbar (add collectors, renderer and listener)
+         *
+         * @static 
+         */
+        public static function boot(){
+            return \Barryvdh\Debugbar\LaravelDebugbar::boot();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function shouldCollect($name, $default = false){
+            return \Barryvdh\Debugbar\LaravelDebugbar::shouldCollect($name, $default);
+        }
+        
+        /**
+         * Starts a measure
+         *
+         * @param string $name Internal name, used to stop the measure
+         * @param string $label Public name
+         * @static 
+         */
+        public static function startMeasure($name, $label = null){
+            return \Barryvdh\Debugbar\LaravelDebugbar::startMeasure($name, $label);
+        }
+        
+        /**
+         * Stops a measure
+         *
+         * @param string $name
+         * @static 
+         */
+        public static function stopMeasure($name){
+            return \Barryvdh\Debugbar\LaravelDebugbar::stopMeasure($name);
+        }
+        
+        /**
+         * Adds an exception to be profiled in the debug bar
+         *
+         * @param \Exception $e
+         * @static 
+         */
+        public static function addException($e){
+            return \Barryvdh\Debugbar\LaravelDebugbar::addException($e);
+        }
+        
+        /**
+         * Returns a JavascriptRenderer for this instance
+         *
+         * @param string $baseUrl
+         * @param string $basePathng
+         * @return \Barryvdh\Debugbar\JavascriptRenderer 
+         * @static 
+         */
+        public static function getJavascriptRenderer($baseUrl = null, $basePath = null){
+            return \Barryvdh\Debugbar\LaravelDebugbar::getJavascriptRenderer($baseUrl, $basePath);
+        }
+        
+        /**
+         * Modify the response and inject the debugbar (or data in headers)
+         *
+         * @param \Symfony\Component\HttpFoundation\Request $request
+         * @param \Symfony\Component\HttpFoundation\Response $response
+         * @return \Symfony\Component\HttpFoundation\Response 
+         * @static 
+         */
+        public static function modifyResponse($request, $response){
+            return \Barryvdh\Debugbar\LaravelDebugbar::modifyResponse($request, $response);
+        }
+        
+        /**
+         * Check if the Debugbar is enabled
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isEnabled(){
+            return \Barryvdh\Debugbar\LaravelDebugbar::isEnabled();
+        }
+        
+        /**
+         * Collects the data from the collectors
+         *
+         * @return array 
+         * @static 
+         */
+        public static function collect(){
+            return \Barryvdh\Debugbar\LaravelDebugbar::collect();
+        }
+        
+        /**
+         * Injects the web debug toolbar into the given Response.
+         *
+         * @param \Symfony\Component\HttpFoundation\Response $response A Response instance
+         * Based on https://github.com/symfony/WebProfilerBundle/blob/master/EventListener/WebDebugToolbarListener.php
+         * @static 
+         */
+        public static function injectDebugbar($response){
+            return \Barryvdh\Debugbar\LaravelDebugbar::injectDebugbar($response);
+        }
+        
+        /**
+         * Disable the Debugbar
+         *
+         * @static 
+         */
+        public static function disable(){
+            return \Barryvdh\Debugbar\LaravelDebugbar::disable();
+        }
+        
+        /**
+         * Adds a measure
+         *
+         * @param string $label
+         * @param float $start
+         * @param float $end
+         * @static 
+         */
+        public static function addMeasure($label, $start, $end){
+            return \Barryvdh\Debugbar\LaravelDebugbar::addMeasure($label, $start, $end);
+        }
+        
+        /**
+         * Utility function to measure the execution of a Closure
+         *
+         * @param string $label
+         * @param \Closure $closure
+         * @static 
+         */
+        public static function measure($label, $closure){
+            return \Barryvdh\Debugbar\LaravelDebugbar::measure($label, $closure);
+        }
+        
+        /**
+         * Collect data in a CLI request
+         *
+         * @return array 
+         * @static 
+         */
+        public static function collectConsole(){
+            return \Barryvdh\Debugbar\LaravelDebugbar::collectConsole();
+        }
+        
+        /**
+         * Adds a message to the MessagesCollector
+         * 
+         * A message can be anything from an object to a string
+         *
+         * @param mixed $message
+         * @param string $label
+         * @static 
+         */
+        public static function addMessage($message, $label = 'info'){
+            return \Barryvdh\Debugbar\LaravelDebugbar::addMessage($message, $label);
+        }
+        
+        /**
+         * Adds a data collector
+         *
+         * @param \DebugBar\DataCollectorInterface $collector
+         * @throws DebugBarException
+         * @return $this 
+         * @static 
+         */
+        public static function addCollector($collector){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::addCollector($collector);
+        }
+        
+        /**
+         * Checks if a data collector has been added
+         *
+         * @param string $name
+         * @return boolean 
+         * @static 
+         */
+        public static function hasCollector($name){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::hasCollector($name);
+        }
+        
+        /**
+         * Returns a data collector
+         *
+         * @param string $name
+         * @return \DebugBar\DataCollectorInterface 
+         * @throws DebugBarException
+         * @static 
+         */
+        public static function getCollector($name){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getCollector($name);
+        }
+        
+        /**
+         * Returns an array of all data collectors
+         *
+         * @return \DebugBar\array[DataCollectorInterface] 
+         * @static 
+         */
+        public static function getCollectors(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getCollectors();
+        }
+        
+        /**
+         * Sets the request id generator
+         *
+         * @param \DebugBar\RequestIdGeneratorInterface $generator
+         * @return $this 
+         * @static 
+         */
+        public static function setRequestIdGenerator($generator){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::setRequestIdGenerator($generator);
+        }
+        
+        /**
+         * 
+         *
+         * @return \DebugBar\RequestIdGeneratorInterface 
+         * @static 
+         */
+        public static function getRequestIdGenerator(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getRequestIdGenerator();
+        }
+        
+        /**
+         * Returns the id of the current request
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getCurrentRequestId(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getCurrentRequestId();
+        }
+        
+        /**
+         * Sets the storage backend to use to store the collected data
+         *
+         * @param \DebugBar\StorageInterface $storage
+         * @return $this 
+         * @static 
+         */
+        public static function setStorage($storage = null){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::setStorage($storage);
+        }
+        
+        /**
+         * 
+         *
+         * @return \DebugBar\StorageInterface 
+         * @static 
+         */
+        public static function getStorage(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getStorage();
+        }
+        
+        /**
+         * Checks if the data will be persisted
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isDataPersisted(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::isDataPersisted();
+        }
+        
+        /**
+         * Sets the HTTP driver
+         *
+         * @param \DebugBar\HttpDriverInterface $driver
+         * @return $this 
+         * @static 
+         */
+        public static function setHttpDriver($driver){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::setHttpDriver($driver);
+        }
+        
+        /**
+         * Returns the HTTP driver
+         * 
+         * If no http driver where defined, a PhpHttpDriver is automatically created
+         *
+         * @return \DebugBar\HttpDriverInterface 
+         * @static 
+         */
+        public static function getHttpDriver(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getHttpDriver();
+        }
+        
+        /**
+         * Returns collected data
+         * 
+         * Will collect the data if none have been collected yet
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getData(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getData();
+        }
+        
+        /**
+         * Returns an array of HTTP headers containing the data
+         *
+         * @param string $headerName
+         * @param integer $maxHeaderLength
+         * @return array 
+         * @static 
+         */
+        public static function getDataAsHeaders($headerName = 'phpdebugbar', $maxHeaderLength = 4096, $maxTotalHeaderLength = 250000){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getDataAsHeaders($headerName, $maxHeaderLength, $maxTotalHeaderLength);
+        }
+        
+        /**
+         * Sends the data through the HTTP headers
+         *
+         * @param bool $useOpenHandler
+         * @param string $headerName
+         * @param integer $maxHeaderLength
+         * @return $this 
+         * @static 
+         */
+        public static function sendDataInHeaders($useOpenHandler = null, $headerName = 'phpdebugbar', $maxHeaderLength = 4096){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::sendDataInHeaders($useOpenHandler, $headerName, $maxHeaderLength);
+        }
+        
+        /**
+         * Stacks the data in the session for later rendering
+         *
+         * @static 
+         */
+        public static function stackData(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::stackData();
+        }
+        
+        /**
+         * Checks if there is stacked data in the session
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function hasStackedData(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::hasStackedData();
+        }
+        
+        /**
+         * Returns the data stacked in the session
+         *
+         * @param boolean $delete Whether to delete the data in the session
+         * @return array 
+         * @static 
+         */
+        public static function getStackedData($delete = true){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getStackedData($delete);
+        }
+        
+        /**
+         * Sets the key to use in the $_SESSION array
+         *
+         * @param string $ns
+         * @return $this 
+         * @static 
+         */
+        public static function setStackDataSessionNamespace($ns){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::setStackDataSessionNamespace($ns);
+        }
+        
+        /**
+         * Returns the key used in the $_SESSION array
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getStackDataSessionNamespace(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::getStackDataSessionNamespace();
+        }
+        
+        /**
+         * Sets whether to only use the session to store stacked data even
+         * if a storage is enabled
+         *
+         * @param boolean $enabled
+         * @return $this 
+         * @static 
+         */
+        public static function setStackAlwaysUseSessionStorage($enabled = true){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::setStackAlwaysUseSessionStorage($enabled);
+        }
+        
+        /**
+         * Checks if the session is always used to store stacked data
+         * even if a storage is enabled
+         *
+         * @return boolean 
+         * @static 
+         */
+        public static function isStackAlwaysUseSessionStorage(){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::isStackAlwaysUseSessionStorage();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function offsetSet($key, $value){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::offsetSet($key, $value);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function offsetGet($key){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::offsetGet($key);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function offsetExists($key){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::offsetExists($key);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function offsetUnset($key){
+            //Method inherited from \DebugBar\DebugBar            
+            return \Barryvdh\Debugbar\LaravelDebugbar::offsetUnset($key);
+        }
+        
+    }
+
+
+    class Theme extends \Cartalyst\Themes\Laravel\Facades\Theme{
+        
+        /**
+         * Registers the given theme with the theme bag.
+         * 
+         * You may provide either a theme instance, the slug of the theme
+         * or the theme's physical path as an argument.
+         *
+         * @param mixed $theme
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function register($theme){
+            return \Cartalyst\Themes\ThemeBag::register($theme);
+        }
+        
+        /**
+         * Registers a theme at the given path.
+         *
+         * @param string $path
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @static 
+         */
+        public static function registerAtPath($path){
+            return \Cartalyst\Themes\ThemeBag::registerAtPath($path);
+        }
+        
+        /**
+         * Locates a theme using the given slug in the
+         * registered paths and registers it.
+         *
+         * @param string $slug
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @throws \RuntimeException
+         * @static 
+         */
+        public static function locateAndRegister($slug){
+            return \Cartalyst\Themes\ThemeBag::locateAndRegister($slug);
+        }
+        
+        /**
+         * Ensures a theme is registered.
+         *
+         * @param mixed $theme
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @static 
+         */
+        public static function ensureRegistered($theme){
+            return \Cartalyst\Themes\ThemeBag::ensureRegistered($theme);
+        }
+        
+        /**
+         * Make a view with the option to specify which theme you
+         * would like to use.
+         *
+         * @param string $name
+         * @param array $data
+         * @param mixed $theme
+         * @return \Illuminate\View\View 
+         * @throws \RuntimeException
+         * @static 
+         */
+        public static function view($name, $data = array(), $theme = null){
+            return \Cartalyst\Themes\ThemeBag::view($name, $data, $theme);
+        }
+        
+        /**
+         * Returns the cascaded view paths for the active theme and all
+         * of it's parents right up to the fallback theme.
+         *
+         * @param mixed $theme
+         * @return array 
+         * @static 
+         */
+        public static function getCascadedViewPaths($theme = null){
+            return \Cartalyst\Themes\ThemeBag::getCascadedViewPaths($theme);
+        }
+        
+        /**
+         * Returns the cascaded view paths for a package in the active theme
+         * and all of it's parents right up to the fallback theme.
+         *
+         * @param string $package
+         * @param mixed $theme
+         * @return array 
+         * @static 
+         */
+        public static function getCascadedPackageViewPaths($package, $theme = null){
+            return \Cartalyst\Themes\ThemeBag::getCascadedPackageViewPaths($package, $theme);
+        }
+        
+        /**
+         * Returns the cascaded view paths for a namespace in the active theme
+         * and all of it's parents right up to the fallback theme.
+         *
+         * @param string $namespace
+         * @param mixed $theme
+         * @return array 
+         * @static 
+         */
+        public static function getCascadedNamespaceViewPaths($namespace, $theme = null){
+            return \Cartalyst\Themes\ThemeBag::getCascadedNamespaceViewPaths($namespace, $theme);
+        }
+        
+        /**
+         * Returns the cascaded asset paths for the active theme and all
+         * of it's parents right up to the fallback theme.
+         *
+         * @param mixed $theme
+         * @return array 
+         * @static 
+         */
+        public static function getCascadedAssetPaths($theme = null){
+            return \Cartalyst\Themes\ThemeBag::getCascadedAssetPaths($theme);
+        }
+        
+        /**
+         * Returns the cascaded asset paths for a package in the active theme
+         * and all of it's parents right up to the fallback theme.
+         *
+         * @param string $package
+         * @param mixed $theme
+         * @return array 
+         * @static 
+         */
+        public static function getCascadedPackageAssetPaths($package, $theme = null){
+            return \Cartalyst\Themes\ThemeBag::getCascadedPackageAssetPaths($package, $theme);
+        }
+        
+        /**
+         * Returns the cascaded asset paths for a namespace in the active theme
+         * and all of it's parents right up to the fallback theme.
+         *
+         * @param string $namespace
+         * @param mixed $theme
+         * @return array 
+         * @static 
+         */
+        public static function getCascadedNamespaceAssetPaths($namespace, $theme = null){
+            return \Cartalyst\Themes\ThemeBag::getCascadedNamespaceAssetPaths($namespace, $theme);
+        }
+        
+        /**
+         * Returns the active theme.
+         *
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @static 
+         */
+        public static function getActive(){
+            return \Cartalyst\Themes\ThemeBag::getActive();
+        }
+        
+        /**
+         * Returns the active theme if it exists.
+         * 
+         * If it doesn't, an Exception will be thrown.
+         *
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @throws \RuntimeException
+         * @static 
+         */
+        public static function getActiveOrFail(){
+            return \Cartalyst\Themes\ThemeBag::getActiveOrFail();
+        }
+        
+        /**
+         * Sets the active theme.
+         *
+         * @param mixed $active
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @static 
+         */
+        public static function setActive($active){
+            return \Cartalyst\Themes\ThemeBag::setActive($active);
+        }
+        
+        /**
+         * Returns the fallback theme.
+         *
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @static 
+         */
+        public static function getFallback(){
+            return \Cartalyst\Themes\ThemeBag::getFallback();
+        }
+        
+        /**
+         * Sets the fallback theme.
+         *
+         * @param mixed $fallback
+         * @return \Cartalyst\Themes\ThemeInterface 
+         * @static 
+         */
+        public static function setFallback($fallback){
+            return \Cartalyst\Themes\ThemeBag::setFallback($fallback);
+        }
+        
+        /**
+         * Gets the default packages path relative to each theme.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getPackagesPath(){
+            return \Cartalyst\Themes\ThemeBag::getPackagesPath();
+        }
+        
+        /**
+         * Sets the default packages path relative to each theme.
+         *
+         * @param string $packagesPath
+         * @return void 
+         * @static 
+         */
+        public static function setPackagesPath($packagesPath){
+            \Cartalyst\Themes\ThemeBag::setPackagesPath($packagesPath);
+        }
+        
+        /**
+         * Gets the default namespaces path relative to each theme.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getNamespacesPath(){
+            return \Cartalyst\Themes\ThemeBag::getNamespacesPath();
+        }
+        
+        /**
+         * Sets the default namespaces path relative to each theme.
+         *
+         * @param string $packagesPath
+         * @return void 
+         * @static 
+         */
+        public static function setNamespacesPath($namespacesPath){
+            \Cartalyst\Themes\ThemeBag::setNamespacesPath($namespacesPath);
+        }
+        
+        /**
+         * Gets the default views path relative to each theme / section.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getViewsPath(){
+            return \Cartalyst\Themes\ThemeBag::getViewsPath();
+        }
+        
+        /**
+         * Sets the default views path relative to each theme / section.
+         *
+         * @param string $packagesPath
+         * @return void 
+         * @static 
+         */
+        public static function setViewsPath($viewsPath){
+            \Cartalyst\Themes\ThemeBag::setViewsPath($viewsPath);
+        }
+        
+        /**
+         * Gets the default assets path relative to each theme / section.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getAssetsPath(){
+            return \Cartalyst\Themes\ThemeBag::getAssetsPath();
+        }
+        
+        /**
+         * Sets the default assets path relative to each theme / section.
+         *
+         * @param string $packagesPath
+         * @return void 
+         * @static 
+         */
+        public static function setAssetsPath($assetsPath){
+            \Cartalyst\Themes\ThemeBag::setAssetsPath($assetsPath);
+        }
+        
+        /**
+         * Sets the theme class.
+         *
+         * @param string $themeClass
+         * @return void 
+         * @static 
+         */
+        public static function setThemeClass($themeClass){
+            \Cartalyst\Themes\ThemeBag::setThemeClass($themeClass);
+        }
+        
+        /**
+         * Get an iterator for the items.
+         *
+         * @return \ArrayIterator 
+         * @static 
+         */
+        public static function getIterator(){
+            return \Cartalyst\Themes\ThemeBag::getIterator();
+        }
+        
+        /**
+         * Count the number of items in the collection.
+         *
+         * @return int 
+         * @static 
+         */
+        public static function count(){
+            return \Cartalyst\Themes\ThemeBag::count();
+        }
+        
+        /**
+         * Determine if an item exists at an offset.
+         *
+         * @param mixed $key
+         * @return bool 
+         * @static 
+         */
+        public static function offsetExists($key){
+            return \Cartalyst\Themes\ThemeBag::offsetExists($key);
+        }
+        
+        /**
+         * Get an item at a given offset.
+         *
+         * @param mixed $key
+         * @return mixed 
+         * @static 
+         */
+        public static function offsetGet($key){
+            return \Cartalyst\Themes\ThemeBag::offsetGet($key);
+        }
+        
+        /**
+         * Set the item at a given offset.
+         *
+         * @param mixed $key
+         * @param mixed $value
+         * @return void 
+         * @static 
+         */
+        public static function offsetSet($key, $value){
+            \Cartalyst\Themes\ThemeBag::offsetSet($key, $value);
+        }
+        
+        /**
+         * Unset the item at a given offset.
+         *
+         * @param string $key
+         * @return void 
+         * @static 
+         */
+        public static function offsetUnset($key){
+            \Cartalyst\Themes\ThemeBag::offsetUnset($key);
+        }
+        
+        /**
+         * Creates a new theme class instance.
+         *
+         * @return \Cartalyst\Themes\Cartalyst\Themes\ThemeInterface 
+         * @static 
+         */
+        public static function createTheme($path){
+            return \Cartalyst\Themes\ThemeBag::createTheme($path);
+        }
+        
+        /**
+         * Get the folder depth for areas.
+         *
+         * @return int 
+         * @static 
+         */
+        public static function getAreaDepth(){
+            return \Cartalyst\Themes\ThemeBag::getAreaDepth();
+        }
+        
+        /**
+         * Set the folder depth for areas.
+         *
+         * @param int $areaDepth
+         * @return void 
+         * @static 
+         */
+        public static function setAreaDepth($areaDepth){
+            \Cartalyst\Themes\ThemeBag::setAreaDepth($areaDepth);
+        }
+        
+        /**
+         * Get the max folder depth for themes.
+         *
+         * @return int 
+         * @static 
+         */
+        public static function getMaxThemeDepth(){
+            return \Cartalyst\Themes\ThemeBag::getMaxThemeDepth();
+        }
+        
+        /**
+         * Set the max folder depth for themes.
+         *
+         * @param int $maxThemeDepth
+         * @return void 
+         * @static 
+         */
+        public static function setMaxThemeDepth($maxThemeDepth){
+            \Cartalyst\Themes\ThemeBag::setMaxThemeDepth($maxThemeDepth);
+        }
+        
+        /**
+         * Get the max folder depth for sections.
+         *
+         * @return int 
+         * @static 
+         */
+        public static function getMaxSectionDepth(){
+            return \Cartalyst\Themes\ThemeBag::getMaxSectionDepth();
+        }
+        
+        /**
+         * Set the max folder depth for sections.
+         *
+         * @param int $maxSectionDepth
+         * @return void 
+         * @static 
+         */
+        public static function setMaxSectionDepth($maxSectionDepth){
+            \Cartalyst\Themes\ThemeBag::setMaxSectionDepth($maxSectionDepth);
+        }
+        
+        /**
+         * Get the view factory.
+         *
+         * @return \Illuminate\View\Factory 
+         * @static 
+         */
+        public static function getViewFactory(){
+            return \Cartalyst\Themes\ThemeBag::getViewFactory();
+        }
+        
+        /**
+         * Set the view factory.
+         *
+         * @param \Illuminate\View\Factory $view
+         * @return void 
+         * @static 
+         */
+        public static function setViewFactory($view){
+            \Cartalyst\Themes\ThemeBag::setViewFactory($view);
+        }
+        
+        /**
+         * Get the filesystem associated with the theme bag.
+         *
+         * @return \Illuminate\Filesystem\Filesystem 
+         * @static 
+         */
+        public static function getFilesystem(){
+            return \Cartalyst\Themes\ThemeBag::getFilesystem();
+        }
+        
+        /**
+         * Return the theme paths.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getPaths(){
+            return \Cartalyst\Themes\ThemeBag::getPaths();
+        }
+        
+    }
+
+
+    class Asset extends \Cartalyst\Themes\Laravel\Facades\Asset{
+        
+        /**
+         * Returns the actual path to an asset based on the key provided,
+         * by resolving to the correct location in the correct theme.
+         *
+         * @param string $key
+         * @return string 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function getPath($key){
+            return \Cartalyst\Themes\Assets\AssetManager::getPath($key);
+        }
+        
+        /**
+         * Returns a URL for the asset with the given key.
+         *
+         * @param string $key
+         * @return string 
+         * @static 
+         */
+        public static function getUrl($key){
+            return \Cartalyst\Themes\Assets\AssetManager::getUrl($key);
+        }
+        
+        /**
+         * Queues an asset with the asset manager. The slug is a human-friendly
+         * version of the asset and is unique to the asset type.
+         * 
+         * The key is the key of the asset in the current theme, much like loading
+         * views and dependencies are an array of slug's which this asset
+         * requires to be loaded first.
+         *
+         * @param string $slug
+         * @param string $key
+         * @param array $dependencies
+         * @return void 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function queue($slug, $key, $dependencies = array()){
+            \Cartalyst\Themes\Assets\AssetManager::queue($slug, $key, $dependencies);
+        }
+        
+        /**
+         * Creates an asset with the provided slug,
+         * key and dependencies.
+         *
+         * @param string $slug
+         * @param string $key
+         * @param array $dependencies
+         * @return \Cartalyst\Themes\Assets\Asset 
+         * @static 
+         */
+        public static function createAsset($slug, $key, $dependencies = array()){
+            return \Cartalyst\Themes\Assets\AssetManager::createAsset($slug, $key, $dependencies);
+        }
+        
+        /**
+         * Creates an asset collection from the passed
+         * array of assets.
+         *
+         * @param array $assets
+         * @return \Assetic\Asset\AssetCollectionInterface 
+         * @static 
+         */
+        public static function createAssetCollection($assets){
+            return \Cartalyst\Themes\Assets\AssetManager::createAssetCollection($assets);
+        }
+        
+        /**
+         * Returns an array of style assets registered.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getStyles(){
+            return \Cartalyst\Themes\Assets\AssetManager::getStyles();
+        }
+        
+        /**
+         * Returns an array of script assets registered.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getScripts(){
+            return \Cartalyst\Themes\Assets\AssetManager::getScripts();
+        }
+        
+        /**
+         * Returns an array of dependency sorted
+         * style assets registered.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getSortedStyles(){
+            return \Cartalyst\Themes\Assets\AssetManager::getSortedStyles();
+        }
+        
+        /**
+         * Returns an array of dependency sorted
+         * script assets registered.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getSortedScripts(){
+            return \Cartalyst\Themes\Assets\AssetManager::getSortedScripts();
+        }
+        
+        /**
+         * Returns an array of dependency sorted
+         * assets of the provided type.
+         *
+         * @param string $type
+         * @return array 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function getSorted($type){
+            return \Cartalyst\Themes\Assets\AssetManager::getSorted($type);
+        }
+        
+        /**
+         * Sorts and compiles all registered styles with
+         * the manager and returns the URLs for each one.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getCompiledStyles(){
+            return \Cartalyst\Themes\Assets\AssetManager::getCompiledStyles();
+        }
+        
+        /**
+         * Sorts and compiles all registered scripts with
+         * the manager and returns the URLs for each one.
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getCompiledScripts(){
+            return \Cartalyst\Themes\Assets\AssetManager::getCompiledScripts();
+        }
+        
+        /**
+         * Compiles assets of a given type which are registered.
+         *
+         * @param string $type
+         * @return array 
+         * @static 
+         */
+        public static function getCompiled($type){
+            return \Cartalyst\Themes\Assets\AssetManager::getCompiled($type);
+        }
+        
+        /**
+         * Returns the correct file extension for the given
+         * asset type.
+         *
+         * @param string $type
+         * @return string 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function getCompileFileExtension($type){
+            return \Cartalyst\Themes\Assets\AssetManager::getCompileFileExtension($type);
+        }
+        
+        /**
+         * Builds a compile filename for an asset with the
+         * requested extension.
+         *
+         * @param \Assetic\Asset\AssetInterface $asset
+         * @param string $extension
+         * @return string 
+         * @static 
+         */
+        public static function getCompileFileName($asset, $extension){
+            return \Cartalyst\Themes\Assets\AssetManager::getCompileFileName($asset, $extension);
+        }
+        
+        /**
+         * Returns the cache key for the given filters of an asset.
+         *
+         * @param \Assetic\Asset\AssetInterface $asset
+         * @return string $cacheKey
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function getCacheKey($asset){
+            return \Cartalyst\Themes\Assets\AssetManager::getCacheKey($asset);
+        }
+        
+        /**
+         * Adds a filter for the given file extension.
+         *
+         * @param string $extension
+         * @param \Closure $callback
+         * @return void 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function addFilter($extension, $callback){
+            \Cartalyst\Themes\Assets\AssetManager::addFilter($extension, $callback);
+        }
+        
+        /**
+         * Returns the filter instances for the given file extension.
+         *
+         * @param string $extension
+         * @return array $instances
+         * @static 
+         */
+        public static function getFilterInstances($extension){
+            return \Cartalyst\Themes\Assets\AssetManager::getFilterInstances($extension);
+        }
+        
+        /**
+         * Sets the cache path.
+         *
+         * @param string $cachePath
+         * @return void 
+         * @static 
+         */
+        public static function setCachePath($cachePath){
+            \Cartalyst\Themes\Assets\AssetManager::setCachePath($cachePath);
+        }
+        
+        /**
+         * Set the debug flag.
+         *
+         * @param bool $debug
+         * @return void 
+         * @static 
+         */
+        public static function setDebug($debug){
+            \Cartalyst\Themes\Assets\AssetManager::setDebug($debug);
+        }
+        
+        /**
+         * Set the for recompile flag.
+         *
+         * @param bool $status
+         * @return void 
+         * @static 
+         */
+        public static function setForceRecompile($status){
+            \Cartalyst\Themes\Assets\AssetManager::setForceRecompile($status);
+        }
+        
+        /**
+         * Clear all the compiled assets.
+         *
+         * @param bool $clean
+         * @return void 
+         * @static 
+         */
+        public static function clearAssets($clear = false){
+            \Cartalyst\Themes\Assets\AssetManager::clearAssets($clear);
+        }
+        
+        /**
+         * Clears queued assets of the provided type.
+         *
+         * @param string $type
+         * @return void 
+         * @throws \InvalidArgumentException
+         * @static 
+         */
+        public static function clearQueue($type){
+            \Cartalyst\Themes\Assets\AssetManager::clearQueue($type);
+        }
+        
+    }
+
+
+    class JSMin extends \App\Helpers\JSMin{
+        
+    }
+
+
+    class Image extends \Intervention\Image\Facades\Image{
+        
+        /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @static 
+         */
+        public static function configure($config = array()){
+            return \Intervention\Image\ImageManager::configure($config);
+        }
+        
+        /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function make($data){
+            return \Intervention\Image\ImageManager::make($data);
+        }
+        
+        /**
+         * Creates an empty image canvas
+         *
+         * @param integer $width
+         * @param integer $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */
+        public static function canvas($width, $height, $background = null){
+            return \Intervention\Image\ImageManager::canvas($width, $height, $background);
+        }
+        
+        /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param integer $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */
+        public static function cache($callback, $lifetime = null, $returnObj = false){
+            return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
         }
         
     }

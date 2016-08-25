@@ -180,6 +180,8 @@ return [
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        'Cartalyst\Themes\Laravel\ThemeServiceProvider',
+        Intervention\Image\ImageServiceProvider::class
     ],
 
     /*
@@ -239,6 +241,10 @@ return [
          */
         'Module' => Nwidart\Modules\Facades\Module::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Theme' => 'Cartalyst\Themes\Laravel\Facades\Theme',
+        'Asset' => 'Cartalyst\Themes\Laravel\Facades\Asset',
+        'JSMin' => App\Helpers\JSMin::class,
+        'Image' => Intervention\Image\Facades\Image::class
     ],
 
 ];

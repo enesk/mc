@@ -1,6 +1,7 @@
 <?php
 namespace Modules\Car\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
@@ -24,6 +25,35 @@ class Car extends Model
         'model_id',
         'mobile_id'
     ];
+
+    public static function newCars()
+    {
+        $cars = self::groupBy('title')->get()->take(10);
+
+        return $cars;
+    }
+
+    public static function search($data)
+    {
+        $cars = self::take(100);
+        if(!empty($data['company']))
+            $cars = $cars->where('company_id', $data['company']);
+        if(!empty($data['model']))
+            $cars = $cars->where('model_id', $data['model']);
+        if(!empty($data['year']))
+            $cars = $cars->whereDate('first_registration', '>=', Carbon::createFromFormat('Y', $data['year'])->toDateString());
+        if(!empty($data['priceRange'])):
+            $data = explode(';', $data['priceRange']);
+            $cars = $cars->whereBetween('price', [$data[0], $data[1]]);
+        endif;
+
+        return $cars->get();
+    }
+
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
 
 
     public function company()

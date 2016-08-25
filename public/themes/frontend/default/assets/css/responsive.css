@@ -1,0 +1,720 @@
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+    .searchBoxWrapper {
+        padding-left: 75px;
+    }
+    .darkSubHedader {
+        font-size: 14px;
+    }
+    .isCircle {
+        height: 30px;
+        width: 30px;
+    }
+    .carBox_action button {
+        font-size: 12px;
+    }
+    .from_time_dropdown {
+        right: -32px;
+    }
+}
+@media only screen and (max-width: 565px) {
+    body {
+        overflow-x: hidden;
+    }
+    .navbar-collapse {
+        padding-right: 0
+    }
+    .headerMenu {
+        margin: 0
+    }
+    .headerMenu li {
+        display: inline-block;
+    }
+    .headerMenu li a {
+        border-right: none !important;
+    }
+    .menu_dropdown {
+        margin-top: 10px;
+        right: 5px;
+    }
+    .menu_dropdown.arrow_box:before, .menu_dropdown.arrow_box:after {
+        left: 92%;
+    }
+    .searchBoxWrapper {
+        padding: 0;
+        margin: 0;
+        height: auto;
+    }
+    .searchBox, .searchBox_action {
+        width: 100%;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+    }
+    .station_dropdown {
+        left: 6vw;
+        width: 91vw;
+    }
+    .changeData_box .station_dropdown{
+      left: 3vw;
+    }
+    .station_dropdown .col-xs-12 {
+        padding-right: 15px !important
+    }
+    .from_time_dropdown {
+        right: 20px;
+    }
+    .mainSlider {
+        height: 250px;
+    }
+    .mainSlider .slick-slide img {
+        height: 250px;
+    }
+    .slick-prev, .slick-next {
+        width: 15px;
+        height: 30px;
+        background-image: url("../img/slides/arrow_mobile.png");
+    }
+    .slick-next {
+        background-image: url("../img/slides/arrow_mobile_r.png");
+    }
+    h1 {
+        font-size: 24px
+    }
+    .headlineCircles {
+        width: 120px;
+        height: 120px;
+    }
+    .headlineTitles {
+        font-size: 16px;
+    }
+    .headlineCircles img {
+        transform: translate(0, 42px);
+        width: 56px;
+    }
+    .smallOnMbl {
+        width: 30px !important;
+        transform: translate(0, 36px) !important;
+    }
+    .carSlider img {
+        height: 120px;
+    }
+    .carSlider .slick-prev {
+        left: 10px;
+        width: 7px;
+        height: 15px;
+        background-image: url("../img/slides/car_arrow_mobile.png");
+    }
+    .carSlider .slick-next {
+        right: 10px;
+        width: 7px;
+        height: 15px;
+        background-image: url("../img/slides/car_arrow_mobile_r.png");
+    }
+    .btn.btn-negative {
+        font-size: 16px;
+    }
+    .cert_box {
+        margin-bottom: 15px;
+    }
+    .testimonialSlider {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        height: auto;
+    }
+    .testm_text {
+        font-size: 18px;
+    }
+    .testimonialSlider .slick-next {
+        right: -23px;
+        background-image: none;
+    }
+    .testimonialSlider .slick-prev {
+        left: -23px;
+        background-image: none;
+    }
+    .testm_text:before {
+        font-size: 40px;
+        margin-top: -12px;
+        margin-left: -14px;
+    }
+    .testm_text:after {
+        font-size: 40px;
+        margin-top: -2px;
+        margin-left: 3px;
+    }
+    footer .hasBorders {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid #3C3E46;
+        border-bottom: 1px solid #3C3E46;
+    }
+    .footer_nav {
+        text-align: center;
+        font-size: 12px;
+        height: auto;
+    }
+    .footer_nav li {
+        line-height: inherit;
+    }
+    .bottomMobile {
+        padding: 15px 0 0 0;
+    }
+    .darkSubHedader {
+        padding: 0;
+        font-size: 14px;
+        height: 66px;
+    }
+    .stepsList li:not(:last-child):after {
+        content: "\f111";
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .stepsList li {
+        padding: 0
+    }
+    .isCircle {
+        margin-right: 0;
+        width: 24px;
+        height: 24px;
+        padding-top: 3px;
+        padding-left: 0px;
+        line-height: 1.4;
+        font-size: 12px;
+        vertical-align: 2px;
+    }
+    .futureStep .isCircle {
+        padding-top: 0px;
+        padding-left: 0;
+        padding-top: 1px;
+    }
+    .infoBar {
+        height: auto;
+        padding: 0;
+    }
+    .infoBar_box {
+        border-left: none;
+        border-bottom: 1px solid #e6e6e6;
+        height: auto;
+        padding-bottom: 15px;
+    }
+    .infoBar_box_left {
+        padding-left: 0
+    }
+    .sResult {
+        text-align: center;
+        font-size: 24px;
+        padding: 15px 0
+    }
+    .carDetailImg {
+        margin: 0 auto;
+    }
+    .pr0 {
+        padding-right: 15px !important
+    }
+    .pl0 {
+        padding-left: 15px !important
+    }
+    .formBox input {
+        margin-bottom: 10px;
+    }
+    .formBox .mt10 {
+        margin-top: 0 !important
+    }
+    .bootstrap-select.mobileFix {
+        margin-bottom: 15px
+    }
+    .carBox_specs.specHalf span {
+        width: 50%;
+    }
+    .totalPrice_action button {
+        width: 100%;
+    }
+    .formBox.hasLightBckg .checkbox label {
+        font-size: 14px;
+    }
+    .btn-negative.btn-form {
+        margin-top: 10px;
+    }
+    .totalPrice_vat {
+        text-align: center;
+    }
+    .totalPrice {
+        text-align: center;
+    }
+    .plannedTrip span:last-child {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .plannedTrip button {
+        width: 100%;
+    }
+    .m_extLastLine {
+        text-align: center;
+    }
+    .navbar-nav .open .dropdown-menu {
+        right: 0;
+        width: 250px;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        position: absolute;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+    .infoBar_box.change {
+        border-right: none;
+        padding-bottom: 22px;
+        text-align: right;
+    }
+    .changeData {
+        height: auto;
+        padding: 0;
+    }
+    .changeData .mt10 {
+        margin-top: 0 !important
+    }
+    .changeData input {
+        margin-bottom: 10px;
+    }
+    .changeData_box {
+        height: auto;
+        float: left;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .changeData_box .dateWrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .changeData_box .rentalStation {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .chage_commit {
+        width: 100%;
+        padding-top: 15px !important;
+        padding: 15px 0;
+        border-top: 1px solid #c60018;
+        margin-top: 10px;
+    }
+    .m_border {
+        border-top: 1px solid #c60018;
+        margin-top: 10px;
+    }
+    .from_time_dropdown.arrow_box:before, .from_time_dropdown.arrow_box:after {
+        left: 75%
+    }
+    .sResultFilter button {
+        font-size: 12px !important;
+        height: 35px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+    .m_center {
+        text-align: center;
+    }
+    .infoBar_box.change a {
+        padding-top: 14px;
+    }
+    .searchBox.saleBox {
+        width: 100%;
+    }
+    .pr5 {
+        padding-right: 15px !important;
+    }
+    .pl5 {
+        padding-left: 15px !important;
+    }
+    .searchBox.saleBox .mt15 {
+        margin-top: 0 !important;
+    }
+    .searchBox.saleBox .saleSelect {
+        margin-bottom: 15px;
+    }
+    .searchBox.saleBox .cartType {
+        margin-bottom: 10px;
+    }
+    .priceRange {
+        margin-top: 50px;
+    }
+    .careerTable {
+        overflow-x: auto;
+        font-size: 12px;
+    }
+    .carDetl_slider .ps_l {
+        padding-left: 15px !important;
+    }
+    .carFilterBox {
+        border: none;
+    }
+    .ps_l {
+        padding-left: 15px !important;
+    }
+    .ps_r {
+        padding-right: 15px !important;
+    }
+    .selectCarFilter {
+        padding-top: 15px;
+    }
+    .carFilterBox {
+        height: auto;
+    }
+    .selectCarFilter .saleSelect {
+        margin-bottom: 15px;
+    }
+    .selectCarFilter .p15 {
+        padding: 0 !important
+    }
+    .carFilterBox .cartType {
+        margin-bottom: 10px;
+    }
+    .resetSelection {
+        height: 30px;
+    }
+    .resetSelection a i {
+        position: relative;
+        left: auto;
+    }
+    .carBox.pL_sale .tableHeader {
+        padding-top: 15px;
+    }
+    .carBox.pL_sale .carBox_priceInfo {
+        padding-top: 15px;
+    }
+    .searchBox_action.saleBox {
+        width: 100%;
+    }
+    .carDtl_Title {
+      padding-bottom: 15px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .carDetl_slider-for .slick-next {
+          right: 7px;
+    }
+    .carDetl_slider-for .slick-prev {
+          left: 7px;
+    }
+    .carDtl_hdr a {
+          padding: 16px 0;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 740px) {
+    .menu_dropdown {
+        margin-top: -20px;
+        right: 0px;
+    }
+    .stepsList {
+        padding-top: 16px;
+    }
+    .isCircle {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        padding-top: 4px;
+    }
+    .stepsList li:not(:last-child):after {
+        margin-left: 9px;
+        margin-right: 9px;
+    }
+    .currentStep .isCircle {
+        margin-right: 7px;
+    }
+    .dateWrapper {
+        width: 100%;
+    }
+    .destinationActivate {
+        width: 100%;
+    }
+    .futureStep .isCircle {
+        line-height: 1.7;
+    }
+    .carDetl_slider .ps_l {
+        padding-left: 15px !important;
+    }
+    .formBox .checkbox.small_label label::before {
+      margin-top: -3px;
+
+    }
+    .formBox .checkbox.small_label label::after {
+          top: -2px;
+    }
+}
+@media only screen and (min-width: 740px) and (max-width: 1000px) {
+    .headerMenu {
+        margin: 0;
+    }
+    .navbar-collapse {
+        padding-right: 0;
+    }
+    .headerMenu li {
+        display: inline-block;
+    }
+    .headerMenu li a {
+        border-right: none !important;
+    }
+    .isCircle {
+        height: 35px;
+        width: 35px;
+        font-size: 18px;
+    }
+    .stepsList li:not(:last-child):after {
+        margin-left: 10px;
+    }
+    .infoBar {
+        height: auto;
+        padding: 0;
+    }
+    .infoBar_box {
+        border-left: none;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    .sResult {
+        text-align: center;
+    }
+    .carDetailImg {
+        margin: 0 auto;
+    }
+    .tableHeader {
+        text-align: center;
+    }
+    .carBox_specs.specHalf span {
+        width: 50%;
+    }
+    .summGroup {
+        text-align: center;
+    }
+    .formBox input {
+        margin-bottom: 10px;
+    }
+    .btn-negative.btn-form {
+        margin-top: 10px;
+    }
+    .pr0 {
+        padding-right: 15px !important
+    }
+    .pl0 {
+        padding-left: 15px !important
+    }
+    .bootstrap-select.mobileFix {
+        margin-bottom: 15px
+    }
+    .totalPrice {
+        text-align: center;
+    }
+    .totalPrice_vat {
+        text-align: center;
+    }
+    .totalPrice_action {
+        text-align: center;
+    }
+    .formBox .mt10 {
+        margin-top: 0 !important;
+    }
+    .cert_box {
+        margin-bottom: 15px;
+    }
+    .station_dropdown {
+        width: 380px;
+    }
+    .from_time_dropdown {
+        left: 90px;
+    }
+    .navbar-nav .open .dropdown-menu {
+        right: 0;
+        width: 250px;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        position: absolute;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+    .sResultFilter button {
+        margin-bottom: 10px;
+    }
+    .changeData {
+        height: auto;
+        padding: 0;
+    }
+    .m_border {
+        border-top: 1px solid #c60018;
+        margin-top: 10px;
+    }
+    .chage_commit {
+        padding-top: 15px !important;
+        padding: 15px 0;
+        border-top: 1px solid #c60018;
+        height: 56px;
+    }
+    .dateWrapper {
+        width: 100%;
+    }
+    .pr5 {
+        padding-right: 15px !important;
+    }
+    .pl5 {
+        padding-left: 15px !important;
+    }
+    .searchBox.saleBox .mt15 {
+        margin-top: 0 !important;
+    }
+    .searchBox.saleBox .saleSelect {
+        margin-bottom: 15px;
+    }
+    .searchBox.saleBox .cartType {
+        margin-bottom: 10px;
+    }
+    .priceRange {
+        margin-top: 50px;
+    }
+    .carFilterBox {
+        border: none;
+    }
+    .ps_l {
+        padding-left: 15px !important;
+    }
+    .ps_r {
+        padding-right: 15px !important;
+    }
+    .selectCarFilter {
+        padding-top: 15px;
+    }
+    .carFilterBox {
+        height: auto;
+    }
+    .selectCarFilter .saleSelect {
+        margin-bottom: 15px;
+    }
+    .selectCarFilter .p15 {
+        padding: 0 !important
+    }
+    .carFilterBox .cartType {
+        margin-bottom: 10px;
+    }
+    .resetSelection {
+        height: 30px;
+    }
+    .resetSelection a i {
+        position: relative;
+        left: auto;
+    }
+    .carBox.pL_sale .tableHeader {
+        padding-top: 15px;
+    }
+    .carBox.pL_sale .carBox_priceInfo {
+        padding-top: 15px;
+    }
+    .carDetl_right .m_center {
+      text-align: center;
+    }
+    .testimonialSlider {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+    .item .m_center  {
+      text-align: center;
+    }
+
+}
+@media only screen and (min-width: 1000px) and (max-width: 1180px) {
+    .navbar .container {
+        margin-right: 0;
+    }
+    .navbar-collapse {
+        padding-right: 0;
+    }
+    .darkSubHedader {
+        padding: 0;
+    }
+    .darkSubHedader .container {
+        padding: 0;
+    }
+    .cert_image.bigLogo img {
+        max-width: 195px;
+    }
+    .cert_text {
+        min-height: 65px;
+    }
+    .carFilterBox {
+        border: none;
+    }
+    .carFilterBox {
+        width: 50%;
+    }
+    .carFilterBox:last-of-type {
+        width: 100%;
+        border-top: 1px solid #c60018;
+    }
+    .resetSelection {
+        padding-top: 7px;
+    }
+    .resetSelection a i {
+        position: relative;
+        left: auto;
+    }
+    .carDetl_slider .ps_l {
+        padding-left: 25px !important
+    }
+    .carDetl_slider-for img {
+        height: 290px;
+    }
+    .validUpTo {
+      font-size: 12px;
+      margin-left: -6px;
+    }
+    .card_date .bootstrap-select> .dropdown-toggle {
+      padding-left: 8px;
+      font-size: 12px;
+      padding-right: 16px;
+    }
+
+}
+@media only screen and (max-width: 1200px) {
+    .hidden-lg-down {
+        display: none;
+    }
+    .subHdrMenu li a {
+        font-size: 14px;
+    }
+    .subHdrMenu li {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .sResult {
+        padding: 15px 15px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .carDetl_slider {
+        min-height: 100%;
+    }
+    .subHdrMenu li a {
+        font-size: 20px;
+    }
+    .subHdrMenu li {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .addressCol {
+        margin-bottom: 30px;
+    }
+    .ps_l {
+        padding-left: 15px !important;
+    }
+    .ps_r {
+        padding-right: 15px !important;
+    }
+    .searchBox.saleBox .pr5{
+      padding-right: 15px !important;
+    }
+    .searchBox.saleBox .pl5{
+      padding-left: 15px !important;
+    }
+
+}
+@media only screen and (min-width: 1200px) {
+    .carDetl_slider-for img {
+        height: 370px;
+    }
+}

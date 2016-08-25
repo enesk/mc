@@ -21,23 +21,28 @@ class CarModel extends Model
 
     public function company()
     {
-        return $this->belongsTo(\Modules\Car\Models\Company::class);
+        return $this->belongsTo(Company::class);
+    }
+    
+    public function cars() {
+        return $this->hasMany(Car::class);
     }
 
     public static function findOrCreateByAPI($ad, $companyID)
     {
-        $companyData = [
+        $modelData = [
             'name' => $ad->vehicle->model->{'local-description'}->{'$'},
             'slug' => $ad->vehicle->model->{'@key'},
             'company_id' => $companyID
         ];
 
-        $model = CarModel::where('slug', $ad->vehicle->model->{'@key'})->get();
-        if ($model->isEmpty()):
-            $model = CarModel::create($companyData);
+        $check = CarModel::where('slug', $modelData['slug']);
+        if ($check->get()->isEmpty()):
+            $carModel = CarModel::create($modelData);
+            return $carModel;
         endif;
 
-        return $model->first();
+        return $check->first();
     }
 
 }

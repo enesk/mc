@@ -18,7 +18,12 @@
         "nwidart/laravel-modules": "^0.9.0",
         "anlutro/curl": "^1.4",
         "barryvdh/laravel-ide-helper": "^2.2",
-        "barryvdh/laravel-debugbar": "^2.2"
+        "barryvdh/laravel-debugbar": "^2.2",
+        "cartalyst/themes": "3.0.*",
+        "cartalyst/assetic-filters": "1.0.*",
+        "leafo/scssphp": "0.6.5",
+        "intervention/image": "^2.3",
+        "intervention/imagecache": "^2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -63,5 +68,13 @@
     },
     "config": {
         "preferred-install": "dist"
-    }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.cartalyst.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

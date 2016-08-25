@@ -1,0 +1,9 @@
+@extends('layouts.default')
+@section('content')
+    @include('partials.sliders.sales.home')
+    @include('partials.boxes.sales.search')
+    @include('partials.sliders.sales.featured')
+    @include('partials.boxes.sales.partners')
+    @include('partials.sliders.sales.testimonials')
+    @include('partials.boxes.sales.newsletter')
+@endsection

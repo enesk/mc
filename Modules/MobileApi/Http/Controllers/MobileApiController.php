@@ -12,6 +12,7 @@ use Modules\Car\Models\Feature;
 use Modules\Car\Models\Specifics\FuelConsumption;
 use Modules\Car\Models\Specifics\Specific;
 use Modules\MobileApi\Http\Requests\ApiRequest;
+use Carbon\Carbon;
 
 class MobileApiController extends Controller
 {
@@ -91,7 +92,7 @@ class MobileApiController extends Controller
         $carData = [
             'title' => $ad->vehicle->{'model-description'}->{'@value'},
             'description' => $ad->description,
-            'first_registration' => $ad->vehicle->specifics->{'first-registration'}->{'@value'},
+            'first_registration' => Carbon::createFromFormat('Y-m', $ad->vehicle->specifics->{'first-registration'}->{'@value'})->toDateTimeString(),
             'price' => $ad->price->{'consumer-price-amount'}->{'@value'},
             'milage' => $this->getMilage($ad),
             'power' => $power,
@@ -197,11 +198,12 @@ class MobileApiController extends Controller
                 $link = $image[1]->{'@url'};
             endif;
             $extension = pathinfo($link, PATHINFO_EXTENSION);
-            $imagesPath = public_path('uploads/cars/' . $car->id . '/' . uniqid() . '.' . $extension);;
-            $copy = \File::copy($link, $imagesPath);
+            $path = '/uploads/cars/' . $car->id . '/' . uniqid() . '.' . $extension;
+            $copyPath = public_path($path);
+            $copy = \File::copy($link, $copyPath);
             if ($copy):
                 $photoData = [
-                    'path' => $imagesPath,
+                    'path' => $path,
                     'car_id' => $car->id
                 ];
                 Photo::create($photoData);

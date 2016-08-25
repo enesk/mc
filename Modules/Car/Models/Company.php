@@ -15,9 +15,9 @@ class Company extends Model
         'slug'
     ];
 
-    public function carModel()
+    public function models()
     {
-        return $this->hasMany('CarModel', 'id', 'company_id');
+        return $this->hasMany(CarModel::class);
     }
 
     public static function findOrCreateByAPI($ad)
@@ -27,11 +27,12 @@ class Company extends Model
             'slug' => $ad->vehicle->make->{'@key'},
         ];
 
-        $company = Company::where('slug', $ad->vehicle->make->{'@key'});
-        if ($company->get()->isEmpty()):
-            $company = Company::create($companyData);
+        $check = self::where('slug', $companyData['slug']);
+        if ($check->get()->isEmpty()):
+            $company = self::create($companyData);
+            return $company;
         endif;
 
-        return $company->get()->first();
+        return $check->first();
     }
 }
