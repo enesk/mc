@@ -6,7 +6,6 @@
     "active": 1,
     "order": 0,
     "providers": [
-        "Modules\\Site\\Providers\\SiteServiceProvider"
     ],
     "aliases":{},
     "files": [
