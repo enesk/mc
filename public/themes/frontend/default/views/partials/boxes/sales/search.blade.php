@@ -14,9 +14,19 @@ $year = date('Y');
                             <h3>Suchoptionen</h3>
                         </div>
                     </div>
+                    @if(session('error'))
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-info" role="alert">
+                                    {{ session('error') }}
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                     <div class="row">
                         <div class="col-md-6 pr5">
-                            <select name="company" class="selectpicker form-control selectCompany" data-live-search="true"
+                            <select name="company" class="selectpicker form-control selectCompany"
+                                    data-live-search="true"
                                     title="Marke">
                                 @foreach($companies as $company)
                                     <option value="{{ $company->id }}">{{ $company->name }}</option>
@@ -24,7 +34,8 @@ $year = date('Y');
                             </select>
                         </div>
                         <div class="col-md-6 pl5">
-                            <select name="model" class="selectpicker form-control selectModel" data-live-search="true" title="Model">
+                            <select name="model" class="selectpicker form-control selectModel" data-live-search="true"
+                                    title="Model">
                             </select>
                         </div>
                     </div>

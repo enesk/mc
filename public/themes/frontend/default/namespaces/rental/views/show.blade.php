@@ -18,14 +18,14 @@
                             <div class="col-sm-2 hidden-xs">
                                 <div class="carDetl_slider-nav">
                                     @foreach($car->photos as $photo)
-                                        <div><img src="/imager{{$photo->path}}" alt=""></div>
+                                        <div><img src="{{$photo->path}}" alt=""></div>
                                     @endforeach
                                 </div>
                             </div>
                             <div class="col-sm-10 col-xs-12 ps_l">
                                 <div class="carDetl_slider-for">
                                     @foreach($car->photos as $photo)
-                                        <div><img src="/imager{{$photo->path}}" alt=""></div>
+                                        <div><img src="{{$photo->path}}" alt=""></div>
                                     @endforeach
                                 </div>
                             </div>
@@ -45,45 +45,62 @@
                         <p>Schadstoffklasse</p>
                         <p>Umweltplakette</p>
                         <p>Farbe</p>
-                        <p>Herstellerfarbbezeichnung</p>
-                        <p>Kraftstoffverbr. komb.</p>
-                        <p>Kraftstoffverbr. innerorts</p>
-                        <p>Kraftstoffverbr. außerorts</p>
-                        <p>CO²-Emissionen komb.</p>
+                        <p>Getriebe</p>
+                        @if(!empty($car->consumptions))
+                            <p>Kraftstoffverbr. komb.</p>
+                            <p>Kraftstoffverbr. innerorts</p>
+                            <p>Kraftstoffverbr. außerorts</p>
+                            <p>CO²-Emissionen komb.</p>
+                        @endif
                         <p>Zugr.-lgd. Treibstoffart</p>
                     </div>
                     <div class="col-sm-6 ">
-                        <p>4/5</p>
-                        <p>Euro5</p>
-                        <p>4 (Grün)</p>
-                        <p>Schwarz (Metallic)</p>
-                        <p>saphirschwarz met.</p>
-                        <p>
-                            <button
-                                    type="button"
-                                    class="btn ico-btn"
-                                    data-toggle="tooltip"
-                                    data-placement="right"
-                                    title="Bei den angegebenen Daten handelt es sich um Circa-Angaben des Angebot-Erstellers. Die Werte können Erfahrungen zu diesem Modell darstellen oder aus anderen Quellen stammen.">
-                                ca. 4,4 l/100 km<i class="fa fa-info-circle" aria-hidden="true"></i>
-                            </button>
-                        </p>
-                        <p>ca. 7,6 l/100 km</p>
-                        <p>ca. 5,6 l/100 km</p>
-                        <p>ca. 118 g/km</p>
-                        <p>
-                            <button
-                                    type="button"
-                                    class="btn ico-btn"
-                                    data-toggle="tooltip"
-                                    data-placement="right"
-                                    title="Bei den angegebenen Daten handelt es sich um Circa-Angaben des Angebot-Erstellers. Die Werte können Erfahrungen zu diesem Modell darstellen oder aus anderen Quellen stammen.">
-                                Diesel<i class="fa fa-info-circle" aria-hidden="true"></i>
-                            </button>
-                        </p>
+                        @if(isset($car->specifics()->where('name', 'door-count ')->get()->first()->value))
+                            <p>{{ $car->specifics()->where('name', 'door-count ')->get()->first()->value }}</p>
+                        @endif
+                        @if(isset($car->specifics()->where('name', 'emission-class')->get()->first()->value))
+                            <p>{{ $car->specifics()->where('name', 'emission-class')->get()->first()->value }}</p>
+                        @endif
+                        @if(isset($car->specifics()->where('name', 'emission-sticker')->get()->first()->value))
+                            <p>{{ $car->specifics()->where('name', 'emission-sticker')->get()->first()->value }}</p>
+                        @endif
+                        @if(isset($car->specifics()->where('name', 'exterior-color')->get()->first()->value))
+                            <p>{{ $car->specifics()->where('name', 'exterior-color')->get()->first()->value }}</p>
+                        @endif
+                        @if(isset($car->specifics()->where('name', 'gearbox')->get()->first()->value))
+                            <p>{{ $car->specifics()->where('name', 'gearbox')->get()->first()->value }}</p>
+                        @endif
+                        @if(!empty($car->consumptions))
+                            <p>
+                                <button
+                                        type="button"
+                                        class="btn ico-btn"
+                                        data-toggle="tooltip"
+                                        data-placement="right"
+                                        title="Bei den angegebenen Daten handelt es sich um Circa-Angaben des Angebot-Erstellers. Die Werte können Erfahrungen zu diesem Modell darstellen oder aus anderen Quellen stammen.">
+                                    ca. {{ $car->consumptions->combined }} l/100 km<i class="fa fa-info-circle"
+                                                                                      aria-hidden="true"></i>
+                                </button>
+                            </p>
+                            <p>ca. {{ $car->consumptions->inner }} l/100 km</p>
+                            <p>ca. {{ $car->consumptions->outer }} l/100 km</p>
+                            <p>ca. {{ $car->consumptions->co2_emission }} g/km</p>
+                        @endif
+                        @if(isset($car->specifics()->where('name', 'fuel')->get()->first()->value))
+                            <p>
+                                <button
+                                        type="button"
+                                        class="btn ico-btn"
+                                        data-toggle="tooltip"
+                                        data-placement="right"
+                                        title="Bei den angegebenen Daten handelt es sich um Circa-Angaben des Angebot-Erstellers. Die Werte können Erfahrungen zu diesem Modell darstellen oder aus anderen Quellen stammen.">
+                                    {{ $car->specifics()->where('name', 'fuel')->get()->first()->value }}<i
+                                            class="fa fa-info-circle" aria-hidden="true"></i>
+                                </button>
+                            </p>
+                        @endif
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-xs-12 carDetl_innerTitle">
                         <h2>Ausstattung</h2>
@@ -92,34 +109,12 @@
 
                 <div class="row carDtl_equipment pt20">
                     <div class="col-sm-6">
-                        <p>Innenausstattung</p>
+                        <p>Ausstatung</p>
                     </div>
                     <div class="col-sm-6">
-                        <p>Klimatisierung (Klimaanlage)</p>
-                        <p>Navigationssystem</p>
-                        <p>Sitzheizung</p>
-                        <p>Zentralverriegelung</p>
-                    </div>
-                </div>
-                <div class="row carDtl_equipment">
-                    <div class="col-sm-6">
-                        <p>Außenausstattung</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p>Leichtmetallfelgen</p>
-                    </div>
-                </div>
-                <div class="row carDtl_equipment">
-                    <div class="col-sm-6">
-                        <p>Sicherheit & Umwelt</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p>Xenonscheinwerfer</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 carDetl_innerTitle">
-                        <h2>Fahrzeugbeschreibung</h2>
+                        @foreach($car->features as $specific)
+                            <p>{{ $specific->name }}</p>
+                        @endforeach
                     </div>
                 </div>
 
@@ -156,21 +151,24 @@
                         </div>
                     @endif
                     <div class="carBox_specs m_center">
+                        @if(isset($car->specifics()->where('name', 'door-count ')->get()->first()->value))
                             <span>
                                 <img src="/{{ \App\Helpers\Helper::assetsUrl('/img/doorsCount.png') }}"
                                      alt="doors_count">
-                                5</span>
+                                {{ $car->specifics()->where('name', 'door-count ')->get()->first()->value }}
+                            </span>
+                        @endif
 
                             <span>
                                 <img src="/{{ \App\Helpers\Helper::assetsUrl('/img/personCount.png') }}"
                                      alt="people_count">
-                                4</span>
+                            </span>
 
                     </div>
                     <div class="carDetl_actions">
                         <div class="row">
                             <div class="col-xs-12 text-right m_center">
-                                <p>Fahrzeugnummer (für Anfragen): M114210</p>
+                                <p></p>
                             </div>
                             <div class="col-xs-12 text-right m_center">
                                 <button class="btn btn-positive" name="Fahrzeug wählen">

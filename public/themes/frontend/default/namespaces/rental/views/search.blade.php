@@ -1,7 +1,11 @@
 @extends('layouts.default')
 @section('content')
     @include('partials.headers.sales.subheader')
-    @include('partials.headers.sales.search')
+    @include('partials.headers.sales.search',
+    ['companyID' => Request::get('company'),
+    'modelID' => Request::get('model'),
+    'fuelID' => Request::get('fuel')
+    ])
     <div class="container mb40">
         <div class="row">
             <div class="col-xs-12 sResult pL_sale">
@@ -71,10 +75,13 @@
                             </div>
                         @endif
                         <div class="carBox_specs">
+                            @if(isset($car->specifics()->where('name', 'door-count ')->get()->first()->value))
                             <span>
                                 <img src="{{ \App\Helpers\Helper::assetsUrl('/img/doorsCount.png') }}"
                                      alt="doors_count">
-                                {{ $car->specifics()->where('name', 'door-count ')->get()->first()->value }}</span>
+                                {{ $car->specifics()->where('name', 'door-count ')->get()->first()->value }}
+                            </span>
+                            @endif
                             <span>
                                 <img src="{{ \App\Helpers\Helper::assetsUrl('/img/personCount.png') }}"
                                      alt="people_count">
