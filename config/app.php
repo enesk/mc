@@ -176,7 +176,7 @@ return [
         /*
         * Other Service Providers...
         */
-
+        
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
