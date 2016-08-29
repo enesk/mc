@@ -11,9 +11,7 @@ class PagesController extends Controller
     {
         $page = Page::where('slug', $slug);
 
-        $page = $page->first();
-        if(empty($page))
-            return true;
+        $page = $page->firstOrFail();
 
         return \View::make($page->template)->with('page', $page);
     }
