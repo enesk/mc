@@ -47,6 +47,7 @@
                         <li><a href="{{ url('admin/rental/specifics') }}"><i class="fa fa-list"></i> <span>Alle Ausstatungen</span></a></li>
                     </ul>
                 </li>
+                <li><a href="{{ url('admin/testimonials') }}"><i class="fa fa-comment-o "></i> <span>Kundenmeinungen</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-cogs"></i> <span>Advanced</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
