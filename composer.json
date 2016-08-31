@@ -13,7 +13,6 @@
         "backpack/logmanager": "^2.3",
         "backpack/settings": "^2.0",
         "backpack/pagemanager": "^1.0",
-        "backpack/MenuCRUD": "^1.0",
         "backpack/newscrud": "^2.0",
         "nwidart/laravel-modules": "^0.9.0",
         "anlutro/curl": "^1.4",

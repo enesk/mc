@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "71942b1c5bd4da57aa73d3870147232f",
-    "content-hash": "63cfbcb9c53e3c6839b9a34a0e667ec0",
+    "hash": "b916fed2640440095496d6ef298d11f5",
+    "content-hash": "3fa7b34c9ecd49404033783e14ff1670",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -147,16 +147,16 @@
         },
         {
             "name": "backpack/base",
-            "version": "0.6.13",
+            "version": "0.6.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/Base.git",
-                "reference": "41e460978adbb3462fd14f1c769dfc0d13c705ed"
+                "reference": "92c604c1d479fdeacab7ce64ab0b6cbe3be435a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/Base/zipball/41e460978adbb3462fd14f1c769dfc0d13c705ed",
-                "reference": "41e460978adbb3462fd14f1c769dfc0d13c705ed",
+                "url": "https://api.github.com/repos/Laravel-Backpack/Base/zipball/92c604c1d479fdeacab7ce64ab0b6cbe3be435a0",
+                "reference": "92c604c1d479fdeacab7ce64ab0b6cbe3be435a0",
                 "shasum": ""
             },
             "require": {
@@ -201,20 +201,20 @@
                 "backpack",
                 "base"
             ],
-            "time": "2016-08-12 09:29:05"
+            "time": "2016-08-30 14:42:52"
         },
         {
             "name": "backpack/crud",
-            "version": "3.0.16",
+            "version": "3.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/CRUD.git",
-                "reference": "e26efef5a099b5cb3a83ee7e223c617b5fe5f221"
+                "reference": "74ef4efde1eae0ecbe48eb1e937d8c947ac1ad6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/e26efef5a099b5cb3a83ee7e223c617b5fe5f221",
-                "reference": "e26efef5a099b5cb3a83ee7e223c617b5fe5f221",
+                "url": "https://api.github.com/repos/Laravel-Backpack/CRUD/zipball/74ef4efde1eae0ecbe48eb1e937d8c947ac1ad6a",
+                "reference": "74ef4efde1eae0ecbe48eb1e937d8c947ac1ad6a",
                 "shasum": ""
             },
             "require": {
@@ -263,7 +263,7 @@
                 "read",
                 "update"
             ],
-            "time": "2016-08-24 06:28:41"
+            "time": "2016-08-31 11:34:35"
         },
         {
             "name": "backpack/logmanager",
@@ -323,76 +323,22 @@
             "time": "2016-07-31 06:46:09"
         },
         {
-            "name": "backpack/menucrud",
-            "version": "1.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Laravel-Backpack/MenuCRUD.git",
-                "reference": "b6801251cb9bd9b65720b2fe03f921b9ab9ed38d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/MenuCRUD/zipball/b6801251cb9bd9b65720b2fe03f921b9ab9ed38d",
-                "reference": "b6801251cb9bd9b65720b2fe03f921b9ab9ed38d",
-                "shasum": ""
-            },
-            "require": {
-                "backpack/crud": "^3.0.6",
-                "illuminate/support": "~5.1",
-                "php": "~5.5|~7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Backpack\\MenuCRUD\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Cristian Tabacitu",
-                    "email": "hello@tabacitu.ro",
-                    "homepage": "http://tabacitu.ro",
-                    "role": "Developer"
-                }
-            ],
-            "description": "An admin panel for menu items, using Backpack\\CRUD on Laravel 5.",
-            "homepage": "https://github.com/backpack/MenuCRUD",
-            "keywords": [
-                "MenuCRUD",
-                "backpack"
-            ],
-            "time": "2016-07-31 09:21:46"
-        },
-        {
             "name": "backpack/newscrud",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/NewsCRUD.git",
-                "reference": "016a8f8db4f326451cefa41701750fac4c2eb494"
+                "reference": "b39a301b3102f8338625b15497d4fd4362f55a29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/NewsCRUD/zipball/016a8f8db4f326451cefa41701750fac4c2eb494",
-                "reference": "016a8f8db4f326451cefa41701750fac4c2eb494",
+                "url": "https://api.github.com/repos/Laravel-Backpack/NewsCRUD/zipball/b39a301b3102f8338625b15497d4fd4362f55a29",
+                "reference": "b39a301b3102f8338625b15497d4fd4362f55a29",
                 "shasum": ""
             },
             "require": {
                 "backpack/crud": "^3.0.6",
+                "cviebrock/eloquent-sluggable": "^3.0",
                 "illuminate/support": "~5.1",
                 "php": "~5.5|~7.0"
             },
@@ -430,7 +376,7 @@
                 "NewsCRUD",
                 "backpack"
             ],
-            "time": "2016-07-31 09:23:42"
+            "time": "2016-08-30 17:26:02"
         },
         {
             "name": "backpack/pagemanager",
@@ -499,22 +445,20 @@
         },
         {
             "name": "backpack/settings",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/Settings.git",
-                "reference": "9016b0fc8e4bdc0c3404447b29529764bb29e415"
+                "reference": "3b19ac22423240bb9767826564e23549958a8195"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/Settings/zipball/9016b0fc8e4bdc0c3404447b29529764bb29e415",
-                "reference": "9016b0fc8e4bdc0c3404447b29529764bb29e415",
+                "url": "https://api.github.com/repos/Laravel-Backpack/Settings/zipball/3b19ac22423240bb9767826564e23549958a8195",
+                "reference": "3b19ac22423240bb9767826564e23549958a8195",
                 "shasum": ""
             },
             "require": {
-                "backpack/crud": "^3.0.6",
-                "illuminate/support": "~5.1",
-                "php": ">=5.3.0"
+                "backpack/crud": "3.0.*|3.1.*"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.*",
@@ -556,7 +500,7 @@
                 "tabacitu",
                 "updivision"
             ],
-            "time": "2016-08-05 11:51:08"
+            "time": "2016-08-31 13:08:45"
         },
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -2219,16 +2163,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.2.3",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "e57b9c943498967674d9baf73846060be899b604"
+                "reference": "53cefb19ca0b8c314adce4c7ec79333333c9edc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/e57b9c943498967674d9baf73846060be899b604",
-                "reference": "e57b9c943498967674d9baf73846060be899b604",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/53cefb19ca0b8c314adce4c7ec79333333c9edc4",
+                "reference": "53cefb19ca0b8c314adce4c7ec79333333c9edc4",
                 "shasum": ""
             },
             "require": {
@@ -2272,7 +2216,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2016-08-16 07:32:29"
+            "time": "2016-08-31 07:50:37"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -3413,7 +3357,6 @@
                 "laravel",
                 "messages"
             ],
-            "abandoned": true,
             "time": "2015-04-13 17:27:18"
         },
         {
