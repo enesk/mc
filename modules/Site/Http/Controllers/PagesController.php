@@ -7,12 +7,14 @@ use Illuminate\Routing\Controller;
 
 class PagesController extends Controller
 {
-    public function getPage($slug = null)
+
+    public function getPage($slug)
     {
-        $page = Page::where('slug', $slug);
-
-        $page = $page->firstOrFail();
-
-        return \View::make($page->template)->with('page', $page);
+        if (Page::where('slug', '=', $slug)->count() != 0):
+            $page = Page::where('slug', '=', $slug)->first();
+            return \View::make($page->template)->with('page', $page);
+        else:
+            \App::abort(404, 'Page Not Found');
+        endif;
     }
 }

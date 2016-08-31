@@ -1,20 +1,17 @@
+<?php
+$testimonials = \Modules\Testimonial\Models\Testimonial::orderBy('order')->get();
+?>
 <div class="container-fluid testimonialSliderWrap">
     <div class="container">
         <div class="testimonialSlider">
-
+            @foreach($testimonials as $testimonial)
             <div class="testimonial">
                 <div class="testm_text">
-                    Millennium Cars hat einem das echte Gefühl gegeben ein "Kunde" zu sein.
+                    {{ $testimonial->testimonial }}
                 </div>
-                <div class="testm_auth">Sebastian</div>
+                <div class="testm_auth">{{ $testimonial->name }}</div>
             </div>
-            <div class="testimonial">
-                <div class="testm_text">
-                    Millennium Cars hat einem das echte Gefühl gegeben ein "Kunde" zu sein.
-                </div>
-                <div class="testm_auth">Sebastian</div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </div>
