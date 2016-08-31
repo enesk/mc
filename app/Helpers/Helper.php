@@ -19,6 +19,12 @@ class Helper
         return self::themeUrl() . '/assets'.$path;
     }
 
+
+    public static function uploadsURL($path = '')
+    {
+        return '/uploads'.$path;
+    }
+
     public static function smartPrice($price)
     {
         setlocale(LC_MONETARY, 'it_IT');

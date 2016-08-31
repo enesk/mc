@@ -1,0 +1,15 @@
+{
+	"name": "werky/menu",
+	"description": "",
+	"authors": [
+		{
+			"name": "Enes Kul",
+			"email": "kul@widimedia.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Modules\\Menu\\": ""
+		}
+	}
+}

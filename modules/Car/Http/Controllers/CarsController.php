@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Modules\Car\Models\Car;
 use Modules\Car\Models\Company;
+use Modules\Car\Models\Specifics\Specific;
 
 class CarsController extends Controller
 {
@@ -13,11 +14,11 @@ class CarsController extends Controller
     {
         $companyID = \Request::get('company');
         if (!$companyID)
-            return redirect('/home')->with('error', 'Bitte eine Marke auswählen!');
+            return \Redirect::back()->with('error', 'Bitte eine Marke auswählen!');
 
         $companies = Company::all();
         $models = Company::find($companyID)->models;
-        $fuels = \Modules\Car\Models\Specifics\Specific::where('name', 'fuel')->groupby('key')->get();
+        $fuels = Specific::where('name', 'fuel')->groupby('key')->get();
         $cars = Car::search($request->all());
         $year = date('Y');
         $data = [
@@ -28,7 +29,7 @@ class CarsController extends Controller
             'year' => $year
         ];
 
-        return view('rental::search', $data);
+        return view('sales::search', $data);
 
     }
 
@@ -40,6 +41,6 @@ class CarsController extends Controller
             'car' => $car
         ];
 
-        return view('rental::show', $data);
+        return view('sales::show', $data);
     }
 }

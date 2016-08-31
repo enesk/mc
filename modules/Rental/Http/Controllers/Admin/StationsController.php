@@ -56,6 +56,12 @@ class StationsController extends CrudController
         ]);
 
         $this->crud->addField([
+            'name' => 'photo',
+            'label' => "Bild",
+            'type' => 'browse'
+        ]);
+
+        $this->crud->addField([
             'name' => 'openings',
             'label' => "Öffnungszeiten",
             'type' => 'openings',

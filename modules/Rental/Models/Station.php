@@ -17,6 +17,7 @@ class Station extends Model
         'zipcode',
         'city',
         'tel',
+        'photo',
         'order',
         'openings',
     ];
