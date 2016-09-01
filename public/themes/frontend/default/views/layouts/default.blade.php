@@ -20,10 +20,10 @@
     {{ Asset::queue('rangeSlider', 'css/ion.rangeSlider.css') }}
     {{ Asset::queue('rangeSlider-skin', 'css/ion.rangeSlider.skinNice.css') }}
     {{ Asset::queue('helpers', 'css/helpers.css') }}
-    {{ Asset::queue('responsive', 'css/responsive.css') }}
     {{ Asset::queue('bootstrapValidator', 'css/bootstrapValidator.min.css') }}
     {{ Asset::queue('fa', 'css/font-awesome.min.css') }}
     {{ Asset::queue('app', 'scss/app.scss') }}
+    {{ Asset::queue('responsive', 'css/responsive.css') }}
 
     @foreach (Asset::getCompiledStyles() as $style)
         <link href="{{ $style }}" rel="stylesheet">
