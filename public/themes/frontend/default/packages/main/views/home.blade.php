@@ -1,6 +1,6 @@
 @extends('layouts.default')
 @section('content')
-    <div class="container-fluid ">
+    <div class="container-fluid">
         <div class="row">
             @foreach(\Modules\Rental\Models\Station::all() as $station)
             <a href="{{ URL::to('sales') }}" class="col-lg-3 col-sm-3 col-xs-6 start-locations" style="background-image: url({{ $station->photo }});">
