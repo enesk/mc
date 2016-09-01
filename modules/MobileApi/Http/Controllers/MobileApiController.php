@@ -190,7 +190,7 @@ class MobileApiController extends Controller
     public function createImages($ad, $car)
     {
         if (!is_dir(public_path('uploads/cars/' . $car->id)))
-            mkdir('uploads/cars/' . $car->id);
+            mkdir("uploads/cars/$car->id");
 
         foreach ($ad->images->image as $image):
             if (isset($image->representation)):
