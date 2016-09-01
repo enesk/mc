@@ -22,36 +22,45 @@ class MenuItemCrudController extends CrudController
         $this->crud->enableReorder('name', 2);
 
         $this->crud->addColumn([
-                                'name' => 'name',
-                                'label' => 'Label',
-                            ]);
+            'name' => 'name',
+            'label' => 'Label',
+        ]);
         $this->crud->addColumn([
-                                'label' => 'Parent',
-                                'type' => 'select',
-                                'name' => 'parent_id',
-                                'entity' => 'parent',
-                                'attribute' => 'name',
-                                'model' => "\Modules\Menu\Models\MenuItem",
-                            ]);
+            'label' => 'Parent',
+            'type' => 'select',
+            'name' => 'parent_id',
+            'entity' => 'parent',
+            'attribute' => 'name',
+            'model' => "\Modules\Menu\Models\MenuItem",
+        ]);
 
         $this->crud->addField([
-                                'name' => 'name',
-                                'label' => 'Label',
-                            ]);
+            'name' => 'name',
+            'label' => 'Label',
+        ]);
         $this->crud->addField([
-                                'label' => 'Parent',
-                                'type' => 'select',
-                                'name' => 'parent_id',
-                                'entity' => 'parent',
-                                'attribute' => 'name',
-                                'model' => "\Modules\Menu\Models\MenuItem",
-                            ]);
+            'label' => 'Parent',
+            'type' => 'select',
+            'name' => 'parent_id',
+            'entity' => 'parent',
+            'attribute' => 'name',
+            'model' => "\Modules\Menu\Models\MenuItem",
+        ]);
         $this->crud->addField([
-                                'name' => 'type',
-                                'label' => 'Type',
-                                'type' => 'page_or_link',
-                                'page_model' => '\Backpack\PageManager\app\Models\Page',
-                            ]);
+            'name' => 'type',
+            'label' => 'Type',
+            'type' => 'page_or_link',
+            'page_model' => '\Modules\Page\Models\Page',
+        ]);
+
+        $this->crud->addField([
+            'label' => 'Menü',
+            'type' => 'select',
+            'name' => 'menu_id',
+            'entity' => 'menu',
+            'attribute' => 'name',
+            'model' => "\Modules\Menu\Models\Menu",
+        ]);
     }
 
     public function store(StoreRequest $request)

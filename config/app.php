@@ -169,18 +169,18 @@ return [
         Backpack\LogManager\LogManagerServiceProvider::class,
         Backpack\Settings\SettingsServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-        Backpack\PageManager\PageManagerServiceProvider::class,
         Backpack\NewsCRUD\NewsCRUDServiceProvider::class,
 
         /*
         * Other Service Providers...
         */
-        
+
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         'Cartalyst\Themes\Laravel\ThemeServiceProvider',
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -243,7 +243,8 @@ return [
         'Theme' => 'Cartalyst\Themes\Laravel\Facades\Theme',
         'Asset' => 'Cartalyst\Themes\Laravel\Facades\Asset',
         'JSMin' => App\Helpers\JSMin::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Menu' => Lavary\Menu\Facade::class,
     ],
 
 ];

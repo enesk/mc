@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Backpack\PageManager\app\Models\Page;
+use Modules\Page\Models\Page;
 
 class PagesController extends Controller
 {

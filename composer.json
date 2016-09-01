@@ -22,7 +22,8 @@
         "cartalyst/assetic-filters": "1.0.*",
         "leafo/scssphp": "0.6.5",
         "intervention/image": "^2.3",
-        "intervention/imagecache": "^2.3"
+        "intervention/imagecache": "^2.3",
+        "lavary/laravel-menu": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -1,11 +1,10 @@
 <?php
 
-namespace Modules\Menu\Providers;
+namespace Modules\Page\Providers;
 
-use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
-class MenuServiceProvider extends ServiceProvider
+class PageServiceProvider extends ServiceProvider
 {
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -27,30 +26,15 @@ class MenuServiceProvider extends ServiceProvider
 	}
 
 	/**
-	 * Define the routes for the application.
-	 *
-	 * @param  \Illuminate\Routing\Router  $router
-	 * @return void
-	 */
-	public function setupRoutes(Router $router)
-	{
-		$router->group(['namespace' => 'Modules\Menu\Http\Controllers'], function ($router) {
-			\Route::group(['prefix' => 'admin', 'middleware' => ['web', 'admin'], 'namespace' => 'Admin'], function () {
-				\CRUD::resource('menu-item', 'MenuItemCrudController');
-				\CRUD::resource('menu', 'MenuCrudController');
-			});
-		});
-	}
-
-
-	/**
 	 * Register the service provider.
 	 *
 	 * @return void
 	 */
 	public function register()
 	{
-		$this->setupRoutes($this->app->router);
+		$this->app->bind('pagemanager', function ($app) {
+			return new PageManager($app);
+		});
 	}
 
 	/**
@@ -61,10 +45,10 @@ class MenuServiceProvider extends ServiceProvider
 	protected function registerConfig()
 	{
 		$this->publishes([
-		    __DIR__.'/../Config/config.php' => config_path('menu.php'),
+		    __DIR__.'/../Config/config.php' => config_path('page.php'),
 		]);
 		$this->mergeConfigFrom(
-		    __DIR__.'/../Config/config.php', 'menu'
+		    __DIR__.'/../Config/config.php', 'page'
 		);
 	}
 
@@ -75,7 +59,7 @@ class MenuServiceProvider extends ServiceProvider
 	 */
 	public function registerViews()
 	{
-		$viewPath = base_path('resources/views/modules/menu');
+		$viewPath = base_path('resources/views/modules/page');
 
 		$sourcePath = __DIR__.'/../Resources/views';
 
@@ -84,8 +68,8 @@ class MenuServiceProvider extends ServiceProvider
 		]);
 
 		$this->loadViewsFrom(array_merge(array_map(function ($path) {
-			return $path . '/modules/menu';
-		}, \Config::get('view.paths')), [$sourcePath]), 'menu');
+			return $path . '/modules/page';
+		}, \Config::get('view.paths')), [$sourcePath]), 'page');
 	}
 
 	/**
@@ -95,12 +79,12 @@ class MenuServiceProvider extends ServiceProvider
 	 */
 	public function registerTranslations()
 	{
-		$langPath = base_path('resources/lang/modules/menu');
+		$langPath = base_path('resources/lang/modules/page');
 
 		if (is_dir($langPath)) {
-			$this->loadTranslationsFrom($langPath, 'menu');
+			$this->loadTranslationsFrom($langPath, 'page');
 		} else {
-			$this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'menu');
+			$this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'page');
 		}
 	}
 

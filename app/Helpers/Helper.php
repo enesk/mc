@@ -3,6 +3,8 @@
 namespace App\Helpers;
 
 
+use Modules\Menu\Models\Menu as MenuModel;
+
 class Helper
 {
 
@@ -16,13 +18,13 @@ class Helper
 
     public static function assetsUrl($path = '')
     {
-        return self::themeUrl() . '/assets'.$path;
+        return self::themeUrl() . '/assets' . $path;
     }
 
 
     public static function uploadsURL($path = '')
     {
-        return '/uploads'.$path;
+        return '/uploads' . $path;
     }
 
     public static function smartPrice($price)
@@ -34,13 +36,15 @@ class Helper
         return $data;
     }
 
-    public static function noneTax($price) {
-        $noneTax = $price/1.19;
+    public static function noneTax($price)
+    {
+        $noneTax = $price / 1.19;
         return $noneTax;
     }
 
-    public static function kwToPS($kw) {
-        $convert = $kw*1.35962;
+    public static function kwToPS($kw)
+    {
+        $convert = $kw * 1.35962;
         $ps = substr($convert, 0, strpos($convert, "."));
 
         return $ps;

@@ -24,7 +24,7 @@ class MenuItem extends Model
 
     public function page()
     {
-        return $this->belongsTo('Backpack\PageManager\app\Models\Page', 'page_id');
+        return $this->belongsTo('Modules\Page\Models\Page', 'page_id');
     }
 
     /**

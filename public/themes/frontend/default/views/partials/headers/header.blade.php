@@ -55,10 +55,10 @@
             </a>
         </div>
         <div class="col-md-8 col-xs-6 vMiddle flex-end">
-            @if(Request::is('/'))
-                @include('partials.navigation.mainHeader')
-            @else
+            @if(Request::is('sales/*') or Request::is('sales'))
                 @include('partials.navigation.header')
+            @else
+                {{ \App\Helpers\MenuHelper::getMenu('header-main') }}
             @endif
 
         </div>

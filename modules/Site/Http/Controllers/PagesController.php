@@ -2,7 +2,7 @@
 
 namespace Modules\Site\Http\Controllers;
 
-use Backpack\PageManager\app\Models\Page;
+use Modules\Page\Models\Page;
 use Illuminate\Routing\Controller;
 
 class PagesController extends Controller
