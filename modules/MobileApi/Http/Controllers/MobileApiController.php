@@ -19,6 +19,7 @@ class MobileApiController extends Controller
 
     public function index()
     {
+        ini_set('memory_limit', '-1');
         $ads = $this->getAds();
         $created = $this->createCars($ads);
         $deleted = $this->deleteCars($ads);
