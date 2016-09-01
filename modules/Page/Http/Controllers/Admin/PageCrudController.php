@@ -45,6 +45,11 @@ class PageCrudController extends CrudController
         |--------------------------------------------------------------------------
         */
 
+        $this->crud->addField([
+            'name' => 'template_slug',
+            'Label' => 'Slug'
+        ]);
+
         // In PageManager,
         // - default fields, that all templates are using, are set using $this->addDefaultPageFields();
         // - template-specific fields are set per-template, in the PageTemplates trait;
