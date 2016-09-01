@@ -1341,7 +1341,7 @@ select.bs-select-hidden, select.selectpicker {
         width: 91vw;
     }
     .changeData_box .station_dropdown{
-      left: 3vw;
+        left: 3vw;
     }
     .station_dropdown .col-xs-12 {
         padding-right: 15px !important
@@ -1358,10 +1358,10 @@ select.bs-select-hidden, select.selectpicker {
     .slick-prev, .slick-next {
         width: 15px;
         height: 30px;
-        background-image: url("/themes/frontend/default/assets/img/slides/arrow_mobile.png");
+        background-image: url("/themes/frontend/default/assets/image/slides/arrow_mobile.png");
     }
     .slick-next {
-        background-image: url("/themes/frontend/default/assets/img/slides/arrow_mobile_r.png");
+        background-image: url("/themes/frontend/default/assets/image/slides/arrow_mobile_r.png");
     }
     h1 {
         font-size: 24px
@@ -1388,13 +1388,13 @@ select.bs-select-hidden, select.selectpicker {
         left: 10px;
         width: 7px;
         height: 15px;
-        background-image: url("/themes/frontend/default/assets/img/slides/car_arrow_mobile.png");
+        background-image: url("/themes/frontend/default/assets/image/slides/car_arrow_mobile.png");
     }
     .carSlider .slick-next {
         right: 10px;
         width: 7px;
         height: 15px;
-        background-image: url("/themes/frontend/default/assets/img/slides/car_arrow_mobile_r.png");
+        background-image: url("/themes/frontend/default/assets/image/slides/car_arrow_mobile_r.png");
     }
     .btn.btn-negative {
         font-size: 16px;
@@ -1671,18 +1671,18 @@ select.bs-select-hidden, select.selectpicker {
         width: 100%;
     }
     .carDtl_Title {
-      padding-bottom: 15px;
-      margin-top: 30px;
-      margin-bottom: 30px;
+        padding-bottom: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .carDetl_slider-for .slick-next {
-          right: 7px;
+        right: 7px;
     }
     .carDetl_slider-for .slick-prev {
-          left: 7px;
+        left: 7px;
     }
     .carDtl_hdr a {
-          padding: 16px 0;
+        padding: 16px 0;
     }
 }
 @media only screen and (min-width: 480px) and (max-width: 740px) {
@@ -1719,11 +1719,11 @@ select.bs-select-hidden, select.selectpicker {
         padding-left: 15px !important;
     }
     .formBox .checkbox.small_label label::before {
-      margin-top: -3px;
+        margin-top: -3px;
 
     }
     .formBox .checkbox.small_label label::after {
-          top: -2px;
+        top: -2px;
     }
 }
 @media only screen and (min-width: 740px) and (max-width: 1000px) {
@@ -1891,15 +1891,15 @@ select.bs-select-hidden, select.selectpicker {
         padding-top: 15px;
     }
     .carDetl_right .m_center {
-      text-align: center;
+        text-align: center;
     }
     .testimonialSlider {
-    height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
     .item .m_center  {
-      text-align: center;
+        text-align: center;
     }
 
 }
@@ -1946,13 +1946,13 @@ select.bs-select-hidden, select.selectpicker {
         height: 290px;
     }
     .validUpTo {
-      font-size: 12px;
-      margin-left: -6px;
+        font-size: 12px;
+        margin-left: -6px;
     }
     .card_date .bootstrap-select> .dropdown-toggle {
-      padding-left: 8px;
-      font-size: 12px;
-      padding-right: 16px;
+        padding-left: 8px;
+        font-size: 12px;
+        padding-right: 16px;
     }
 
 }
@@ -1969,6 +1969,16 @@ select.bs-select-hidden, select.selectpicker {
     }
     .sResult {
         padding: 15px 15px;
+    }
+    .start-locations{
+        height: 400px;
+    }
+    .start-location-name{
+        font-size: 12px;
+    }
+    .start-location-name .fa{
+        top: -1px;
+        font-size: 12px;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -1992,12 +2002,14 @@ select.bs-select-hidden, select.selectpicker {
         padding-right: 15px !important;
     }
     .searchBox.saleBox .pr5{
-      padding-right: 15px !important;
+        padding-right: 15px !important;
     }
     .searchBox.saleBox .pl5{
-      padding-left: 15px !important;
+        padding-left: 15px !important;
     }
-
+    .start-locations{
+        height: 250px;
+    }
 }
 @media only screen and (min-width: 1200px) {
     .carDetl_slider-for img {
@@ -2351,7 +2363,7 @@ textarea {
   display: none; }
 
 .rentalStation input {
-  background-image: url("/themes/frontend/default/assets/img/map-maker.svg");
+  background-image: url("/themes/frontend/default/assets/image/map-maker.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
   background-size: 14px 14px;
@@ -2359,14 +2371,14 @@ textarea {
   cursor: pointer; }
 
 .datepick {
-  background-image: url("/themes/frontend/default/assets/img/calendar.svg");
+  background-image: url("/themes/frontend/default/assets/image/calendar.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
   background-size: 14px 14px;
   padding-right: 30px; }
 
 .timepick {
-  background-image: url("/themes/frontend/default/assets/img/clock.svg");
+  background-image: url("/themes/frontend/default/assets/image/clock.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
   background-size: 14px 14px;
@@ -2713,7 +2725,8 @@ textarea {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  width: 100%; }
+  width: 100%;
+  background-image: url("/themes/frontend/default/assets/image/newsletterBckg.jpg"); }
 
 .newsletter_box {
   position: relative; }
@@ -2892,12 +2905,10 @@ textarea {
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 20px; }
 
-.tableHeader a {
-  color: #111; }
-  .tableHeader h3 {
-    font-size: 20px;
-    text-transform: uppercase;
-    margin-bottom: 5px; }
+.tableHeader h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 5px; }
   .tableHeader p {
     color: #7c808c; }
 
@@ -3270,7 +3281,7 @@ textarea {
   border-radius: 0;
   height: 30px;
   border-color: #939393;
-  background-image: url("/themes/frontend/default/assets/img/search.svg");
+  background-image: url("/themes/frontend/default/assets/image/search.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
   background-size: 14px 14px;
@@ -3465,14 +3476,14 @@ textarea {
 /* about us */
 .twoColorBorder {
   background-repeat: repeat-x;
-  background-image: url("/themes/frontend/default/assets/img/twoColor.jpg");
+  background-image: url("/themes/frontend/default/assets/image/twoColor.jpg");
   height: 20px;
   width: 100%; }
 
 .aboutUs, .career {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/themes/frontend/default/assets/img/aboutUs.jpg");
+  background-image: url("/themes/frontend/default/assets/image/aboutUs.jpg");
   height: 300px;
   width: 100%; }
 
@@ -3548,7 +3559,7 @@ textarea {
   color: #e3001b !important; }
 /* career */
 .career {
-  background-image: url("/themes/frontend/default/assets/img/career.jpg"); }
+  background-image: url("/themes/frontend/default/assets/image/career.jpg"); }
 
 .careerTable {
   padding-top: 25px;
@@ -3680,7 +3691,7 @@ footer {
     padding-left: 5px; }
   .footer_nav li a {
     color: #fff; }
-/** Start **/
+
 .loginActivate {
   clear: both;
   float: inherit; }
@@ -3706,9 +3717,8 @@ footer {
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
-
-.start-location-name .fa {
-  margin-left: 5px;
-  font-size: 20px;
-  position: relative;
-  top: -3px; }
+  .start-location-name .fa {
+    margin-left: 5px;
+    font-size: 20px;
+    position: relative;
+    top: -3px; }

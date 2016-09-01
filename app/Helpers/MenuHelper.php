@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-use Modules\Page\Models\Page;
 use Modules\Menu\Models\Menu;
 
 class MenuHelper
@@ -11,14 +10,11 @@ class MenuHelper
     public static function getMenu($slug)
     {
         $items = self::getItems($slug);
-        echo '<ul class="list-inline subHdrMenu">';
-        foreach ($items as $item):
-            $page = Page::find($item->page_id);
-            $url = self::getUrl($item, $page);
-            $selected = self::isSelected($page);
-            self::makeHtml($selected, $url, $item);
-        endforeach;
-        echo '</ul>';
+        $data = [
+            'items' => $items
+        ];
+
+        echo view('partials.navigation.menu', $data);
     }
 
     /**
@@ -50,16 +46,6 @@ class MenuHelper
         endif;
 
         return $url;
-    }
-
-    /**
-     * @param $selected
-     * @param $url
-     * @param $item
-     */
-    public static function makeHtml($selected, $url, $item)
-    {
-        echo '<li class="hidden-xs ' . $selected . '"><a href="' . $url . '">' . $item->name . '</a></li>';
     }
 
     /**

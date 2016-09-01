@@ -1,4 +1,3 @@
-
 <ul class="list-inline subHdrMenu">
     <li class="selected hidden-xs">
         <a href="">PKW-verkauf</a>

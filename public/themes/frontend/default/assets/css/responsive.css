@@ -55,7 +55,7 @@
         width: 91vw;
     }
     .changeData_box .station_dropdown{
-      left: 3vw;
+        left: 3vw;
     }
     .station_dropdown .col-xs-12 {
         padding-right: 15px !important
@@ -72,10 +72,10 @@
     .slick-prev, .slick-next {
         width: 15px;
         height: 30px;
-        background-image: url("../img/slides/arrow_mobile.png");
+        background-image: url("../image/slides/arrow_mobile.png");
     }
     .slick-next {
-        background-image: url("../img/slides/arrow_mobile_r.png");
+        background-image: url("../image/slides/arrow_mobile_r.png");
     }
     h1 {
         font-size: 24px
@@ -102,13 +102,13 @@
         left: 10px;
         width: 7px;
         height: 15px;
-        background-image: url("../img/slides/car_arrow_mobile.png");
+        background-image: url("../image/slides/car_arrow_mobile.png");
     }
     .carSlider .slick-next {
         right: 10px;
         width: 7px;
         height: 15px;
-        background-image: url("../img/slides/car_arrow_mobile_r.png");
+        background-image: url("../image/slides/car_arrow_mobile_r.png");
     }
     .btn.btn-negative {
         font-size: 16px;
@@ -385,18 +385,18 @@
         width: 100%;
     }
     .carDtl_Title {
-      padding-bottom: 15px;
-      margin-top: 30px;
-      margin-bottom: 30px;
+        padding-bottom: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     .carDetl_slider-for .slick-next {
-          right: 7px;
+        right: 7px;
     }
     .carDetl_slider-for .slick-prev {
-          left: 7px;
+        left: 7px;
     }
     .carDtl_hdr a {
-          padding: 16px 0;
+        padding: 16px 0;
     }
 }
 @media only screen and (min-width: 480px) and (max-width: 740px) {
@@ -433,11 +433,11 @@
         padding-left: 15px !important;
     }
     .formBox .checkbox.small_label label::before {
-      margin-top: -3px;
+        margin-top: -3px;
 
     }
     .formBox .checkbox.small_label label::after {
-          top: -2px;
+        top: -2px;
     }
 }
 @media only screen and (min-width: 740px) and (max-width: 1000px) {
@@ -605,15 +605,15 @@
         padding-top: 15px;
     }
     .carDetl_right .m_center {
-      text-align: center;
+        text-align: center;
     }
     .testimonialSlider {
-    height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
     .item .m_center  {
-      text-align: center;
+        text-align: center;
     }
 
 }
@@ -660,13 +660,13 @@
         height: 290px;
     }
     .validUpTo {
-      font-size: 12px;
-      margin-left: -6px;
+        font-size: 12px;
+        margin-left: -6px;
     }
     .card_date .bootstrap-select> .dropdown-toggle {
-      padding-left: 8px;
-      font-size: 12px;
-      padding-right: 16px;
+        padding-left: 8px;
+        font-size: 12px;
+        padding-right: 16px;
     }
 
 }
@@ -683,6 +683,16 @@
     }
     .sResult {
         padding: 15px 15px;
+    }
+    .start-locations{
+        height: 400px;
+    }
+    .start-location-name{
+        font-size: 12px;
+    }
+    .start-location-name .fa{
+        top: -1px;
+        font-size: 12px;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -706,12 +716,14 @@
         padding-right: 15px !important;
     }
     .searchBox.saleBox .pr5{
-      padding-right: 15px !important;
+        padding-right: 15px !important;
     }
     .searchBox.saleBox .pl5{
-      padding-left: 15px !important;
+        padding-left: 15px !important;
     }
-
+    .start-locations{
+        height: 250px;
+    }
 }
 @media only screen and (min-width: 1200px) {
     .carDetl_slider-for img {

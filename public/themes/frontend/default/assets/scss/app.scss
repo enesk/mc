@@ -439,7 +439,7 @@ textarea {
 }
 
 .rentalStation input {
-  background-image: url("../img/map-maker.svg");
+  background-image: url("../image/map-maker.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
   background-size: 14px 14px;
@@ -448,7 +448,7 @@ textarea {
 }
 
 .datepick {
-  background-image: url("../img/calendar.svg");
+  background-image: url("../image/calendar.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
   background-size: 14px 14px;
@@ -456,7 +456,7 @@ textarea {
 }
 
 .timepick {
-  background-image: url("../img/clock.svg");
+  background-image: url("../image/clock.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
   background-size: 14px 14px;
@@ -898,6 +898,7 @@ textarea {
   background-repeat: no-repeat;
   background-position: top center;
   width: 100%;
+  background-image: url("../image/newsletterBckg.jpg");
 }
 
 .newsletter_box {
@@ -1130,9 +1131,6 @@ textarea {
 }
 
 .tableHeader {
-  a {
-    color: #111;
-  }
   h3 {
     font-size: 20px;
     text-transform: uppercase;
@@ -1615,7 +1613,7 @@ textarea {
   border-radius: 0;
   height: 30px;
   border-color: #939393;
-  background-image: url("../img/search.svg");
+  background-image: url("../image/search.svg");
   background-repeat: no-repeat;
   background-position: right 8px center;
   background-size: 14px 14px;
@@ -1880,7 +1878,7 @@ textarea {
 
 .twoColorBorder {
   background-repeat: repeat-x;
-  background-image: url("../img/twoColor.jpg");
+  background-image: url("../image/twoColor.jpg");
   height: 20px;
   width: 100%;
 }
@@ -1888,7 +1886,7 @@ textarea {
 .aboutUs, .career {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("../img/aboutUs.jpg");
+  background-image: url("../image/aboutUs.jpg");
   height: 300px;
   width: 100%;
 }
@@ -1985,7 +1983,7 @@ textarea {
 /* career */
 
 .career {
-  background-image: url("../img/career.jpg");
+  background-image: url("../image/career.jpg");
 }
 
 .careerTable {
@@ -2170,22 +2168,23 @@ footer {
   }
 }
 
-/** Start **/
-
-.loginActivate{
+.loginActivate {
   clear: both;
   float: inherit;
 }
-.no-last-child{
+
+.no-last-child {
   padding-left: 10px !important;
 }
-.start-locations{
+
+.start-locations {
   padding: 0px;
   height: 600px;
   background-size: cover;
   border-right: 1px solid #fff;
 }
-.start-location-name{
+
+.start-location-name {
   background-color: #4f97f0;
   color: #fff;
   display: block;
@@ -2194,14 +2193,13 @@ footer {
   text-align: center;
   font-weight: 700;
   text-transform: uppercase;
-
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}
-.start-location-name .fa{
-  margin-left: 5px;
-  font-size: 20px;
-  position: relative;
-  top: -3px;
+  .fa {
+    margin-left: 5px;
+    font-size: 20px;
+    position: relative;
+    top: -3px;
+  }
 }
