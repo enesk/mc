@@ -2181,24 +2181,28 @@ footer {
   height: 600px;
   background-size: cover;
   border-right: 1px solid #fff;
-}
-
-.start-location-name {
-  background-color: #4f97f0;
-  color: #fff;
-  display: block;
-  padding: 20px 0px;
-  font-size: 25px;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  .fa {
-    margin-left: 5px;
-    font-size: 20px;
+  &:hover {
+    .start-location-name {
+      background-color: #e3001b;
+    }
+  }
+  .start-location-name {
+    background-color: #4f97f0;
+    color: #fff;
+    display: block;
+    padding: 20px 0px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
     position: relative;
-    top: -3px;
+    top: 50%;
+    transform: translateY(-50%);
+    .fa {
+      margin-left: 5px;
+      font-size: 20px;
+      position: relative;
+      top: -3px;
+    }
   }
 }
