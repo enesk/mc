@@ -39,6 +39,7 @@
 <!-- main -->
 <!-- footer -->
 <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 {{ Asset::queue('js-bs', 'js/bootstrap/bootstrap.min.js') }}
 {{ Asset::queue('js-bs-validator', 'js/bootstrap-validator/bootstrapValidator.min.js') }}
 {{ Asset::queue('js-bs-datepicker', 'js/datetimepicker/bootstrap-datepicker.js') }}
