@@ -2181,6 +2181,11 @@ footer {
   height: 600px;
   background-size: cover;
   border-right: 1px solid #fff;
+  &:hover{
+    .start-location-name {
+      background: #e3001b;
+    }
+  }
 }
 
 .start-location-name {
