@@ -67,10 +67,9 @@ class Car extends Model
 
     public function company()
     {
-        return $this->hasOne('Modules\Car\Models\Company', 'company_id', 'id');
+        return $this->belongsTo(Company::class);
     }
-
-
+    
     public function carClass()
     {
         return $this->belongsTo('Modules\Car\Models\carClass', 'class_id', 'id');

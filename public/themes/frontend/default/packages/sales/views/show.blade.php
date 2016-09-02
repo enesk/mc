@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-xs-12 ">
                 <h1 class="carDtl_Title">
-                    {{ $car->title }}
+                    {{ $car->company->name.' '.$car->title }}
                 </h1>
             </div>
         </div>

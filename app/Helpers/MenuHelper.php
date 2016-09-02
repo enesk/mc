@@ -17,19 +17,25 @@ class MenuHelper
         echo view('partials.navigation.menu', $data);
     }
 
+    public static function getSidebarMenu($menuID) {
+        $items = Menu::find($menuID)->items;
+        $data = [
+            'items' => $items
+        ];
+
+        echo view('partials.navigation.sidebar', $data);
+    }
+
     /**
      * @param $page
      * @return string
      */
     public static function isSelected($page)
     {
-        if (\Request::is($page->slug)):
-            $selected = 'selected';
-        else:
-            $selected = '';
-        endif;
+        if (\Request::is($page->slug))
+            return true;
 
-        return $selected;
+        return false;
     }
 
     /**

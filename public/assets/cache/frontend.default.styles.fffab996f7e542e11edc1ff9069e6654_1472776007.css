@@ -2743,14 +2743,13 @@ textarea {
 /* about us */
 .twoColorBorder {
   background-repeat: repeat-x;
-  background-image: url("/themes/frontend/default/assets/image/twoColor.jpg");
+  background-image: url("/themes/frontend/default/assets/img/twoColor.jpg");
   height: 20px;
   width: 100%; }
 
 .aboutUs, .career {
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/themes/frontend/default/assets/image/aboutUs.jpg");
   height: 300px;
   width: 100%; }
 

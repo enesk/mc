@@ -4,8 +4,8 @@ namespace Modules\Page\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 // VALIDATION: change the requests to match your own file names if you need form validation
-use Backpack\PageManager\app\Http\Requests\PageRequest as StoreRequest;
-use Backpack\PageManager\app\Http\Requests\PageRequest as UpdateRequest;
+use Modules\Page\Http\Requests\PageRequest as StoreRequest;
+use Modules\Page\Http\Requests\PageRequest as UpdateRequest;
 use Modules\Page\Templates\PageTemplates;
 
 class PageCrudController extends CrudController
@@ -33,10 +33,10 @@ class PageCrudController extends CrudController
 
         $this->crud->addColumn('name');
         $this->crud->addColumn([
-                                'name' => 'template',
-                                'type' => 'model_function',
-                                'function_name' => 'getTemplateName',
-                                ]);
+            'name' => 'template',
+            'type' => 'model_function',
+            'function_name' => 'getTemplateName',
+        ]);
         $this->crud->addColumn('slug');
 
         /*
@@ -122,38 +122,53 @@ class PageCrudController extends CrudController
     public function addDefaultPageFields($template = false)
     {
         $this->crud->addField([
-                                'name' => 'template',
-                                'label' => 'Template',
-                                'type' => 'select_page_template',
-                                'options' => $this->getTemplatesArray(),
-                                'value' => $template,
-                                'allows_null' => false,
-                                'wrapperAttributes' => [
-                                    'class' => 'form-group col-md-6',
-                                ],
-                            ]);
+            'name' => 'template',
+            'label' => 'Template',
+            'type' => 'select_page_template',
+            'options' => $this->getTemplatesArray(),
+            'value' => $template,
+            'allows_null' => false,
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
+        ]);
         $this->crud->addField([
-                                'name' => 'name',
-                                'label' => 'Page name (only seen by admins)',
-                                'type' => 'text',
-                                'wrapperAttributes' => [
-                                    'class' => 'form-group col-md-6',
-                                ],
-                                // 'disabled' => 'disabled'
-                            ]);
+            'name' => 'name',
+            'label' => 'Page name (only seen by admins)',
+            'type' => 'text',
+            'wrapperAttributes' => [
+                'class' => 'form-group col-md-6',
+            ],
+            // 'disabled' => 'disabled'
+        ]);
         $this->crud->addField([
-                                'name' => 'title',
-                                'label' => 'Page Title',
-                                'type' => 'text',
-                                // 'disabled' => 'disabled'
-                            ]);
+            'name' => 'title',
+            'label' => 'Page Title',
+            'type' => 'text',
+            // 'disabled' => 'disabled'
+        ]);
         $this->crud->addField([
-                                'name' => 'slug',
-                                'label' => 'Page Slug (URL)',
-                                'type' => 'text',
-                                'hint' => 'Will be automatically generated from your title, if left empty.',
-                                // 'disabled' => 'disabled'
-                            ]);
+            'name' => 'slug',
+            'label' => 'Page Slug (URL)',
+            'type' => 'text',
+            'hint' => 'Will be automatically generated from your title, if left empty.',
+            // 'disabled' => 'disabled'
+        ]);
+
+        $this->crud->addField([
+            'name' => 'header_bg',
+            'label' => "Header Bild",
+            'type' => 'browse'
+        ]);
+
+        $this->crud->addField([
+            'label' => 'Menü',
+            'type' => 'select',
+            'name' => 'sidebar_menu_id',
+            'entity' => 'me nu',
+            'attribute' => 'name',
+            'model' => "\Modules\Menu\Models\Menu",
+        ]);
     }
 
     /**
@@ -185,8 +200,7 @@ class PageCrudController extends CrudController
 
         $templates_trait = new \ReflectionClass('Modules\Page\Templates\PageTemplates');
         $templates = $templates_trait->getMethods();
-
-        if (! count($templates)) {
+        if (!count($templates)) {
             abort('403', 'No templates have been found.');
         }
 

@@ -14,10 +14,10 @@ $cars = \Modules\Car\Models\Car::newCars();
                 <div>
                     <a href="{{ route('cars::show', $car->id) }}"><img src="/imager{{ $car->photos()->first()->path }}"></a>
                     <h2 class="carSlide_name">
-                        @if(strlen($car->title) > 30)
-                            {{ substr($car->title, 0, 30) }}...
+                        @if(strlen($car->company->name.' '.$car->title) > 30)
+                            {{ substr($car->company->name.' '.$car->title, 0, 30) }}...
                         @else
-                            {{ $car->title }}
+                            {{ $car->company->name.' '.$car->title }}
                         @endif
                     </h2>
                     <div class="carSlide_price">

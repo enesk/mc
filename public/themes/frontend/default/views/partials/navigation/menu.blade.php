@@ -5,7 +5,7 @@
         $url = \App\Helpers\MenuHelper::getUrl($item, $page);
         $selected = \App\Helpers\MenuHelper::isSelected($page);
         ?>
-        <li class="{{ $selected }} hidden-xs">
+        <li class="@if($selected)selected @endif hidden-xs">
             <a href="{{ $url }}">{{ $item->name }}</a>
         </li>
     @endforeach

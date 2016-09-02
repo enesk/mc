@@ -22,7 +22,7 @@ class Page extends Model implements SluggableInterface
     protected $primaryKey = 'id';
     public $timestamps = true;
     // protected $guarded = ['id'];
-    protected $fillable = ['template', 'name', 'title', 'slug', 'content', 'extras'];
+    protected $fillable = ['template', 'name', 'title', 'slug', 'content', 'extras', 'sidebar_menu_id', 'header_bg'];
     // protected $hidden = [];
     // protected $dates = [];
     protected $fakeColumns = ['extras'];
