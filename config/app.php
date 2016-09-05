@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'rastatt',
 
     /*
     |--------------------------------------------------------------------------
@@ -168,7 +168,7 @@ return [
         Backpack\BackupManager\BackupManagerServiceProvider::class,
         Backpack\LogManager\LogManagerServiceProvider::class,
         Backpack\Settings\SettingsServiceProvider::class,
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
         Backpack\NewsCRUD\NewsCRUDServiceProvider::class,
 
         /*
@@ -181,12 +181,8 @@ return [
         Cartalyst\Themes\Laravel\ThemeServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Webwizo\Shortcodes\ShortcodesServiceProvider::class,
-        /*
-         * Shortcodes
-         */
-
-        \Modules\Site\Providers\ShortcodesServiceProvider::class
-
+        \Modules\Site\Providers\ShortcodesServiceProvider::class,
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class
     ],
 
     /*
@@ -252,6 +248,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Menu' => Lavary\Menu\Facade::class,
         'Shortcode' => Webwizo\Shortcodes\Facades\Shortcode::class,
+        'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class
     ],
 
 ];

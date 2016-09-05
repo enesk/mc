@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2016-09-04.
+    * Generated on 2016-09-05.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -50,8 +50,7 @@ namespace PHPSTORM_META {
             'command.backup:list' instanceof \Spatie\Backup\Commands\ListCommand,
             'command.backup:monitor' instanceof \Spatie\Backup\Commands\MonitorCommand,
             'Spatie\Backup\Helpers\ConsoleOutput' instanceof \Spatie\Backup\Helpers\ConsoleOutput,
-            'sluggable.creator' instanceof \Cviebrock\EloquentSluggable\SluggableMigrationCreator,
-            'sluggable.table' instanceof \Cviebrock\EloquentSluggable\SluggableTableCommand,
+            'Cviebrock\EloquentSluggable\SluggableObserver' instanceof \Cviebrock\EloquentSluggable\SluggableObserver,
             'modules' instanceof \Nwidart\Modules\Repository,
             'Nwidart\Modules\Contracts\RepositoryInterface' instanceof \Nwidart\Modules\Repository,
             'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
@@ -62,6 +61,9 @@ namespace PHPSTORM_META {
             'theme.publisher' instanceof \Cartalyst\Themes\ThemePublisher,
             'command.theme.publish' instanceof \Cartalyst\Themes\Console\ThemePublishCommand,
             'image' instanceof \Intervention\Image\ImageManager,
+            'shortcode.compiler' instanceof \Webwizo\Shortcodes\Compilers\ShortcodeCompiler,
+            'shortcode' instanceof \Webwizo\Shortcodes\Shortcode,
+            'Mcamara\LaravelLocalization\LaravelLocalization' instanceof \Mcamara\LaravelLocalization\LaravelLocalization,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
@@ -183,8 +185,7 @@ namespace PHPSTORM_META {
             'command.backup:list' instanceof \Spatie\Backup\Commands\ListCommand,
             'command.backup:monitor' instanceof \Spatie\Backup\Commands\MonitorCommand,
             'Spatie\Backup\Helpers\ConsoleOutput' instanceof \Spatie\Backup\Helpers\ConsoleOutput,
-            'sluggable.creator' instanceof \Cviebrock\EloquentSluggable\SluggableMigrationCreator,
-            'sluggable.table' instanceof \Cviebrock\EloquentSluggable\SluggableTableCommand,
+            'Cviebrock\EloquentSluggable\SluggableObserver' instanceof \Cviebrock\EloquentSluggable\SluggableObserver,
             'modules' instanceof \Nwidart\Modules\Repository,
             'Nwidart\Modules\Contracts\RepositoryInterface' instanceof \Nwidart\Modules\Repository,
             'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
@@ -195,6 +196,9 @@ namespace PHPSTORM_META {
             'theme.publisher' instanceof \Cartalyst\Themes\ThemePublisher,
             'command.theme.publish' instanceof \Cartalyst\Themes\Console\ThemePublishCommand,
             'image' instanceof \Intervention\Image\ImageManager,
+            'shortcode.compiler' instanceof \Webwizo\Shortcodes\Compilers\ShortcodeCompiler,
+            'shortcode' instanceof \Webwizo\Shortcodes\Shortcode,
+            'Mcamara\LaravelLocalization\LaravelLocalization' instanceof \Mcamara\LaravelLocalization\LaravelLocalization,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
@@ -316,8 +320,7 @@ namespace PHPSTORM_META {
             'command.backup:list' instanceof \Spatie\Backup\Commands\ListCommand,
             'command.backup:monitor' instanceof \Spatie\Backup\Commands\MonitorCommand,
             'Spatie\Backup\Helpers\ConsoleOutput' instanceof \Spatie\Backup\Helpers\ConsoleOutput,
-            'sluggable.creator' instanceof \Cviebrock\EloquentSluggable\SluggableMigrationCreator,
-            'sluggable.table' instanceof \Cviebrock\EloquentSluggable\SluggableTableCommand,
+            'Cviebrock\EloquentSluggable\SluggableObserver' instanceof \Cviebrock\EloquentSluggable\SluggableObserver,
             'modules' instanceof \Nwidart\Modules\Repository,
             'Nwidart\Modules\Contracts\RepositoryInterface' instanceof \Nwidart\Modules\Repository,
             'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
@@ -328,6 +331,9 @@ namespace PHPSTORM_META {
             'theme.publisher' instanceof \Cartalyst\Themes\ThemePublisher,
             'command.theme.publish' instanceof \Cartalyst\Themes\Console\ThemePublishCommand,
             'image' instanceof \Intervention\Image\ImageManager,
+            'shortcode.compiler' instanceof \Webwizo\Shortcodes\Compilers\ShortcodeCompiler,
+            'shortcode' instanceof \Webwizo\Shortcodes\Shortcode,
+            'Mcamara\LaravelLocalization\LaravelLocalization' instanceof \Mcamara\LaravelLocalization\LaravelLocalization,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,
@@ -449,8 +455,7 @@ namespace PHPSTORM_META {
             'command.backup:list' instanceof \Spatie\Backup\Commands\ListCommand,
             'command.backup:monitor' instanceof \Spatie\Backup\Commands\MonitorCommand,
             'Spatie\Backup\Helpers\ConsoleOutput' instanceof \Spatie\Backup\Helpers\ConsoleOutput,
-            'sluggable.creator' instanceof \Cviebrock\EloquentSluggable\SluggableMigrationCreator,
-            'sluggable.table' instanceof \Cviebrock\EloquentSluggable\SluggableTableCommand,
+            'Cviebrock\EloquentSluggable\SluggableObserver' instanceof \Cviebrock\EloquentSluggable\SluggableObserver,
             'modules' instanceof \Nwidart\Modules\Repository,
             'Nwidart\Modules\Contracts\RepositoryInterface' instanceof \Nwidart\Modules\Repository,
             'debugbar' instanceof \Barryvdh\Debugbar\LaravelDebugbar,
@@ -461,6 +466,9 @@ namespace PHPSTORM_META {
             'theme.publisher' instanceof \Cartalyst\Themes\ThemePublisher,
             'command.theme.publish' instanceof \Cartalyst\Themes\Console\ThemePublishCommand,
             'image' instanceof \Intervention\Image\ImageManager,
+            'shortcode.compiler' instanceof \Webwizo\Shortcodes\Compilers\ShortcodeCompiler,
+            'shortcode' instanceof \Webwizo\Shortcodes\Shortcode,
+            'Mcamara\LaravelLocalization\LaravelLocalization' instanceof \Mcamara\LaravelLocalization\LaravelLocalization,
             'translation.loader' instanceof \Illuminate\Translation\FileLoader,
             'translator' instanceof \Illuminate\Translation\Translator,
             'Illuminate\Broadcasting\BroadcastManager' instanceof \Illuminate\Broadcasting\BroadcastManager,

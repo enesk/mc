@@ -22,14 +22,19 @@
 <!-- header -->
 <div class="container">
     <div class="row vAlignCentered mb20">
-        <div class="col-md-4 col-xs-6">
+        <div class="col-md-3 col-xs-5">
             <a href="/" title="Millenium Cars">
-                <img src="/uploads/logos/group.png" alt="Millenium Cars"
-                     class="img-responsive">
+                @if(Request::is('xrastatt/*') or Request::is('rastatt'))
+                    <img src="/uploads/logos/logo-rastatt.png" alt="Millenium Cars" class="img-responsive">
+                @elseif(Request::is('xkarlsruhe/*') or Request::is('karlsruhe'))
+                    <img src="/uploads/logos/logo-karlsruhe.png" alt="Millenium Cars" class="img-responsive">
+                @else
+                    <img src="/uploads/logos/group.png" alt="Millenium Cars" class="img-responsive">
+                @endif
             </a>
         </div>
-        <div class="col-md-8 col-xs-6 vMiddle flex-end">
-            @if(Request::is('sales/*') or Request::is('sales'))
+        <div class="col-md-9 col-xs-7 vMiddle flex-end">
+            @if(Request::is('*/sales/*') or Request::is('*/sales'))
                 @include('partials.navigation.header')
             @else
                 {{ \App\Helpers\MenuHelper::getMenu('header-main') }}
