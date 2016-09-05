@@ -8,7 +8,7 @@ class Station extends Model
 {
     use CrudTrait;
 
-    protected $table = 'rentals_stations';
+    protected $table = 'stations';
     protected $primaryKey = 'id';
     protected $fillable = [
         'name',

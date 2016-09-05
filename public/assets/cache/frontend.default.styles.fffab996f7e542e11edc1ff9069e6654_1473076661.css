@@ -2763,10 +2763,10 @@ textarea {
   padding: 11px 20px;
   margin-top: 105px; }
 
-.aboutUs_main {
+.standard_main {
   padding-top: 25px;
   padding-bottom: 25px; }
-  .aboutUs_main p {
+  .standard_main p {
     color: #111;
     line-height: 2; }
 
@@ -2824,11 +2824,8 @@ textarea {
   font-weight: bold;
   color: #e3001b !important; }
 /* career */
-.career {
-  background-image: url("/themes/frontend/default/assets/image/career.jpg"); }
-
 .careerTable {
-  padding-top: 25px;
+  padding-top: 5px;
   color: #111;
   margin-bottom: 40px; }
   .careerTable .table > thead > tr > th {

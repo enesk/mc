@@ -23,7 +23,7 @@ trait PageTemplates
     {
 
     }
-    private function company()
+    private function standard()
     {
         $this->crud->addField([
             'name' => 'content',

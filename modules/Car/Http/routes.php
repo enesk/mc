@@ -1,5 +1,5 @@
 <?php
-Route::group(['middleware' => ['web']], function () {
+Route::group(['middleware' => ['web', 'admin']], function () {
 
     Route::get('imager/{image?}', function ($src) {
         $cacheimage = Image::cache(function ($image) use ($src) {

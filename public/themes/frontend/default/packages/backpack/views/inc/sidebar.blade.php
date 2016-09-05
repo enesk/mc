@@ -17,12 +17,9 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">{{ trans('backpack::base.administration') }}</li>
-                <!-- ================================================ -->
-                <!-- ==== Recommended place for admin menu items ==== -->
-                <!-- ================================================ -->
                 <li><a href="{{ url('admin/dashboard') }}"><i class="fa fa-dashboard"></i>
                         <span>{{ trans('backpack::base.dashboard') }}</span></a></li>
-
+            <!--
                 <li class="treeview">
                     <a href="#"><i class="fa fa-newspaper-o"></i> <span>News</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
@@ -34,34 +31,57 @@
                         <li><a href="{{ url('admin/tag') }}"><i class="fa fa-tag"></i> <span>Tags</span></a></li>
                     </ul>
                 </li>
+                !-->
 
-                <li><a href="{{ url('admin/page') }}"><i class="fa fa-file-o"></i> <span>Pages</span></a></li>
+                <li><a href="{{ url('admin/page') }}"><i class="fa fa-file-o"></i> <span>Seiten</span></a></li>
                 <li class="treeview">
-                    <a href="#!"><i class="fa fa-list"></i> <span>Menü verwaltung</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <a href="#!"><i class="fa fa-list"></i> <span>Menü verwaltung</span> <i
+                                class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="{{ url('admin/menu') }}"><i class="fa fa-list"></i> <span>Menüs</span></a></li>
-                        <li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menüpunkte</span></a></li>
+                        <li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i>
+                                <span>Menüpunkte</span></a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#!"><i class="fa fa-users"></i> <span>Teams</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ url('admin/teams') }}"><i class="fa fa-list"></i> <span>Alle Teams</span></a></li>
-                        <li><a href="{{ url('admin/members') }}"><i class="fa fa-list"></i> <span>Alle Mitglieder</span></a></li>
+                        <li><a href="{{ url('admin/teams') }}"><i class="fa fa-list"></i> <span>Alle Teams</span></a>
+                        </li>
+                        <li><a href="{{ url('admin/members') }}"><i class="fa fa-list"></i> <span>Alle Mitglieder</span></a>
+                        </li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#!"><i class="fa fa-car"></i> <span>Vermietung</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ url('admin/rental/stations') }}"><i class="fa fa-list"></i> <span>Alle Stationen</span></a></li>
-                        <li><a href="{{ url('admin/rental/categories') }}"><i class="fa fa-list"></i> <span>Alle Kategorien</span></a></li>
-                        <li><a href="{{ url('admin/rental/classes') }}"><i class="fa fa-list"></i> <span>Alle Klassen</span></a></li>
-                        <li><a href="{{ url('admin/rental/specifics') }}"><i class="fa fa-list"></i> <span>Alle Ausstatungen</span></a></li>
+                        <li><a href="{{ url('admin/rental/stations') }}"><i class="fa fa-list"></i>
+                                <span>Alle Stationen</span></a></li>
+                        <li><a href="{{ url('admin/rental/categories') }}"><i class="fa fa-list"></i> <span>Alle Kategorien</span></a>
+                        </li>
+                        <li><a href="{{ url('admin/rental/classes') }}"><i class="fa fa-list"></i>
+                                <span>Alle Klassen</span></a></li>
+                        <li><a href="{{ url('admin/rental/specifics') }}"><i class="fa fa-list"></i> <span>Alle Ausstatungen</span></a>
+                        </li>
                     </ul>
                 </li>
-                <li><a href="{{ url('admin/testimonials') }}"><i class="fa fa-comment-o "></i> <span>Kundenmeinungen</span></a></li>
+                <li class="treeview">
+                    <a href="#!"><i class="fa fa-bullhorn"></i> <span>Stellenanzeigen</span> <i
+                                class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ url('admin/jobs/categories') }}"><i class="fa fa-list"></i>
+                                <span>Kategorien</span></a></li>
+                        <li><a href="{{ url('admin/jobs') }}"><i class="fa fa-bullhorn"></i>
+                                <span>Alle Stellenanzeigen</span></a>
+                        </li>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="{{ url('admin/testimonials') }}"><i class="fa fa-comment-o "></i>
+                        <span>Kundenmeinungen</span></a></li>
+            <!--
                 <li class="treeview">
                     <a href="#"><i class="fa fa-cogs"></i> <span>Advanced</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
@@ -75,8 +95,7 @@
                         </li>
                     </ul>
                 </li>
-
-
+                !-->
                 <!-- ======================================= -->
                 <li class="header">{{ trans('backpack::base.user') }}</li>
                 <li><a href="{{ url('admin/logout') }}"><i class="fa fa-sign-out"></i>

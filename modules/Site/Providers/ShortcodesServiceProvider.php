@@ -22,5 +22,6 @@ class ShortcodesServiceProvider extends ServiceProvider
     public function register()
     {
         \Shortcode::register('team', 'Modules\Site\Shortcodes\TeamShortcode@profiles');
+        \Shortcode::register('jobs', 'Modules\Site\Shortcodes\JobsShortcode@jobs');
     }
 }
