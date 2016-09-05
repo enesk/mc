@@ -22,5 +22,5 @@ Route::group(['namespace' => 'Modules\Page\Http\Controllers'], function ($router
 });
 
 Route::group(['middleware' => 'web', 'as' => 'pages::'], function () {
-    Route::get('{slug?}', ['uses' => '\Modules\Site\Http\Controllers\PagesController@getPage', 'as' => 'search'])->where('slug', '([A-Za-z0-9\-\/]+)');
+    Route::get('{slug?}', ['uses' => '\Modules\Page\Http\Controllers\PagesController@getPage', 'as' => 'search'])->where('slug', '([A-Za-z0-9\-\/]+)');
 });

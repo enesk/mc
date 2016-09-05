@@ -30,7 +30,7 @@
     <div class="row vAlignCentered mb20">
         <div class="col-md-4 col-xs-6">
             <a href="/" title="Millenium Cars">
-                <img src="/{{ \App\Helpers\Helper::assetsUrl() }}/img/milleniumcars.png" alt="Millenium Cars"
+                <img src="/uploads/logos/group.png" alt="Millenium Cars"
                      class="img-responsive">
             </a>
         </div>

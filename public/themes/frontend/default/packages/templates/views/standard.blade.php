@@ -15,7 +15,7 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-xs-12 aboutUs_main">
-                        {!! $page->content !!}
+                        {!! \Shortcode::compile($page->content) !!}
                     </div>
                 </div>
             </div>
