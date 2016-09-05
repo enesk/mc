@@ -4,15 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-
-    <meta name="description" content="description">
-    <meta name="keywords" content="keywords">
-    <meta name="author" content="flexwork team // fxw.io - productivity matters!">
-
+    <meta name="author" content="widimedia">
     <link rel="shortcut icon" href="image/favicon.png">
-
     <title>Verkauf</title>
-
     {{ Asset::queue('bootstrap', 'css/bootstrap.min.css') }}
     {{ Asset::queue('slick', 'css/slick.css') }}
     {{ Asset::queue('datepicker', 'css/datepicker.css') }}
@@ -24,13 +18,10 @@
     {{ Asset::queue('fa', 'css/font-awesome.min.css') }}
     {{ Asset::queue('app', 'scss/app.scss') }}
     {{ Asset::queue('responsive', 'css/responsive.css') }}
-
     @foreach (Asset::getCompiledStyles() as $style)
         <link href="{{ $style }}" rel="stylesheet">
     @endforeach
-
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" rel="stylesheet" type="text/css">
-
 </head>
 <body>
 @include('partials.headers.header')
@@ -48,10 +39,17 @@
 {{ Asset::queue('js-rangeSlider', 'js/ionRangeSlider/ion.rangeSlider.min.js') }}
 {{ Asset::queue('js-functions', 'js/functions.js') }}
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-70087926-4', 'auto');
     ga('send', 'pageview');
