@@ -8,12 +8,6 @@
                 <li class="hidden-xs">
                     <a href="#">Datenschutz</a>
                 </li>
-                <li class="hidden-xs">
-                    <a href="#">AGB</a>
-                </li>
-                <li class="hidden-xs">
-                    <a href="#">Anfahrt</a>
-                </li>
                 <li>
                     <a href="#">
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
