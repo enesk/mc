@@ -3,10 +3,10 @@
         <div class="navbar-collapse">
             <ul class="nav navbar-nav navbar-right headerMenu">
                 <li class="hidden-xs">
-                    <a href="#">Impressum</a>
+                    <a href="/impressum">Impressum</a>
                 </li>
                 <li class="hidden-xs">
-                    <a href="#">Datenschutz</a>
+                    <a href="/datenschutz">Datenschutz</a>
                 </li>
                 <li>
                     <a href="#">
