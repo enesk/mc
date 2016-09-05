@@ -44,6 +44,14 @@
                     </ul>
                 </li>
                 <li class="treeview">
+                    <a href="#!"><i class="fa fa-users"></i> <span>Teams</span> <i
+                                class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ url('admin/teams') }}"><i class="fa fa-list"></i> <span>Alle Teams</span></a></li>
+                        <li><a href="{{ url('admin/members') }}"><i class="fa fa-list"></i> <span>Alle Mitglieder</span></a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
                     <a href="#!"><i class="fa fa-car"></i> <span>Vermietung</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">

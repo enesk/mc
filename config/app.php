@@ -178,8 +178,14 @@ return [
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        'Cartalyst\Themes\Laravel\ThemeServiceProvider',
+        Cartalyst\Themes\Laravel\ThemeServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Webwizo\Shortcodes\ShortcodesServiceProvider::class,
+        /*
+         * Shortcodes
+         */
+
+        \Modules\Site\Providers\ShortcodesServiceProvider::class
 
     ],
 
@@ -240,11 +246,12 @@ return [
          */
         'Module' => Nwidart\Modules\Facades\Module::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'Theme' => 'Cartalyst\Themes\Laravel\Facades\Theme',
-        'Asset' => 'Cartalyst\Themes\Laravel\Facades\Asset',
+        'Theme' => Cartalyst\Themes\Laravel\Facades\Theme::class,
+        'Asset' => Cartalyst\Themes\Laravel\Facades\Asset::class,
         'JSMin' => App\Helpers\JSMin::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Menu' => Lavary\Menu\Facade::class,
+        'Shortcode' => Webwizo\Shortcodes\Facades\Shortcode::class,
     ],
 
 ];

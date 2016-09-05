@@ -23,8 +23,8 @@ class ClassesController extends CrudController
         $this->crud->setColumns(['name']);
 
         $this->crud->addColumn([
-            'name' => 'station_id', // The db column name
-            'label' => "Station", // Table column heading
+            'name' => 'station_id', 
+            'label' => "Station", 
             'type' => 'stations'
         ]);
         $this->crud->addField([

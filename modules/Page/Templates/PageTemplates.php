@@ -19,46 +19,10 @@ trait PageTemplates
     | - page title
     | - page slug
     */
-
-    private function services()
+    private function no()
     {
-        $this->crud->addField([   // CustomHTML
-            'name' => 'metas_separator',
-            'type' => 'custom_html',
-            'value' => '<br><h2>Metas</h2><hr>',
-        ]);
-        $this->crud->addField([
-            'name' => 'meta_title',
-            'label' => 'Meta Title',
-            'fake' => true,
-            'store_in' => 'extras',
-        ]);
-        $this->crud->addField([
-            'name' => 'meta_description',
-            'label' => 'Meta Description',
-            'fake' => true,
-            'store_in' => 'extras',
-        ]);
-        $this->crud->addField([
-            'name' => 'meta_keywords',
-            'type' => 'textarea',
-            'label' => 'Meta Keywords',
-            'fake' => true,
-            'store_in' => 'extras',
-        ]);
-        $this->crud->addField([   // CustomHTML
-            'name' => 'content_separator',
-            'type' => 'custom_html',
-            'value' => '<br><h2>Content</h2><hr>',
-        ]);
-        $this->crud->addField([
-            'name' => 'content',
-            'label' => 'Content',
-            'type' => 'wysiwyg',
-            'placeholder' => 'Your content here',
-        ]);
-    }
 
+    }
     private function company()
     {
         $this->crud->addField([

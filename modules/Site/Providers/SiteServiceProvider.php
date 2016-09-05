@@ -32,7 +32,7 @@ class SiteServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		//
+		
 	}
 
 	/**
