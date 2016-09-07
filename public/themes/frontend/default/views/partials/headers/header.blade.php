@@ -36,6 +36,8 @@
         <div class="col-md-9 col-xs-7 vMiddle flex-end">
             @if(Request::is('*/sales/*') or Request::is('*/sales'))
                 @include('partials.navigation.header')
+            @elseif(Request::is('*/rental/*') or Request::is('*/rental'))
+                @include('partials.navigation.header')
             @else
                 {{ \App\Helpers\MenuHelper::getMenu('header-main') }}
             @endif

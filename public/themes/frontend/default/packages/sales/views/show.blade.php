@@ -159,7 +159,7 @@
                             </span>
                         @endif
 
-                            <span>
+                        <span>
                                 <img src="/{{ \App\Helpers\Helper::assetsUrl('/img/personCount.png') }}"
                                      alt="people_count">
                             </span>
@@ -171,9 +171,12 @@
                                 <p></p>
                             </div>
                             <div class="col-xs-12 text-right m_center">
-                                <button class="btn btn-positive" name="Fahrzeug wählen">
-                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>Finanzierung Prüfen
-                                </button>
+                                <iframe id="price-calculator" width="300" height="250" src="http://cdn.bdrops.net/scb/300x250/index.html?partnerCode=06175826&requestid=smallkalkulator&cost={{ str_replace('.', '', \App\Helpers\Helper::smartPrice($car->price)) }}" border="0" frameborder="0"></iframe>
+                                <a id="calculate" href="#!">
+                                    <button class="btn btn-positive" name="Fahrzeug wählen">
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>Finanzierung Prüfen
+                                    </button>
+                                </a>
                             </div>
 
                             <div class="col-xs-12 text-right m_center">

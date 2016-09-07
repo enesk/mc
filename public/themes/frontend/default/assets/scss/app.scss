@@ -606,9 +606,6 @@ textarea {
       width: 30px;
       display: inline-block;
     }
-    &:last-child {
-      padding-left: 10px;
-    }
   }
 }
 
@@ -2203,4 +2200,9 @@ footer {
     position: relative;
     top: -3px;
   }
+}
+
+#price-calculator {
+  display: none;
+  margin-bottom: 30px;
 }
