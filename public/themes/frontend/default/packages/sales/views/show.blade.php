@@ -178,13 +178,13 @@
                                     </button>
                                 </a>
                             </div>
-
+                            <!--
                             <div class="col-xs-12 text-right m_center">
                                 <button class="btn btn-blue" name="Fahrzeug wählen">
                                     <i class="fa fa-arrow-right" aria-hidden="true"></i>Farhzeug Resevieren
                                 </button>
                             </div>
-
+                            !-->
                             <div class="col-xs-12 text-right m_center">
                                 <button class="btn btn-gray" name="Fahrzeug wählen">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>E-Mail
