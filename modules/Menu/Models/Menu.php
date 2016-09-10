@@ -10,8 +10,8 @@ class Menu extends Model
     use CrudTrait;
 
     protected $table = 'menus';
-    protected $fillable = ['name'];
-
+    protected $fillable = ['name', 'slug'];
+    
 
     public function items()
     {

@@ -10,8 +10,10 @@ Route::group(['middleware' => ['web', 'admin'], 'prefix' => 'admin/rental', 'nam
 Route::group(['middleware' => ['web']], function () {
     Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         Route::group(['as' => 'rental::', 'prefix' => 'rental', 'namespace' => 'Modules\Rental\Http\Controllers'], function () {
-            #Route::get('search', ['as' => 'search', 'uses' => 'CarsController@search']);
-            #Route::get('show/{carID}', ['as' => 'show', 'uses' => 'CarsController@show']);
+            Route::get('search', ['as' => 'search', 'uses' => 'RentalsController@search']);
+            Route::get('extras', ['as' => 'extras', 'uses' => 'RentalsController@extras']);
+            Route::get('check', ['as' => 'check', 'uses' => 'RentalsController@check']);
+            Route::get('thanks', ['as' => 'thanks', 'uses' => 'RentalsController@thanks']);
         });
     });
 });

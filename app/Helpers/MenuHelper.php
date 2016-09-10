@@ -32,7 +32,7 @@ class MenuHelper
      */
     public static function isSelected($page)
     {
-        if (\Request::is($page->slug.'/*') or \Request::is($page->slug))
+        if (\Request::is($page->slug.'/*') or \Request::is($page->slug) or \Request::is('*/'.$page->slug))
             return true;
 
         return false;

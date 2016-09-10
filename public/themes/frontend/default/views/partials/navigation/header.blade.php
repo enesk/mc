@@ -1,10 +1,4 @@
 <ul class="list-inline subHdrMenu">
-    <li class="selected hidden-xs">
-        <a href="">PKW-verkauf</a>
-    </li>
-    <li class="hidden-xs">
-        <a href="">PKW-Vermietung</a>
-    </li>
     <li>
         <a href="" data-toggle="dropdown" id="menu_dropdown">MENÜ
             <i class="fa fa-bars menuIco" aria-hidden="true"></i>

@@ -23,7 +23,7 @@ class MenuItemCrudController extends CrudController
 
         $this->crud->addColumn([
             'name' => 'name',
-            'label' => 'Label',
+            'label' => 'Name',
         ]);
         $this->crud->addColumn([
             'label' => 'Parent',
@@ -36,7 +36,7 @@ class MenuItemCrudController extends CrudController
 
         $this->crud->addField([
             'name' => 'name',
-            'label' => 'Label',
+            'label' => 'Name',
         ]);
         $this->crud->addField([
             'label' => 'Parent',

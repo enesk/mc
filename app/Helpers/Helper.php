@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 
 use Modules\Menu\Models\Menu as MenuModel;
+use Modules\Slider\Models\Slider;
 
 class Helper
 {
@@ -48,6 +49,12 @@ class Helper
         $ps = substr($convert, 0, strpos($convert, "."));
 
         return $ps;
+    }
+
+    public static function getSlider($slug)
+    {
+        $slider = Slider::where('slug', $slug)->get();
+        return $slider->first()->slides;
     }
 
 }

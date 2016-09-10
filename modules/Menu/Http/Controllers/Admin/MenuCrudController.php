@@ -27,6 +27,11 @@ class MenuCrudController extends CrudController
             'name' => 'name',
             'label' => 'Label',
         ]);
+
+        $this->crud->addField([
+            'name' => 'slug',
+            'label' => 'Slug',
+        ]);
     }
 
     public function store(StoreRequest $request)

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2973a7efd00309d8aafb6874600c01b6",
-    "content-hash": "68a78a615df8f2b38f2971b25b599069",
+    "hash": "123f8db3b6dfd40ed7a4e3d2f1c60124",
+    "content-hash": "ad715057b0832aa5af61f4796d5d81ca",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -377,29 +377,28 @@
             "time": "2016-08-31 08:32:27"
         },
         {
-            "name": "backpack/pagemanager",
-            "version": "1.1",
+            "name": "backpack/permissionmanager",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Laravel-Backpack/PageManager.git",
-                "reference": "674617fe5d9505ebf2f1ce5a95064c6711e2f9f1"
+                "url": "https://github.com/Laravel-Backpack/PermissionManager.git",
+                "reference": "70040a6b30b1a52e8e9e30b7554e5f4de79a4fd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/PageManager/zipball/674617fe5d9505ebf2f1ce5a95064c6711e2f9f1",
-                "reference": "674617fe5d9505ebf2f1ce5a95064c6711e2f9f1",
+                "url": "https://api.github.com/repos/Laravel-Backpack/PermissionManager/zipball/70040a6b30b1a52e8e9e30b7554e5f4de79a4fd7",
+                "reference": "70040a6b30b1a52e8e9e30b7554e5f4de79a4fd7",
                 "shasum": ""
             },
             "require": {
                 "backpack/crud": "^3.0.6",
-                "cviebrock/eloquent-sluggable": "^4.0",
                 "illuminate/support": "~5.1",
-                "php": "~5.5|~7.0"
+                "php": ">=5.3.0",
+                "spatie/laravel-permission": "^1.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1",
-                "squizlabs/php_codesniffer": "~2.3"
+                "scrutinizer/ocular": "~1.1"
             },
             "type": "library",
             "extra": {
@@ -409,7 +408,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Backpack\\PageManager\\": "src"
+                    "Backpack\\PermissionManager\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -418,28 +417,36 @@
             ],
             "authors": [
                 {
+                    "name": "Marius Constantin",
+                    "email": "marius@updivision.com",
+                    "homepage": "http://www.updivision.com",
+                    "role": "Lead Developer"
+                },
+                {
                     "name": "Cristian Tabacitu",
                     "email": "hello@tabacitu.ro",
-                    "homepage": "http://tabacitu.ro",
-                    "role": "Architect & Developer"
+                    "homepage": "http://www.tabacitu.ro",
+                    "role": "Chief Architect"
                 }
             ],
-            "description": "Create admin panels for presentation websites on Laravel, using page templates and Backpack\\CRUD.",
-            "homepage": "https://github.com/laravel-backpack/PageManager",
+            "description": "Users and permissions management interface for Laravel 5 using Backpack CRUD.",
+            "homepage": "https://github.com/laravel-backpack/permissionmanager",
             "keywords": [
-                "Content management system",
-                "admin panel",
-                "administer pages",
                 "backpack",
-                "cms",
-                "crud",
-                "manage pages",
-                "pagemanager",
-                "presentation pages",
-                "presentation website",
-                "wordpress"
+                "backpack permission",
+                "backpack roles",
+                "backpack user management",
+                "dick",
+                "dick permission",
+                "laravel backpack",
+                "manage permission",
+                "manage roles",
+                "manage users",
+                "tabacitu",
+                "updivision",
+                "users roles admin"
             ],
-            "time": "2016-08-31 08:16:18"
+            "time": "2016-08-31 16:01:27"
         },
         {
             "name": "backpack/settings",
@@ -2604,48 +2611,6 @@
             "time": "2016-01-27 22:29:54"
         },
         {
-            "name": "lavary/laravel-menu",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lavary/laravel-menu.git",
-                "reference": "60ce1815819f1d57a415f97f4f9a7e8e73938a92"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lavary/laravel-menu/zipball/60ce1815819f1d57a415f97f4f9a7e8e73938a92",
-                "reference": "60ce1815819f1d57a415f97f4f9a7e8e73938a92",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": ">=5.0",
-                "illuminate/view": ">=5.0",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Lavary\\Menu\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Lavary",
-                    "email": "mrl.8081@gmail.com"
-                }
-            ],
-            "description": "A quick way to create menus in Laravel 5",
-            "homepage": "https://github.com/lavary/laravel-menu",
-            "keywords": [
-                "laravel"
-            ],
-            "time": "2016-05-01 19:18:01"
-        },
-        {
             "name": "leafo/scssphp",
             "version": "v0.6.5",
             "source": {
@@ -3866,6 +3831,59 @@
             "time": "2016-08-24 12:02:50"
         },
         {
+            "name": "spatie/laravel-permission",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "99f5574fc59b6d1e3951d0039199e94a6958207a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/99f5574fc59b6d1e3951d0039199e94a6958207a",
+                "reference": "99f5574fc59b6d1e3951d0039199e94a6958207a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.1",
+                "laravel/framework": "^5.1.11",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.1.4",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 5.1",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "security",
+                "spatie"
+            ],
+            "time": "2016-05-08 17:18:03"
+        },
+        {
             "name": "studio-42/elfinder",
             "version": "2.1.14",
             "source": {
@@ -4211,16 +4229,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v2.8.10",
+            "version": "v2.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "ab4c3f085c8f5a56536845bf985c4cef30bf75fd"
+                "reference": "44b499521defddf2eae17a18c811bbdae4f98bdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/ab4c3f085c8f5a56536845bf985c4cef30bf75fd",
-                "reference": "ab4c3f085c8f5a56536845bf985c4cef30bf75fd",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/44b499521defddf2eae17a18c811bbdae4f98bdf",
+                "reference": "44b499521defddf2eae17a18c811bbdae4f98bdf",
                 "shasum": ""
             },
             "require": {
@@ -4256,7 +4274,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-20 05:41:28"
+            "time": "2016-09-06 10:55:00"
         },
         {
             "name": "symfony/finder",
@@ -6448,9 +6466,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "lavary/laravel-menu": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

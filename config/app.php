@@ -183,6 +183,7 @@ return [
         Webwizo\Shortcodes\ShortcodesServiceProvider::class,
         \Modules\Site\Providers\ShortcodesServiceProvider::class,
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class
+        #Backpack\PermissionManager\PermissionManagerServiceProvider::class,
     ],
 
     /*
@@ -246,9 +247,9 @@ return [
         'Asset' => Cartalyst\Themes\Laravel\Facades\Asset::class,
         'JSMin' => App\Helpers\JSMin::class,
         'Image' => Intervention\Image\Facades\Image::class,
-        'Menu' => Lavary\Menu\Facade::class,
         'Shortcode' => Webwizo\Shortcodes\Facades\Shortcode::class,
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class
+        #
     ],
 
 ];
