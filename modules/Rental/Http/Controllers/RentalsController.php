@@ -59,7 +59,7 @@ class RentalsController extends Controller
     {
         $requestData = $request::all();
         \Session::set('reservation.personal', $requestData);
-        dd(session('reservation'));
+       // dd(session('reservation'));
         return view('rental::thanks');
     }
 }
