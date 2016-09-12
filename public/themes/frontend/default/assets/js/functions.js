@@ -1,23 +1,4 @@
 $(document).ready(function () {
-    $.datepicker.regional['de'] = {
-        closeText: 'Done',
-        prevText: 'Prev',
-        nextText: 'Next',
-        currentText: 'heute',
-        monthNames: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
-            'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
-        monthNamesShort: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun',
-            'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'],
-        dayNames: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
-        dayNamesShort: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-        dayNamesMin: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
-        weekHeader: 'KW',
-        dateFormat: 'dd.mm.yy',
-        firstDay: 0,
-        isRTL: false,
-        showMonthAfterYear: false,
-        yearSuffix: ''
-    };
     var app = {
         carSlider: function () {
             $('.carSlider').slick({
@@ -112,6 +93,8 @@ $(document).ready(function () {
             /*Choose station_to dropdown*/
             $("#arrival_dropdown ul li a").click(function () {
                 var val = $(this).find('span').text();
+                var stationID = $(this).data('station-id');
+                $("#to_station").val(stationID);
                 $("#station_dropdown_destination").val(val);
                 $('[data-toggle="dropdown"]').parent().removeClass('open');
             });
@@ -196,8 +179,8 @@ $(document).ready(function () {
                 checkout.hide();
             }).data('datepicker');
         },
-        changeDataPanel: function() {
-            $('#changeDataTrigger').on('click', function(event) {
+        changeDataPanel: function () {
+            $('#changeDataTrigger').on('click', function (event) {
                 $('#changeDataPanel').slideToggle('fast');
             });
         },
@@ -282,7 +265,8 @@ $(document).ready(function () {
     app.stationOptions();
     app.loginBox();
     app.filterOptions();
-    app.checkInOut(app.checkInOutDates());
+    // app.checkInOut(app.checkInOutDates());
+//    reservationCalender.from();
     app.activateToolTip();
     app.carDetailsSlider();
     app.carDetails();

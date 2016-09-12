@@ -29,14 +29,18 @@
 @include('partials.footers.footer')
 <!-- main -->
 <!-- footer -->
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+{{ Asset::queue('js-jquery', 'js/jquery/min.js') }}
+{{ Asset::queue('js-ui', 'js/jquery/ui.js') }}
 {{ Asset::queue('js-bs', 'js/bootstrap/bootstrap.min.js') }}
 {{ Asset::queue('js-bs-validator', 'js/bootstrap-validator/bootstrapValidator.min.js') }}
+{{ Asset::queue('js-calender-moment', 'js/moment/min.js') }}
 {{ Asset::queue('js-bs-datepicker', 'js/datetimepicker/bootstrap-datepicker.js') }}
 {{ Asset::queue('js-bs-select', 'js/bootstrap-select/bootstrap-select.min.js') }}
 {{ Asset::queue('js-slick', 'js/slick/slick.min.js') }}
 {{ Asset::queue('js-rangeSlider', 'js/ionRangeSlider/ion.rangeSlider.min.js') }}
+{{ Asset::queue('js-calender-german', 'js/datetimepicker/german.js') }}
+{{ Asset::queue('js-reservation', 'js/datetimepicker/reservation.js') }}
 {{ Asset::queue('js-functions', 'js/functions.js') }}
 <script>
     (function (i, s, o, g, r, a, m) {

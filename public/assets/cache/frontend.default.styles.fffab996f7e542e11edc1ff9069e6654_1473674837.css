@@ -2147,12 +2147,14 @@ textarea {
   font-weight: 300;
   padding: 30px 0; }
 
-.sResultFilter button {
-  height: 50px;
-  margin-right: 10px;
-  padding-right: 15px;
-  padding-left: 15px;
-  font-size: 16px; }
+.sResultFilter {
+  margin-bottom: 10px; }
+  .sResultFilter button {
+    height: 50px;
+    margin-right: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 16px; }
   .sResultFilter a.active button {
     background-color: #fff;
     border: 1px solid #e3001b;

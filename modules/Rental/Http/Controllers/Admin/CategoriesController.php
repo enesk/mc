@@ -25,6 +25,10 @@ class CategoriesController extends CrudController
             'label' => "Name"
         ]);
         $this->crud->addField([
+            'name' => 'slug',
+            'label' => "Slug"
+        ]);
+        $this->crud->addField([
             'name' => 'order',
             'label' => "Reihenfolge"
         ]);

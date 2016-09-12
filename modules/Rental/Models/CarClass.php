@@ -24,4 +24,23 @@ class CarClass extends Model
         'order',
     ];
 
+
+    /**
+     * @param $stationID
+     * @return mixed
+     */
+    public static function getClassesByStationID($stationID)
+    {
+        return self::where('station_id', $stationID)
+            ->where('cars_available', '>', 0)
+            ->get();
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

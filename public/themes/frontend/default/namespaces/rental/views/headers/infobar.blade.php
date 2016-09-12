@@ -9,8 +9,8 @@
 
                 <div class="infoBar_box_right">
                     <h4 class="media-heading">Abholung</h4>
-                    <p>Millennium Cars GmbH, Baden-Baden</p>
-                    <p>26.07.2016, 11:00</p>
+                    <p>{{ \Modules\Rental\Models\Station::find($reservationDates['from_station'])->name }}, {{ \Modules\Rental\Models\Station::find($reservationDates['from_station'])->city }}</p>
+                    <p>{{ $reservationDates['from_date'] }} {{ $reservationDates['from_time'] }}</p>
                 </div>
             </div>
             <div class="col-md-4 infoBar_box">
@@ -19,8 +19,8 @@
                 </div>
                 <div class="infoBar_box_right">
                     <h4 class="media-heading">Rückgabe</h4>
-                    <p>Millennium Cars GmbH, Baden-Baden</p>
-                    <p>26.07.2016, 11:00</p>
+                    <p>{{ \Modules\Rental\Models\Station::find($reservationDates['to_station'])->name }}, {{ \Modules\Rental\Models\Station::find($reservationDates['to_station'])->city }}</p>
+                    <p>{{ $reservationDates['to_date'] }} {{ $reservationDates['to_time'] }}</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -33,14 +33,9 @@
                             <h4 class="media-heading">MietDauer</h4>
                             <p>
                                 <i aria-hidden="true" class="fa fa-calendar-check-o"></i>
-                                <span class="isBold">5</span>
+                                <span class="isBold">{{ $days }}</span>
                                 Tage</p>
                         </div>
-                    </div>
-                    <div class="col-md-7 col-xs-6 infoBar_box change">
-                        <a id="changeDataTrigger" href="#">Ändern
-                            <i aria-hidden="true" class="fa fa-angle-down"></i>
-                        </a>
                     </div>
                 </div>
             </div>

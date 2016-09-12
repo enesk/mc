@@ -5,44 +5,12 @@
                 Alle Anzeigen
             </button>
         </a>
-        <a class="sportwagen" href="#">
-            <button aria-label="Sportwagen" class="btn btn-border btn-gray" type="button">
-                Sportwagen
-            </button>
-        </a>
-
-
-        <a class="kasten" href="#">
-            <button aria-label="Kasten" class="btn btn-border btn-gray kasten" type="button">
-                Kasten
-            </button>
-        </a>
-
-
-        <a class="limousine" href="#">
-            <button aria-label="Limousine" class="btn btn-border btn-gray limousine" type="button">
-                Limousine
-            </button>
-        </a>
-
-        <a class="coupe" href="#">
-            <button aria-label="Coupe" class="btn btn-border btn-gray coupe" type="button">
-                Coupe
-            </button>
-        </a>
-
-
-        <a class="van" href="#">
-            <button aria-label="VAN" class="btn btn-border btn-gray van" type="button">
-                VAN
-            </button>
-        </a>
-
-
-        <a class="gelandewagen" href="#">
-            <button aria-label="Geländewagen" class="btn btn-border btn-gray gelandewagen" type="button">
-                Geländewagen
-            </button>
-        </a>
+        @foreach($categories as $category)
+            <a class="{{ $category->slug }}" href="#">
+                <button aria-label="{{ $category->name }}" class="btn btn-border btn-gray" type="button">
+                    {{ $category->name }}
+                </button>
+            </a>
+        @endforeach
     </div>
 </div>

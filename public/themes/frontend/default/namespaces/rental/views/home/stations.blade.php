@@ -70,6 +70,7 @@
     <div class="rentalStation" id="destination">
         <input type="text" class="form-control formStyle thinner" placeholder="Rückgabestation wählen..."
                aria-describedby="Rückgabestation wählen" data-toggle="dropdown" id="station_dropdown_destination">
+        <input type="hidden" name="to_station" id="to_station" />
         <div class="dropdown-menu arrow_box station_dropdown arrival_dropdown" aria-labelledby="station_dropdown"
              id="arrival_dropdown">
             <div class="row">
@@ -79,7 +80,7 @@
                         <ul class="list-unstyled">
                             @foreach(\Modules\Rental\Models\Station::all() as $station)
                                 <li>
-                                    <a href="#" data-station-id="{{ $station->id }}">
+                                    <a data-station-id="{{ $station->id }}" href="#" data-station-id="{{ $station->id }}">
                                         <span>{{ $station->name }}, {{ $station->city }}</span>
                                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                                     </a>
