@@ -22,8 +22,8 @@ body {
   }
 }
 
-
-img {}
+img {
+}
 
 a {
   &:hover {
@@ -1463,6 +1463,11 @@ textarea {
   }
   .smallHdr .checkbox label {
     color: #e3001b;
+    a {
+      color: inherit;
+      text-decoration: underline;
+      font-weight: bold;
+    }
     font-size: 14px;
     padding-left: 15px;
     &::before {
@@ -1979,7 +1984,6 @@ textarea {
 
 /* career */
 
-
 .careerTable {
   padding-top: 5px;
   color: #111;
@@ -2176,7 +2180,7 @@ footer {
   height: 600px;
   background-size: cover;
   border-right: 1px solid #fff;
-  &:hover{
+  &:hover {
     .start-location-name {
       background: #e3001b;
     }

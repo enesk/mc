@@ -11,9 +11,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
         Route::group(['as' => 'rental::', 'prefix' => 'rental', 'namespace' => 'Modules\Rental\Http\Controllers'], function () {
             Route::get('search', ['as' => 'search', 'uses' => 'RentalsController@search']);
-            Route::get('extras', ['as' => 'extras', 'uses' => 'RentalsController@extras']);
-            Route::get('check', ['as' => 'check', 'uses' => 'RentalsController@check']);
-            Route::get('thanks', ['as' => 'thanks', 'uses' => 'RentalsController@thanks']);
+            Route::get('class/{id}/extras', ['as' => 'extras', 'uses' => 'RentalsController@extras']);
+            Route::post('check', ['as' => 'check', 'uses' => 'RentalsController@check']);
+            Route::post('thanks', ['as' => 'thanks', 'uses' => 'RentalsController@thanks']);
         });
     });
 });

@@ -3,7 +3,7 @@
     <span>08:30</span>
 </div>
 <div>
-    <span>09:00</span>
+    <span class="selectedTime">09:00</span>
     <span>09:30</span>
 </div>
 <div>
@@ -11,7 +11,7 @@
     <span>10:30</span>
 </div>
 <div>
-    <span class="selectedTime">11:00</span>
+    <span>11:00</span>
     <span>11:30</span>
 </div>
 <div>

@@ -10,7 +10,7 @@
                     <?php
                     switch ($classes->count()):
                         case 0:
-                            echo 'keine Angebote';
+                            echo 'leider keine passende Angebote';
                             break;
                         case 1:
                             echo 'ein Angebot';
@@ -20,7 +20,7 @@
                     endswitch;
                     ?>
                 </span>
-                für Sie!
+                für Sie gefunden!
             </div>
         </div>
         @include('rental::search.categories')
@@ -36,9 +36,10 @@
                     <div class="tableHeader">
                         <h3 class="m_center">{{ $car->name }}</h3>
                         <p class="m_center">{{ $car->details }}</p>
-
                         <div class="carBox_priceExt m_center">
-                            <p>Gesamt {{ \App\Helpers\Helper::smartPrice(\App\Helpers\Helper::calculateRentalPrice($days, $car->daily_price)) }} €</p>
+                            <p>
+                                Gesamt {{ \App\Helpers\Helper::smartPrice(\App\Helpers\Helper::calculateRentalPrice($days, $car->daily_price)) }}
+                                €</p>
                             <p>inkl. 19% MwSt.</p>
                         </div>
                     </div>
@@ -52,7 +53,7 @@
                         </div>
                         <div class="carSlide_text m_center">pro Tag</div>
                         <div class="carBox_action">
-                            <a href="{{ route('rental::extras') }}">
+                            <a href="{{ route('rental::extras', $car->id) }}">
                                 <button class="btn btn-block">Fahrzeug wählen</button>
                             </a>
                         </div>

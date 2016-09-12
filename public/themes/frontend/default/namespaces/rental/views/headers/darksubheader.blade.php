@@ -16,7 +16,7 @@
 
                     </li>
                     <li
-                    @if(Request::is('rental/extras') or Request::is('*/rental/extras')){{ 'class=currentStep' }}@endif
+                    @if(Request::is('rental/*/*/extras') or Request::is('*/rental/*/*/extras')){{ 'class=currentStep' }}@endif
                     @if(Request::is('rental/search')){{ 'class=futureStep' }}@endif
                     >
                         <span class="isCircle">3</span>
@@ -25,7 +25,7 @@
                     </li>
                     <li
                     @if(Request::is('rental/check') or Request::is('*/rental/check')){{ 'class=currentStep' }}@endif
-                    @if(Request::is('rental/extras') or Request::is('rental/search')){{ 'class=futureStep' }}@endif
+                    @if(Request::is('rental/*/*/extras') or Request::is('rental/search')){{ 'class=futureStep' }}@endif
                     >
                         <span class="isCircle">4</span>
                         <span class="hidden-lg-down">Prüfen &amp; Senden</span>

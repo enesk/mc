@@ -94,4 +94,26 @@ class Helper
         return $days * $oneDayPrice;
     }
 
+    /**
+     * @return mixed
+     */
+    public static function getCurrentDate()
+    {
+        $date = date("d.m.Y");
+
+        return $date;
+    }
+
+    /**
+     * @param $currentDate
+     * @return int
+     */
+    public static function addDaysToCurrentDay($currentDate, $day)
+    {
+        $date = strtotime(date("d.m.Y", strtotime($currentDate)) . '+' . $day . 'day');
+        $date = date("d.m.Y", $date);
+
+        return $date;
+    }
+
 }

@@ -15,30 +15,29 @@ var reservation = {
             startDate: '+1d'
         });
     },
+    totalDays: function () {
+        var fromDate = parseDate($('#from_date').val());
+        var toDate = parseDate($('#to_date').val());
+        var dayDifference = dayDiff(toDate, fromDate);
+        $('#total_days').val(dayDifference);
+    },
     to: function () {
+        reservation.totalDays();
         $('#to_date').prop('disabled', true);
-        $('#to_time_dropdown').prop('disabled', true);
         $('#from_date').on('change', function () {
-            $('#to_date').prop('disabled', false);
             $('#to_date').val('');
             var fromDate = $(this).val();
             var dayDifference = dayDiff(parseDate(fromDate), new Date());
+            reservation.totalDays()
             $('#to_date').datepicker({
                 startDate: '+' + dayDifference + 'd',
                 language: 'de',
                 autoclose: true
             });
+            $('#to_date').prop('disabled', false);
         });
-        $('#to_date').on('change', function () {
-            $('#to_time_dropdown').prop('disabled', false);
-            var fromDate = parseDate($('#from_date').val());
-            var toDate = parseDate($(this).val());
-            var dayDifference = dayDiff(toDate, fromDate);
-            $('#total_days').val(dayDifference);
+        $('#to_date').on('change', function() {
+            reservation.totalDays();
         })
     }
 };
-
-
-reservation.from();
-reservation.to();
