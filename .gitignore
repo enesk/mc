@@ -2,3 +2,5 @@
 .idea
 /vendor
 /public/uploads/
+/public/assets/cache/*
+php.ini
