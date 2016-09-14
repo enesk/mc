@@ -11,13 +11,21 @@ class MenuHelper
     {
         $items = self::getItems($slug);
         $data = [
-            'items' => $items
+            'items' => $items,
+            'slug' => $slug
         ];
 
-        echo view('partials.navigation.menu', $data);
+        switch ($slug):
+            case 'footer':
+                echo view('partials.navigation.footer', $data)->render();
+                break;
+            default:
+                echo view('partials.navigation.menu', $data)->render();
+        endswitch;
     }
 
-    public static function getSidebarMenu($menuID) {
+    public static function getSidebarMenu($menuID)
+    {
         $items = Menu::find($menuID)->items;
         $data = [
             'items' => $items
@@ -32,7 +40,9 @@ class MenuHelper
      */
     public static function isSelected($page)
     {
-        if (\Request::is($page->slug.'/*') or \Request::is($page->slug) or \Request::is('*/'.$page->slug))
+        if(!isset($page->slug))
+            return false;
+        if (\Request::is($page->slug . '/*') or \Request::is($page->slug) or \Request::is('*/' . $page->slug))
             return true;
 
         return false;

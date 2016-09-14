@@ -29,7 +29,7 @@
                 @elseif(Request::is('xkarlsruhe/*') or Request::is('karlsruhe'))
                     <img src="/uploads/logos/logo-karlsruhe.png" alt="Millenium Cars" class="img-responsive">
                 @else
-                    <img src="/uploads/logos/group.png" alt="Millenium Cars" class="img-responsive">
+                    <img src="/uploads/logos/group.png" alt="Millenium Cars" class="img-responsive pull-left">
                 @endif
             </a>
         </div>

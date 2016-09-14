@@ -113,7 +113,6 @@
     @push('crud_fields_scripts')
         <script>
             jQuery(document).ready(function($) {
-
                 $("#page_or_link_select").change(function(e) {
                     $(".page_or_link_value input").attr('disabled', 'disabled');
                     $(".page_or_link_value select").attr('disabled', 'disabled');
@@ -138,9 +137,11 @@
                 });
 
             });
+            $('.page_or_link_value select').change(function() {
+                $('input[name="name"]').val($('.page_or_link_value select option:selected').text());
+            })
         </script>
     @endpush
-
 @endif
 {{-- End of Extra CSS and JS --}}
 {{-- ########################################## --}}
