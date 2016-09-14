@@ -4,30 +4,7 @@
             <i class="fa fa-bars menuIco" aria-hidden="true"></i>
         </a>
         <ul class="dropdown-menu dropdown-menu-right arrow_box menu_dropdown" aria-labelledby="menu_dropdown">
-            <li class="visible-xs">
-                <a href="#">PKW-Verkauf<i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li class="visible-xs">
-                <a href="#">PKV-Vermietung<i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#">Über Uns<i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#">Karriere<i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#">Kontakt<i class="fa fa-angle-right" aria-hidden="true"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#">Millennium Trucks Gmbh<i class="fa fa-external-link" aria-hidden="true"></i>
-                </a>
-            </li>
+            {{ \App\Helpers\MenuHelper::getMenu('header-home', 'li') }}
         </ul>
     </li>
 </ul>

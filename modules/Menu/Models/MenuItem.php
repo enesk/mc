@@ -17,6 +17,10 @@ class MenuItem extends Model
         return $this->belongsTo('Modules\Menu\Models\MenuItem', 'parent_id');
     }
 
+    public function scopeByMenu($query, $menuID) {
+        return $query->where('menu_id', $menuID);
+    }
+
     public function children()
     {
         return $this->hasMany('Modules\Menu\Models\MenuItem', 'parent_id');

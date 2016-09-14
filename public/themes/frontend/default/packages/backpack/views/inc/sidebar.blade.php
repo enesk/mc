@@ -39,8 +39,6 @@
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="{{ url('admin/menu') }}"><i class="fa fa-list"></i> <span>Menüs</span></a></li>
-                        <li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i>
-                                <span>Menüpunkte</span></a></li>
                     </ul>
                 </li>
                 <li class="treeview">

@@ -25,14 +25,6 @@ class MenuItemCrudController extends CrudController
             'name' => 'name',
             'label' => 'Name',
         ]);
-        $this->crud->addColumn([
-            'label' => 'Parent',
-            'type' => 'select',
-            'name' => 'parent_id',
-            'entity' => 'parent',
-            'attribute' => 'name',
-            'model' => "\Modules\Menu\Models\MenuItem",
-        ]);
 
         $this->crud->addField([
             'name' => 'name',
