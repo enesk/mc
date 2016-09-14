@@ -7,7 +7,7 @@ use Modules\Menu\Models\Menu;
 class MenuHelper
 {
 
-    public static function getMenu($slug)
+    public static function getMenu($slug, $type = '')
     {
         $items = self::getItems($slug);
         $data = [
@@ -20,7 +20,11 @@ class MenuHelper
                 echo view('partials.navigation.footer', $data)->render();
                 break;
             default:
-                echo view('partials.navigation.menu', $data)->render();
+                if ($type == 'li'):
+                    echo view('partials.navigation.li', $data)->render();
+                else:
+                    echo view('partials.navigation.menu', $data)->render();
+                endif;
         endswitch;
     }
 
@@ -40,7 +44,7 @@ class MenuHelper
      */
     public static function isSelected($page)
     {
-        if(!isset($page->slug))
+        if (!isset($page->slug))
             return false;
         if (\Request::is($page->slug . '/*') or \Request::is($page->slug) or \Request::is('*/' . $page->slug))
             return true;
