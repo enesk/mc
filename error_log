@@ -1,0 +1,1 @@
+[05-Sep-2016 02:45:11 UTC] PHP Fatal error:  Class 'Modules\Site\Providers\ShortcodesServiceProvider' not found in /home/wididns/mc.wididns.com/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 146
