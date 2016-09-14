@@ -23,21 +23,15 @@
 <div class="container">
     <div class="row vAlignCentered mb20">
         <div class="col-md-3 col-xs-5">
-            @if(Request::is('*/rental' or ('rental')))
-                <a href="/rental" title="Millenium Cars">
-            @elseif(Request::is('*/sales'))
-                <a href="/sales" title="Millenium Cars">
-            @else
-                <a href="/" title="Millenium Cars">
-            @endif
-            @if(Request::is('xrastatt/*') or Request::is('rastatt'))
-                <img src="/uploads/logos/logo-rastatt.png" alt="Millenium Cars" class="img-responsive">
-            @elseif(Request::is('xkarlsruhe/*') or Request::is('karlsruhe'))
-                <img src="/uploads/logos/logo-karlsruhe.png" alt="Millenium Cars" class="img-responsive">
-            @else
-                <img src="/uploads/logos/group.png" alt="Millenium Cars" class="img-responsive">
+            <a href="/" title="Millenium Cars">
+                @if(Request::is('xrastatt/*') or Request::is('rastatt'))
+                    <img src="/uploads/logos/logo-rastatt.png" alt="Millenium Cars" class="img-responsive">
+                @elseif(Request::is('xkarlsruhe/*') or Request::is('karlsruhe'))
+                    <img src="/uploads/logos/logo-karlsruhe.png" alt="Millenium Cars" class="img-responsive">
+                @else
+                    <img src="/uploads/logos/group.png" alt="Millenium Cars" class="img-responsive">
                 @endif
-                </a>
+            </a>
         </div>
         <div class="col-md-9 col-xs-7 vMiddle flex-end">
             @if(Request::is('*/sales/*') or Request::is('*/sales') or Request::is('*/rental/*') or Request::is('*/rental/') or Request::is('rental/*') or Request::is('rental') or Request::is('sales'))
