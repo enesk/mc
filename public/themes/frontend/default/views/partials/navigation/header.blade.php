@@ -1,4 +1,4 @@
-<ul class="list-inline subHdrMenu">
+<ul class="list-inline subHdrMenu collapsed-sub-header">
     <li>
         <a href="" data-toggle="dropdown" id="menu_dropdown">MENÜ
             <i class="fa fa-bars menuIco" aria-hidden="true"></i>

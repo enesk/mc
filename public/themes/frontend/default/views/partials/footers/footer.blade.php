@@ -45,26 +45,8 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="fa fa-google-plus-square" aria-hidden="true"></i>
-                                    Google Plus
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
                                     <i class="fa fa-instagram" aria-hidden="true"></i>
                                     Instagram
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-youtube-square" aria-hidden="true"></i>
-                                    Youtube
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-                                    Linkedin
                                 </a>
                             </li>
                             <li>

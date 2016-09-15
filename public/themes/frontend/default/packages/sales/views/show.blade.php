@@ -157,13 +157,13 @@
                                      alt="doors_count">
                                 {{ $car->specifics()->where('name', 'door-count ')->get()->first()->value }}
                             </span>
-                        @endif
-
+                    @endif
+                    <!--
                         <span>
                                 <img src="/{{ \App\Helpers\Helper::assetsUrl('/img/personCount.png') }}"
                                      alt="people_count">
                             </span>
-
+                       !-->
                     </div>
                     <div class="carDetl_actions">
                         <div class="row">
@@ -171,12 +171,19 @@
                                 <p></p>
                             </div>
                             <div class="col-xs-12 text-right m_center">
-                                <iframe id="price-calculator" width="300" height="250" src="http://cdn.bdrops.net/scb/300x250/index.html?partnerCode=06175826&requestid=smallkalkulator&cost={{ str_replace('.', '', \App\Helpers\Helper::smartPrice($car->price)) }}" border="0" frameborder="0"></iframe>
+                                <iframe id="price-calculator" width="300" height="250"
+                                        src="http://cdn.bdrops.net/scb/300x250/index.html?partnerCode=06175826&requestid=smallkalkulator&cost={{ str_replace('.', '', \App\Helpers\Helper::smartPrice($car->price)) }}"
+                                        border="0" frameborder="0"></iframe>
                                 <a id="calculate" href="#!">
                                     <button class="btn btn-positive" name="Fahrzeug wählen">
                                         <i class="fa fa-arrow-right" aria-hidden="true"></i>Finanzierung Prüfen
                                     </button>
                                 </a>
+                            </div>
+                            <div class="col-xs-12 text-right m_center">
+                                <button class="btn btn-gray" data-toggle="modal" data-target="#email-modal">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>E-Mail
+                                </button>
                             </div>
                             <!--
                             <div class="col-xs-12 text-right m_center">
@@ -185,11 +192,6 @@
                                 </button>
                             </div>
 
-                            <div class="col-xs-12 text-right m_center">
-                                <button class="btn btn-gray" name="Fahrzeug wählen">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>E-Mail
-                                </button>
-                            </div>
 
                             <div class="col-xs-12 text-right m_center">
                                 <button class="btn btn-gray" name="Fahrzeug wählen">
@@ -211,6 +213,6 @@
                 </div>
             </div>
         </div>
-
     </div>
+    @include('partials.modals.email')
 @endsection

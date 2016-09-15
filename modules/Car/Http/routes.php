@@ -14,4 +14,8 @@ Route::group(['middleware' => ['web']], function () {
             Route::get('show/{carID}', ['as' => 'show', 'uses' => 'CarsController@show']);
         });
     });
+
+    Route::group(['prefix' => 'send-mail', 'as' => 'email::', 'namespace' => 'Modules\Car\Http\Controllers'], function () {
+        Route::post('interested', ['as' => 'interested', 'uses' => 'EmailsController@interested']);
+    });
 });
