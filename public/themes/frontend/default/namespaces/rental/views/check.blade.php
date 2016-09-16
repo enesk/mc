@@ -171,7 +171,7 @@
                                             <div class="checkbox checkbox-success ">
                                                 <input id="checkbox2" class="styled" type="checkbox">
                                                 <label for="checkbox2">
-                                                    Ich habe die <a href="#!">Allgemeinen Geschäftsbedingungen</a>
+                                                    Ich habe die <a href="/uploads/agb/vermietung.pdf">Allgemeinen Geschäftsbedingungen</a>
                                                     gelesen und bin
                                                     einverstanden
                                                 </label>

@@ -2,7 +2,7 @@
 
 namespace Modules\Rental\Http\Controllers;
 
-use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 use Modules\Rental\Models\CarClass;
 use Modules\Rental\Models\Category;
 use Request;
