@@ -249,6 +249,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Shortcode' => Webwizo\Shortcodes\Facades\Shortcode::class,
         'LaravelLocalization'   => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class
+        
         #
     ],
 
