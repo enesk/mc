@@ -9,7 +9,7 @@
                     <a href="/datenschutz">Datenschutz</a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/kontakt">
                         <i class="fa fa-sign-in" aria-hidden="true"></i>
                         Kontakt</a>
 
