@@ -71,7 +71,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <p>LUnternehmenserfahrung seit über 30 Jahren und über 50 000 Verkauften PKWs. Autoverkauf in drei
+                <p>Unternehmenserfahrung seit über 30 Jahren und über 50 000 Verkauften PKWs. Autoverkauf in drei
 
                     Filialen. Über 500 PKWS auf Lager. Baden-Baden, Rastatt, Karlsruhe. Finanzierung ab 0,9% möglich.
 
