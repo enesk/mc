@@ -13,7 +13,7 @@
                     <div class="footer_address">
                         <h3>Millennium Group</h3>
                         @foreach(\Modules\Rental\Models\Station::all() as $station)
-                            <span class="isBold mt25    ">{{ $station->city }}</span>
+                            <span class="isBold mt25">{{ $station->city }}</span>
                             <span>{{ $station->street }} {{ $station->houseno }}</span>
                             <span>{{ $station->zipcode }} {{ $station->city }}</span>
                             <span>Tel.: {{ $station->tel }}</span>
