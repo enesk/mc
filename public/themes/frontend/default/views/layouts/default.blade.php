@@ -22,6 +22,7 @@
         <link href="{{ $style }}" rel="stylesheet">
     @endforeach
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700" rel="stylesheet" type="text/css">
+    <meta name="google-site-verification" content="N-mz1ajAu4WuokNqf86TMLjsUG5KtMwgY9Tc9EDfuH0" />
 </head>
 <body>
 @include('partials.headers.header')
