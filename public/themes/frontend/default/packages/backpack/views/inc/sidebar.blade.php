@@ -85,6 +85,17 @@
                     <a href="{{ url('admin/sliders') }}"><i class="fa fa-list"></i>
                         <span>Sliders</span></a>
                 </li>
+                <!-- Users, Roles Permissions -->
+                <?php if(auth()->check() && auth()->user()->hasRole('Admin')): ?>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ url('admin/user') }}"><i class="fa fa-user"></i> <span>Users</span></a></li>
+                        <li><a href="{{ url('admin/role') }}"><i class="fa fa-group"></i> <span>Roles</span></a></li>
+                        <li><a href="{{ url('admin/permission') }}"><i class="fa fa-key"></i> <span>Permissions</span></a></li>
+                    </ul>
+                </li>
+                <?php endif; ?>
             <!--
                 <li class="treeview">
                     <a href="#"><i class="fa fa-cogs"></i> <span>Advanced</span> <i

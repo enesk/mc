@@ -182,8 +182,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Webwizo\Shortcodes\ShortcodesServiceProvider::class,
         \Modules\Site\Providers\ShortcodesServiceProvider::class,
-        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class
-        #Backpack\PermissionManager\PermissionManagerServiceProvider::class,
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+        Backpack\PermissionManager\PermissionManagerServiceProvider::class,
     ],
 
     /*
