@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta name="author" content="widimedia">
     <link rel="shortcut icon" href="image/favicon.png">
-    <title>Millenium Cars GmbH - @if(isset($page)) {{ $page->title }} @endif</title>
+    <title>Millenium Cars GmbH @if(isset($page))-  {{ $page->title }} @endif</title>
     {{ Asset::queue('bootstrap', 'css/bootstrap.min.css') }}
     {{ Asset::queue('slick', 'css/slick.css') }}
     {{ Asset::queue('datepicker', 'css/datepicker.css') }}
