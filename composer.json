@@ -22,7 +22,7 @@
         "leafo/scssphp": "0.6.5",
         "intervention/image": "^2.3",
         "intervention/imagecache": "^2.3",
-        "webwizo/laravel-shortcodes": "1.0.4",
+        "webwizo/laravel-shortcodes": "1.0.*",
         "mcamara/laravel-localization": "1.1.*",
         "backpack/permissionmanager": "^2.1"
     },
