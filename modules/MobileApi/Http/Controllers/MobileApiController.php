@@ -22,9 +22,8 @@ class MobileApiController extends Controller
         ini_set('memory_limit', '-1');
         $ads = $this->getAds();
         $this->createCars($ads);
-        #$deleted = $this->deleteCars($ads);
-
-        #echo count($created).' cars created and '.count($deleted).' cars deleted.';
+        $this->deleteCars($ads);
+        #    echo count($created).' cars created and '.count($deleted).' cars deleted.';
     }
 
     /**
@@ -38,7 +37,7 @@ class MobileApiController extends Controller
         $maxPages = ApiRequest::getMaxPages($all);
         $totalAds = [];
         for ($i = 1; $i <= $maxPages; $i++):
-            $callDetails = 'page.size=100&page.number=' . $i;
+            $callDetails = 'page.size=' . $pageSize . '&page.number=' . $i;
             $api = ApiRequest::getAll($callDetails);
             $totalAds[] = ApiRequest::getAds($api);
         endfor;
@@ -90,10 +89,16 @@ class MobileApiController extends Controller
     public function createCar($ad, $category, $company, $model)
     {
         $power = $this->getPower($ad);
+        $fr = isset($ad->vehicle->specifics->{'first-registration'}->{'@value'});
+        if (isset($fr)):
+            $fr = Carbon::today()->toDateTimeString();
+        else:
+            $fr = Carbon::createFromFormat('Y-m', $fr)->toDateTimeString();
+        endif;
         $carData = [
             'title' => $ad->vehicle->{'model-description'}->{'@value'},
             'description' => $ad->description,
-            'first_registration' => Carbon::createFromFormat('Y-m', $ad->vehicle->specifics->{'first-registration'}->{'@value'})->toDateTimeString(),
+            'first_registration' => $fr,
             'price' => $ad->price->{'consumer-price-amount'}->{'@value'},
             'mileage' => $this->getMileage($ad),
             'power' => $power,
@@ -115,20 +120,15 @@ class MobileApiController extends Controller
      */
     public function createFuelConsumption($specific, $car)
     {
-        if (!isset($specific->{'@co2-emission'}))
+        if (!isset($specific->{''}))
             $specific->{'@co2-emission'} = 0;
 
-        if (!isset($specific->{'@inner'}))
-            $specific->{'@inner'} = 0;
+        $this->setEmptyData($specific, '@co2-emission');
+        $this->setEmptyData($specific, '@inner');
+        $this->setEmptyData($specific, '@outer');
+        $this->setEmptyData($specific, '@combined');
+        $this->setEmptyData($specific, '@unit');
 
-        if (!isset($specific->{'@outer'}))
-            $specific->{'@outer'} = 0;
-
-        if (!isset($specific->{'@combined'}))
-            $specific->{'@combined'} = 0;
-
-        if (!isset($specific->{'@unit'}))
-            $specific->{'@unit'} = 0;
 
         $fuelConsumptionData = [
             'envkv_compliant' => ApiRequest::check($specific->{'@envkv-compliant'}),
@@ -142,6 +142,14 @@ class MobileApiController extends Controller
         $fuelConsumption = FuelConsumption::create($fuelConsumptionData);
 
         return $fuelConsumption;
+    }
+
+    public function setEmptyData($data, $specific)
+    {
+        if (!isset($data->{$specific}))
+            return $data->{$specific} = 0;
+
+        return $data->{$specific};
     }
 
     /**
@@ -218,14 +226,10 @@ class MobileApiController extends Controller
      */
     public function deleteCars($ads)
     {
-
         $cars = Car::orderBy('mobile_id', 'desc')->get();
-
         $deleted = [];
         foreach ($cars as $car):
-            $check = array_search($car->mobile_id, array_column($ads, '@key'));
-            if (!$check):
-                $deleted[] = $car->mobile_id;
+            if($this->searchForIDInAPI($car->mobile_id, $ads) == false):
                 Car::destroy($car->id);
                 \File::deleteDirectory(public_path('uploads/cars/' . $car->id));
             endif;
