@@ -181,10 +181,16 @@ class MobileApiController extends Controller
             if (!isset($specific->{'@key'}))
                 continue;
 
+            $ld = isset($specific->{'local-description'}->{'$'});
+            if ($ld):
+                $ld = $ld;
+            else:
+                $ld = '';
+            endif;
             $specificData = [
                 'name' => $key,
                 'key' => $specific->{'@key'},
-                'value' => $specific->{'local-description'}->{'$'},
+                'value' => $ld,
                 'car_id' => $car->id
             ];
             Specific::create($specificData);
@@ -229,7 +235,7 @@ class MobileApiController extends Controller
         $cars = Car::orderBy('mobile_id', 'desc')->get();
         $deleted = [];
         foreach ($cars as $car):
-            if($this->searchForIDInAPI($car->mobile_id, $ads) == false):
+            if ($this->searchForIDInAPI($car->mobile_id, $ads) == false):
                 Car::destroy($car->id);
                 \File::deleteDirectory(public_path('uploads/cars/' . $car->id));
             endif;
