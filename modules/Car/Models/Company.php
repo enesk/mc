@@ -17,7 +17,7 @@ class Company extends Model
 
     public function models()
     {
-        return $this->hasMany(CarModel::class);
+        return $this->hasMany(CarModel::class)->orderBy('name', 'asc');
     }
 
     public static function findOrCreateByAPI($ad)
