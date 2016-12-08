@@ -71,11 +71,11 @@
         </div>
         <div class="row">
             <div class="col-lg-12">
-                <p>Unternehmenserfahrung seit über 30 Jahren und über 50 000 Verkauften PKWs. Autoverkauf in drei
+                <p>Unternehmenserfahrung seit über 30 Jahren und über 50 000 Verkauften PKWs. Autoverkauf in zwei
 
-                    Filialen. Über 500 PKWS auf Lager. Baden-Baden, Rastatt, Karlsruhe. Finanzierung ab 0,9% möglich.
+                    Filialen. Über 500 PKWS auf Lager. Baden-Baden und Rastatt. Finanzierung ab 0,9% möglich.
 
-                    Im Angebot Neuwagen und Jahreswagen. Fahrzeuge aller Klassen. Autovermietung in 3 Standorten.
+                    Im Angebot Neuwagen und Jahreswagen. Fahrzeuge aller Klassen. Autovermietung in 2 Standorten.
 
                     Kleinwagen, Mittelklassewagen sowie Luxusfahrzeuge.</p>
             </div>

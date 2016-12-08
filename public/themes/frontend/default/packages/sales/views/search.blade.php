@@ -30,10 +30,12 @@
         @foreach($cars as $car)
             <div class="row carBox pL_sale">
                 <div class="col-md-4 pl0">
+                    @if(isset($car->photos()->first()->path))
                     <a href="{{ route('cars::show', $car->id) }}">
                         <img src="/imager{{ $car->photos()->first()->path }}" alt="Luxusklasse"
                              class="img-responsive carDetailImg">
                     </a>
+                    @endif
                 </div>
                 <div class="col-md-6">
                     <div class="tableHeader">
