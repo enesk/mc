@@ -1,5 +1,5 @@
 <?php
-$companies = \Modules\Car\Models\Company::all();
+$companies = \Modules\Car\Models\Company::orderBy('name', 'asc')->get();
 $fuels = \Modules\Car\Models\Specifics\Specific::where('name', 'fuel')->groupby('key')->get();
 $year = date('Y');
 ?>
