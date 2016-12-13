@@ -21,8 +21,8 @@ class MobileApiController extends Controller
     {
         ini_set('memory_limit', '-1');
         $ads = $this->getAds();
-        $this->createCars($ads);
         $this->deleteCars($ads);
+        $this->createCars($ads);
         #    echo count($created).' cars created and '.count($deleted).' cars deleted.';
     }
 
