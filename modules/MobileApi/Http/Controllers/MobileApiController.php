@@ -21,8 +21,8 @@ class MobileApiController extends Controller
     {
         ini_set('memory_limit', '-1');
         $ads = $this->getAds();
-        $this->createCars($ads);
         $this->deleteCars($ads);
+        $this->createCars($ads);
         #    echo count($created).' cars created and '.count($deleted).' cars deleted.';
     }
 
@@ -235,10 +235,10 @@ class MobileApiController extends Controller
         $cars = Car::orderBy('mobile_id', 'desc')->get();
         $deleted = [];
         foreach ($cars as $car):
-            if ($this->searchForIDInAPI($car->mobile_id, $ads) == false):
+            #if ($this->searchForIDInAPI($car->mobile_id, $ads) == false):
                 Car::destroy($car->id);
                 \File::deleteDirectory(public_path('uploads/cars/' . $car->id));
-            endif;
+            #endif;
         endforeach;
 
         return $deleted;
