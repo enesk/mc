@@ -40,7 +40,6 @@
                 <div class="col-md-6">
                     <div class="tableHeader">
                         <a href="{{ route('cars::show', $car->id) }}"><h3 class="m_center">{{ $car->title }}</h3></a>
-                        <p class="m_center">{{ $car->specifics()->where('name', 'condition')->get()->first()->value }}</p>
                     </div>
                     <div class="carDetails">
                         <div>
@@ -49,16 +48,6 @@
                             <p>{{ $car->mileage }} km</p>
                             @if($car->power != 0)
                                 <p>{{ $car->power }} kW ({{ \App\Helpers\Helper::kwToPS($car->power) }} PS)</p>
-                            @endif
-                        </div>
-                        <div>
-                            <p>{{ $car->specifics()->where('name', 'fuel')->get()->first()->value }}</p>
-                            <p>{{ $car->specifics()->where('name', 'gearbox')->get()->first()->value }}</p>
-                        </div>
-                        <div>
-                            @if(isset($car->consumptions->combined))
-                                <p>Kraftstoffverbr. komb.: ca. {{ $car->consumptions->combined }} l/100 km - CO 2
-                                    -Emissionen komb.: ca. {{ $car->consumptions->co2_emission }} g/km</p>
                             @endif
                         </div>
                     </div>
@@ -84,10 +73,6 @@
                                 {{ $car->specifics()->where('name', 'door-count ')->get()->first()->value }}
                             </span>
                             @endif
-                            <span>
-                                <img src="/{{ \App\Helpers\Helper::assetsUrl('/img/personCount.png') }}"
-                                     alt="people_count">
-                                </span>
                         </div>
                         <div class="carBox_action">
                             <a href="{{ route('cars::show', $car->id) }}">

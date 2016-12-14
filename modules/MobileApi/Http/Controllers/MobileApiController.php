@@ -182,9 +182,7 @@ class MobileApiController extends Controller
                 continue;
 
             $ld = isset($specific->{'local-description'}->{'$'});
-            if ($ld):
-                $ld = $ld;
-            else:
+            if (!$ld):
                 $ld = '';
             endif;
             $specificData = [
@@ -236,8 +234,8 @@ class MobileApiController extends Controller
         $deleted = [];
         foreach ($cars as $car):
             #if ($this->searchForIDInAPI($car->mobile_id, $ads) == false):
-                Car::destroy($car->id);
-                \File::deleteDirectory(public_path('uploads/cars/' . $car->id));
+            Car::destroy($car->id);
+            \File::deleteDirectory(public_path('uploads/cars/' . $car->id));
             #endif;
         endforeach;
 
