@@ -36,7 +36,9 @@ class CarsController extends Controller
     public function show($carID)
     {
         $car = Car::find($carID);
-
+        if (!$car):
+            return redirect('/');
+        endif;
         $data = [
             'car' => $car
         ];
