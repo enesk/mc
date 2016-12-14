@@ -84,13 +84,6 @@
                         </div>
                     @endif
                     <div class="carBox_specs m_center">
-                        @if(isset($car->specifics()->where('name', 'door-count ')->get()->first()->value))
-                            <span>
-                                <img src="/{{ \App\Helpers\Helper::assetsUrl('/img/doorsCount.png') }}"
-                                     alt="doors_count">
-                                {{ $car->specifics()->where('name', 'door-count ')->get()->first()->value }}
-                            </span>
-                    @endif
                     <!--
                         <span>
                                 <img src="/{{ \App\Helpers\Helper::assetsUrl('/img/personCount.png') }}"

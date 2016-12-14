@@ -204,24 +204,26 @@ class MobileApiController extends Controller
         if (!is_dir(public_path('uploads/cars/' . $car->id)))
             mkdir("uploads/cars/$car->id");
 
-        foreach ($ad->images->image as $image):
-            if (isset($image->representation)):
-                $link = $image->representation[1]->{'@url'};
-            else:
-                $link = $image[1]->{'@url'};
-            endif;
-            $extension = pathinfo($link, PATHINFO_EXTENSION);
-            $path = '/uploads/cars/' . $car->id . '/' . uniqid() . '.' . $extension;
-            $copyPath = public_path($path);
-            $copy = \File::copy($link, $copyPath);
-            if ($copy):
-                $photoData = [
-                    'path' => $path,
-                    'car_id' => $car->id
-                ];
-                Photo::create($photoData);
-            endif;
-        endforeach;
+        if (isset($ad->images->image)):
+            foreach ($ad->images->image as $image):
+                if (isset($image->representation)):
+                    $link = $image->representation[1]->{'@url'};
+                else:
+                    $link = $image[1]->{'@url'};
+                endif;
+                $extension = pathinfo($link, PATHINFO_EXTENSION);
+                $path = '/uploads/cars/' . $car->id . '/' . uniqid() . '.' . $extension;
+                $copyPath = public_path($path);
+                $copy = \File::copy($link, $copyPath);
+                if ($copy):
+                    $photoData = [
+                        'path' => $path,
+                        'car_id' => $car->id
+                    ];
+                    Photo::create($photoData);
+                endif;
+            endforeach;
+        endif;
     }
 
     /**
