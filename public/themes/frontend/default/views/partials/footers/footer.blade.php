@@ -88,16 +88,13 @@
                 <div class="col-md-6">
                     <ul class="list-inline footer_nav">
                         <li>
-                            <a href="#">Kontakt</a>
+                            <a href="/kontakt">Kontakt</a>
                         </li>
                         <li>
-                            <a href="#">AGB</a>
+                            <a href="/datenschutz">Datenschutz</a>
                         </li>
                         <li>
-                            <a href="#">Datenschutz</a>
-                        </li>
-                        <li>
-                            <a href="#">Impressum</a>
+                            <a href="/impressum">Impressum</a>
                         </li>
                     </ul>
                 </div>
