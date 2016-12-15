@@ -18,10 +18,10 @@
         <div class="col-md-3">
             <div class="cert_box">
                 <div class="cert_image bigLogo">
-                    <img src="/uploads/logos/santander.png" alt="European Car Dealer Association">
+                    <img src="/uploads/logos/santander.png" alt="Santander Consumer Bank">
                 </div>
                 <div class="cert_text">
-                    European Car Dealer Association
+                    Santander Consumer Bank
                 </div>
             </div>
         </div>
