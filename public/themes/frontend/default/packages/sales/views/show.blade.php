@@ -36,7 +36,25 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 carDetl_innerTitle">
-                        <h2>Ausstattung</h2>
+                        <h2>Fahrzeug Details</h2>
+                    </div>
+                </div>
+
+                <div class="row carDtl_equipment pt20">
+                    <div class="col-sm-6">
+                        <p>Erstzulassung</p>
+                        <p>Kilometerstand</p>
+                        @if($car->power != 0)
+                            <p>Leistung</p>
+                        @endif
+                    </div>
+                    <div class="col-sm-6">
+                        <?php $data = new \Carbon\Carbon($car->first_registration) ?>
+                        <p>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data)->format('m.Y') }}</p>
+                        <p>{{ number_format($car->mileage, 0, ',', '.') }} km</p>
+                        @if($car->power != 0)
+                            <p>{{ $car->power }} kW ({{ \App\Helpers\Helper::kwToPS($car->power) }} PS)</p>
+                        @endif
                     </div>
                 </div>
 
@@ -101,9 +119,7 @@
                                         src="http://cdn.bdrops.net/scb/300x250/index.html?partnerCode=06175826&requestid=smallkalkulator&cost={{ str_replace('.', '', \App\Helpers\Helper::smartPrice($car->price)) }}"
                                         border="0" frameborder="0"></iframe>
                                 <a id="calculate" href="#!">
-                                    <button class="btn btn-positive" name="Fahrzeug wählen">
-                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>Finanzierung Prüfen
-                                    </button>
+                                    <button class="btn btn-positive" name="Fahrzeug wählen"><i class="fa fa-arrow-right" aria-hidden="true"></i>Finanzierung Prüfen</button>
                                 </a>
                             </div>
                             <div class="col-xs-12 text-right m_center">
