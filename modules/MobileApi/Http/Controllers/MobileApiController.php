@@ -21,6 +21,7 @@ class MobileApiController extends Controller
     {
         ini_set('memory_limit', '-1');
         $ads = $this->getAds();
+        dd($ads[5]);
         $this->deleteCars($ads);
         $this->createCars($ads);
         #    echo count($created).' cars created and '.count($deleted).' cars deleted.';
@@ -89,11 +90,10 @@ class MobileApiController extends Controller
     public function createCar($ad, $category, $company, $model)
     {
         $power = $this->getPower($ad);
-        $fr = isset($ad->vehicle->specifics->{'first-registration'}->{'@value'});
-        if (isset($fr)):
+        if (!isset($ad->vehicle->specifics->{'first-registration'}->{'@value'})):
             $fr = Carbon::today()->toDateTimeString();
         else:
-            $fr = Carbon::createFromFormat('Y-m', $fr)->toDateTimeString();
+            $fr = Carbon::createFromFormat('Y-m', $ad->vehicle->specifics->{'first-registration'}->{'@value'})->toDateTimeString();
         endif;
         $carData = [
             'title' => $ad->vehicle->{'model-description'}->{'@value'},

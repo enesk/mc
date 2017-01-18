@@ -31,10 +31,10 @@
             <div class="row carBox pL_sale">
                 <div class="col-md-4 pl0">
                     @if(isset($car->photos()->first()->path))
-                    <a href="{{ route('cars::show', $car->id) }}">
-                        <img src="/imager{{ $car->photos()->first()->path }}" alt="Luxusklasse"
-                             class="img-responsive carDetailImg">
-                    </a>
+                        <a href="{{ route('cars::show', $car->id) }}">
+                            <img src="/imager{{ $car->photos()->first()->path }}" alt="Luxusklasse"
+                                 class="img-responsive carDetailImg">
+                        </a>
                     @endif
                 </div>
                 <div class="col-md-6">
@@ -45,7 +45,7 @@
                         <div>
                             <?php $data = new \Carbon\Carbon($car->first_registration) ?>
                             <p>EZ {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $data)->format('m.Y') }}</p>
-                            <p>{{ $car->mileage }} km</p>
+                            <p>{{ number_format($car->mileage, 0, ',', '.') }} km</p>
                             @if($car->power != 0)
                                 <p>{{ $car->power }} kW ({{ \App\Helpers\Helper::kwToPS($car->power) }} PS)</p>
                             @endif
@@ -66,11 +66,16 @@
                             </div>
                         @endif
                         <div class="carBox_specs">
-                            @if(isset($car->specifics()->where('name', 'door-count ')->get()->first()->value))
-                            <span>
+                            @if(isset($car->specifics()->where('name', 'door-count')->get()->first()->value))
+                                <span style="background: #fff;"></span>
+                                <span>
                                 <img src="/{{ \App\Helpers\Helper::assetsUrl('/img/doorsCount.png') }}"
                                      alt="doors_count">
-                                {{ $car->specifics()->where('name', 'door-count ')->get()->first()->value }}
+                                    @if($car->specifics()->where('name', 'door-count')->get()->first()->key == 'FOUR_OR_FIVE')
+                                        4/5
+                                    @elseif($car->specifics()->where('name', 'door-count')->get()->first()->key == 'TWO_OR_THREE')
+                                        2/3
+                                    @endif
                             </span>
                             @endif
                         </div>
