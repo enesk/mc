@@ -73,7 +73,7 @@
             <div class="col-lg-12">
                 <p>Unternehmenserfahrung seit über 30 Jahren und über 50 000 Verkauften PKWs. Autoverkauf in zwei
 
-                    Filialen. Über 500 PKWS auf Lager. Baden-Baden und Rastatt. Finanzierung ab 0,9% möglich.
+                    Filialen. Baden-Baden und Rastatt. Finanzierung ab 0,9% möglich.
 
                     Im Angebot Neuwagen und Jahreswagen. Fahrzeuge aller Klassen. Autovermietung in 2 Standorten.
 
@@ -102,7 +102,7 @@
 
                     <ul class="list-inline footer_nav">
                         <li>
-                            Copyright 2016
+                            Copyright 2017
                         </li>
                         <li class="isHighlighted">
 
