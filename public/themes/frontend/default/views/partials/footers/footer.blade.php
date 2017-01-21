@@ -102,7 +102,7 @@
 
                     <ul class="list-inline footer_nav">
                         <li>
-                            Copyright 2016
+                            Copyright 2017
                         </li>
                         <li class="isHighlighted">
 
