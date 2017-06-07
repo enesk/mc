@@ -8,11 +8,14 @@ $cars = \Modules\Car\Models\Car::newCars();
         </div>
     </div>
     <div class="row">
-
         <div class="carSlider saleSlider">
             <?php foreach($cars as $car): ?>
                 <div>
-                    <a href="<?php echo e(route('cars::show', $car->id)); ?>"><img src="/imager<?php echo e($car->photos()->first()->path); ?>"></a>
+                    <?php if(isset($car->photos()->first()->path)): ?>
+                        <a href="<?php echo e(route('cars::show', $car->id)); ?>"></a>
+                    <?php else: ?>
+                        <a href="<?php echo e(route('cars::show', $car->id)); ?>"><img src="/imager<?php echo e($car->photos()->first()->path); ?>"></a>
+                    <?php endif; ?>
                     <h2 class="carSlide_name">
                         <?php if(strlen($car->company->name.' '.$car->title) > 30): ?>
                             <?php echo e(substr($car->company->name.' '.$car->title, 0, 30)); ?>...
@@ -20,6 +23,7 @@ $cars = \Modules\Car\Models\Car::newCars();
                             <?php echo e($car->company->name.' '.$car->title); ?>
 
                         <?php endif; ?>
+
                     </h2>
                     <div class="carSlide_price">
                         <span>€</span>
