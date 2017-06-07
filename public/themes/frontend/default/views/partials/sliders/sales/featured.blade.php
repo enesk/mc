@@ -11,10 +11,10 @@ $cars = \Modules\Car\Models\Car::newCars();
         <div class="carSlider saleSlider">
             @foreach($cars as $car)
                 <div>
-                    @if(empty($car->photos()->first()->path))
-                    <a href="{{ route('cars::show', $car->id) }}"></a>
+                    @if(isset($car->photos()->first()->path))
+                        <a href="{{ route('cars::show', $car->id) }}"></a>
                     @else
-                    <a href="{{ route('cars::show', $car->id) }}"><img src="/imager{{ $car->photos()->first()->path }}"></a>
+                        <a href="{{ route('cars::show', $car->id) }}"><img src="/imager{{ $car->photos()->first()->path }}"></a>
                     @endif
                     <h2 class="carSlide_name">
                         @if(strlen($car->company->name.' '.$car->title) > 30)
