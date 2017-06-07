@@ -1,0 +1,64 @@
+<div>
+    <span>08:00</span>
+    <span>08:30</span>
+</div>
+<div>
+    <span class="selectedTime">09:00</span>
+    <span>09:30</span>
+</div>
+<div>
+    <span>10:00</span>
+    <span>10:30</span>
+</div>
+<div>
+    <span>11:00</span>
+    <span>11:30</span>
+</div>
+<div>
+    <span>12:00</span>
+    <span>12:30</span>
+</div>
+<div>
+    <span>13:00</span>
+    <span>13:30</span>
+</div>
+<div>
+    <span>14:00</span>
+    <span>14:30</span>
+</div>
+<div>
+    <span>15:00</span>
+    <span>15:30</span>
+</div>
+<div>
+    <span>16:00</span>
+    <span>16:30</span>
+</div>
+<div>
+    <span>17:00</span>
+    <span>17:30</span>
+</div>
+<div>
+    <span>18:00</span>
+    <span>18:30</span>
+</div>
+<div>
+    <span>19:00</span>
+    <span>19:30</span>
+</div>
+<div>
+    <span>20:00</span>
+    <span>20:30</span>
+</div>
+<div>
+    <span>21:00</span>
+    <span>21:30</span>
+</div>
+<div>
+    <span>22:00</span>
+    <span>22:30</span>
+</div>
+<div>
+    <span>23:00</span>
+    <span>23:30</span>
+</div>
